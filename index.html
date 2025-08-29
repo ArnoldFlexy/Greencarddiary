@@ -1,0 +1,2822 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Home || Greencard Diary </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicons/favicon.ico">
+    <meta name="description" content="Greencard Diary" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/ambed-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/ambed.css" />
+    <link rel="stylesheet" href="assets/css/ambed-responsive.css" />
+
+    <!-- modes css -->
+    <link rel="stylesheet" id="jssMode" href="assets/css/ambed-light.css">
+
+
+    <!-- toolbar css -->
+    <link rel="stylesheet" href="assets/vendors/toolbar/css/toolbar.css">
+
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <!-- style switcher -->
+    <div class="style-switcher">
+        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
+        <h3>Layout Options</h3>
+        <div class="layout-feature" id="colorMode">
+            <a href="" class="dark-switcher" data-theme="ambed-dark">Dark</a>
+            <a href="" class="light-switcher" data-theme="ambed-light">Light</a>
+            <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
+        </div><!-- /.language-feature -->
+    </div>
+    <!-- end style switcher -->
+
+
+    <style>
+        /* Your existing preloader structure with GreenCardDiary styling */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preloader__image {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Circular loader rings */
+        .loader-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid transparent;
+        }
+
+        .loader-ring--outer {
+            width: 100px;
+            height: 100px;
+            border-top: 3px solid #4CAF50;
+            border-right: 3px solid #4CAF50;
+            animation: spin 2s linear infinite;
+        }
+
+        .loader-ring--inner {
+            width: 70px;
+            height: 70px;
+            border-bottom: 2px solid #66BB6A;
+            border-left: 2px solid #66BB6A;
+            animation: spin-reverse 1.5s linear infinite;
+        }
+
+        /* Central logo area */
+        .loader-center {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(76, 175, 80, 0.1);
+        }
+
+        /* Animated leaves */
+        .loader-leaf {
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            background: linear-gradient(45deg, #4CAF50, #66BB6A);
+            border-radius: 0 100% 0 100%;
+            transform-origin: center bottom;
+        }
+
+        .loader-leaf--1 {
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            animation: leaf-pulse 3s ease-in-out infinite;
+        }
+
+        .loader-leaf--2 {
+            top: 25px;
+            right: 20px;
+            transform: rotate(120deg);
+            animation: leaf-pulse 3s ease-in-out infinite 0.5s;
+        }
+
+        .loader-leaf--3 {
+            top: 25px;
+            left: 20px;
+            transform: rotate(-120deg);
+            animation: leaf-pulse 3s ease-in-out infinite 1s;
+        }
+
+        /* Brand text */
+        .loader-text {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2d5016;
+            white-space: nowrap;
+            opacity: 0;
+            animation: text-fade 2s ease-in-out infinite;
+        }
+
+        .loader-text .text-green {
+            color: #4CAF50;
+        }
+
+        .loader-tagline {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            color: #666;
+            white-space: nowrap;
+            opacity: 0;
+            animation: text-fade 2s ease-in-out infinite 0.5s;
+        }
+
+        /* Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes leaf-pulse {
+            0%, 100% { 
+                transform: scale(1) rotate(var(--rotation, 0deg));
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.3) rotate(var(--rotation, 0deg));
+                opacity: 1;
+            }
+        }
+
+        @keyframes text-fade {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Hide preloader when page is loaded */
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-out;
+        }
+
+    </style>
+
+
+    <!-- Preloader (Your existing structure) -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__image">
+            <!-- Outer ring -->
+            <div class="loader-ring loader-ring--outer"></div>
+            
+            <!-- Inner ring -->
+            <div class="loader-ring loader-ring--inner"></div>
+            
+            <!-- Center logo area -->
+            <div class="loader-center">
+                <!-- Animated leaves -->
+                <div class="loader-leaf loader-leaf--1" style="--rotation: 0deg;"></div>
+                <div class="loader-leaf loader-leaf--2" style="--rotation: 120deg;"></div>
+                <div class="loader-leaf loader-leaf--3" style="--rotation: -120deg;"></div>
+            </div>
+            
+            <!-- Brand text -->
+            <div class="loader-text">
+                green<span class="text-green">card</span>diary
+            </div>
+            <div class="loader-tagline">
+                your green initiative
+            </div>
+        </div>
+    </div>
+    <!-- /.preloader -->
+
+
+
+    <script>
+        // Hide preloader when page loads (add this to your main JS file)
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.classList.add('loaded');
+            
+            // Completely remove after transition
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Demo functions
+        function showPreloader() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'flex';
+            preloader.classList.remove('loaded');
+        }
+
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            preloader.classList.add('loaded');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+
+        function downloadCSS() {
+            const cssContent = `/* GreenCardDiary Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader__image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.loader-ring--outer {
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid #4CAF50;
+    border-right: 3px solid #4CAF50;
+    animation: spin 2s linear infinite;
+}
+
+.loader-ring--inner {
+    width: 70px;
+    height: 70px;
+    border-bottom: 2px solid #66BB6A;
+    border-left: 2px solid #66BB6A;
+    animation: spin-reverse 1.5s linear infinite;
+}
+
+.loader-center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.1);
+}
+
+.loader-leaf {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+    border-radius: 0 100% 0 100%;
+    transform-origin: center bottom;
+}
+
+.loader-leaf--1 {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    animation: leaf-pulse 3s ease-in-out infinite;
+}
+
+.loader-leaf--2 {
+    top: 25px;
+    right: 20px;
+    transform: rotate(120deg);
+    animation: leaf-pulse 3s ease-in-out infinite 0.5s;
+}
+
+.loader-leaf--3 {
+    top: 25px;
+    left: 20px;
+    transform: rotate(-120deg);
+    animation: leaf-pulse 3s ease-in-out infinite 1s;
+}
+
+.loader-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d5016;
+    white-space: nowrap;
+    opacity: 0;
+    animation: text-fade 2s ease-in-out infinite;
+}
+
+.loader-text .text-green {
+    color: #4CAF50;
+}
+
+.loader-tagline {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #666;
+    white-space: nowrap;
+    opacity: 0;
+    animation: text-fade 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes leaf-pulse {
+    0%, 100% { 
+        transform: scale(1) rotate(var(--rotation, 0deg));
+        opacity: 0.7;
+    }
+    50% { 
+        transform: scale(1.3) rotate(var(--rotation, 0deg));
+        opacity: 1;
+    }
+}
+
+@keyframes text-fade {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+}`;
+
+            const blob = new Blob([cssContent], { type: 'text/css' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'greencarddiary-preloader.css';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+
+    
+    <div class="page-wrapper">
+        <header class="main-header clearfix">
+            <div class="main-header__top">
+                <div class="container">
+                    <div class="main-header__top-inner clearfix">
+     <div class="main-header__logo">
+                            <a href="index.html">
+                                <img src="assets/images/resources/logo-3.png" alt="" class="dark-logo" style="height: 85px; width: 100%;">
+                                <img src="assets/images/resources/logo-3.png" alt="" class="light-logo" style="height: 85px; width: 100%;">
+                            </a>
+                        </div>
+                        <div class="main-header__top-right">
+                            <div class="main-header__top-right-content">
+                                <div class="main-header__top-address-box">
+                                    <ul class="list-unstyled main-header__top-address">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-phone-call"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Call anytime</p>
+                                                <h5><a href="tel:980009630">+267 71 724 795</a></h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-message"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Send email</p>
+                                                <h5><a href="mailto:henley@greencarddiary.co.bw">henley@greencarddiary.co.bw</a></h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon icon--location">
+                                                <span class="icon-location"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Plot 12045, Nkoyaphiri Industrial</p>
+                                                <h5>Mogoditshane, Gaborone</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                         <div class="main-header__top-right-social">
+    <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://www.facebook.com/GreenCardDiaries" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <a href="https://www.instagram.com/greencarddiaries" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+        <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-menu clearfix">
+                <div class="main-menu__wrapper clearfix">
+                    <div class="container">
+                        <div class="main-menu__wrapper-inner clearfix">
+                            <div class="main-menu__left">
+                                <div class="main-menu__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list">
+                                        <li class="dropdown megamenu">
+                                            <a href="index.html">Home </a>
+                                        
+                                        </li>
+                                        <li>
+                                            <a href="#about">About </a>
+                                        </li>
+                                      
+                                        <li>
+                                            <a href="#projects">Projects</a>
+                                        </li>
+                                        <li>
+                                            <a href="#services">Services </a>
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Blog </a>
+                                        </li>
+                                        <li> 
+                                            <a href="#shop">Shop</a>
+                                          
+                                        </li>
+                                     
+                                        <li><a href="contact.html">Contact </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-menu__right">
+                                <div class="main-menu__search-btn-box">
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
+                                    </div>
+                                    <div class="main-menu__btn-box">
+                                        <a href="contact.html" class="thm-btn main-menu__btn">Book Appointment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+  <style>
+        /* Chat Bot Styles */
+        .chat-bot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 100vw;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background-color 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        .chat-button i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-window {
+            width: 350px;
+            height: 600px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            max-width: 95vw;
+            max-height: 90vh;
+        }
+
+        .chat-window.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #2c9c56, #1e6e46);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .chat-avatar {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .chat-header .fa-robot {
+            font-size: 24px;
+            margin-right: 12px;
+            animation: robotPulse 2s infinite ease-in-out;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .chat-header-info {
+            z-index: 2;
+        }
+
+        .chat-header-info h3 {
+            font-size: 16px;
+            margin: 0 0 3px 0;
+        }
+
+        .chat-header-info p {
+            font-size: 12px;
+            opacity: 0.8;
+            margin: 0;
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f5f7f9;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+            word-break: break-word;
+        }
+
+        .bot-message {
+            background-color: #e6e6e6;
+            color: #333;
+            border-top-left-radius: 4px;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background-color: #2c9c56;
+            color: white;
+            border-top-right-radius: 4px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .chat-input button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2c9c56;
+            color: white;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-input button:hover {
+            background-color: #1e6e46;
+        }
+
+        .suggested-questions {
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+            color: #000;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggested-question {
+            padding: 8px 12px;
+            background-color: #f0f5ff;
+            border: 1px solid #d0deff;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .suggested-question:hover {
+            background-color: #d0deff;
+        }
+
+        .whatsapp-prompt {
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #25D366;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+
+        .header-waves {
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #4CAF50 100%);
+            position: relative;
+        }
+
+        .header-waves::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M0,50 Q50,20 100,50 T200,50 L200,100 L0,100 Z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat-x;
+            background-size: 200px 100px;
+            animation: wave 8s linear infinite;
+        }
+
+        /* ANIMATIONS */
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes robotPulse {
+            0% { 
+                transform: scale(1) rotate(0deg);
+                text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            }
+            25% { 
+                transform: scale(1.1) rotate(-2deg);
+                text-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+            }
+            50% { 
+                transform: scale(1.2) rotate(2deg);
+                text-shadow: 0 0 20px rgba(76, 175, 80, 1);
+            }
+            75% { 
+                transform: scale(1.1) rotate(-1deg);
+                text-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+            }
+            100% { 
+                transform: scale(1) rotate(0deg);
+                text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .chat-window {
+                width: 95vw;
+                height: 85vh;
+                min-width: 220px;
+                min-height: 320px;
+                right: 2vw;
+                bottom: 80px;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .chat-header {
+                padding: 10px;
+                font-size: 15px;
+            }
+            .chat-messages {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .chat-input input {
+                font-size: 13px;
+                padding: 10px;
+            }
+            .chat-input button {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                margin-left: 6px;
+            }
+            .suggested-questions {
+                gap: 5px;
+                padding: 8px;
+                font-size: 13px;
+            }
+            .suggested-question {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+            .whatsapp-prompt {
+                padding: 10px;
+                margin: 6px;
+                font-size: 13px;
+            }
+            .chat-bot-container {
+                bottom: 10px;
+                right: 10px;
+            }
+            .chat-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .chat-window {
+                width: 98vw;
+                height: 80vh;
+                min-width: 180px;
+                min-height: 220px;
+                right: 1vw;
+                bottom: 70px;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+            .chat-header {
+                padding: 8px;
+                font-size: 13px;
+            }
+            .chat-messages {
+                padding: 6px;
+                font-size: 13px;
+            }
+            .chat-input input {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .chat-input button {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+                margin-left: 4px;
+            }
+            .suggested-questions {
+                gap: 3px;
+                padding: 6px;
+                font-size: 12px;
+            }
+            .suggested-question {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+            .whatsapp-prompt {
+                padding: 8px;
+                margin: 4px;
+                font-size: 12px;
+            }
+            .chat-bot-container {
+                bottom: 5px;
+                right: 5px;
+            }
+            .chat-button {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    </style>
+
+    <!-- Chat Bot Container -->
+    <div class="chat-bot-container">
+        <div class="chat-window">
+            <div class="chat-header header-waves">
+                <div class="chat-avatar">
+                    <i class="fas fa-robot"></i>
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <h5 style="color: white;" id="live-chat-text">LIVE CHAT</h5>
+                        <p id="online-status">•Online</p>
+                    </div>
+                </div>
+                <div class="language-selector" style="margin-left: auto; z-index: 3;">
+                    <select id="languageSelect" style="background: #2c9c56;; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; padding: 5px; font-size: 12px;">
+                        <option value="en">English</option>
+                        <option value="tn">Setswana</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="chat-messages">
+                <div class="message bot-message" id="welcome-message">
+                    Hello! I'm your GreenCard Diary assistant. How can I help you today?
+                </div>
+            </div>
+            
+            <div class="suggested-questions">
+                <div class="suggested-question" data-en="What products do you offer?" data-tn="Dilo dife tse lo di rekisang?">What products do you offer?</div>
+                <div class="suggested-question" data-en="Are you eco-friendly?" data-tn="A lo sireletsa tikologo?">Are you eco-friendly?</div>
+                <div class="suggested-question" data-en="Where are you located?" data-tn="Lo kae?">Where are you located?</div>
+                <div class="suggested-question" data-en="Do you do deliveries?" data-tn="A lo romela dilo?">Do you do deliveries?</div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type your message here...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="footer">
+                <p style="justify-content: center; 
+                text-align: center; 
+                size: 4px; 
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 10px;
+                text-align: center;
+                background: rgba(187, 178, 178, 0.25);
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                line-height: 1.6;
+                color: rgb(73, 73, 73);
+                ">Powered by 
+                <a href="https://techsec-labs.com" 
+                target="_blank" rel="noopener noreferrer">TechSec-LABS</a></p>
+            </div>
+        </div>
+        
+        <div class="chat-button">
+            <i class="fas fa-comment"></i>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const chatButton = document.querySelector('.chat-button');
+            const chatWindow = document.querySelector('.chat-window');
+            const chatInput = document.querySelector('#chat-input-field');
+            const sendButton = document.querySelector('.chat-input button');
+            const chatMessages = document.querySelector('.chat-messages');
+            const suggestedQuestions = document.querySelectorAll('.suggested-question');
+            const languageSelect = document.querySelector('#languageSelect');
+            
+            // State variables
+            let unansweredCount = 0;
+            let whatsappPromptShown = false;
+            let currentLanguage = 'en';
+            
+            // Translation object
+            const translations = {
+                en: {
+                    liveChatTitle: 'LIVE CHAT',
+                    onlineStatus: '•Online',
+                    welcomeMessage: 'Hello! I\'m your GreenCard Diary assistant. How can I help you today?',
+                    inputPlaceholder: 'Type your message here...',
+                    whatsappPromptText: 'I\'d love to connect you with one of our human experts who can provide more detailed assistance! Would you like to chat with them on WhatsApp?',
+                    whatsappButtonText: 'Chat with Expert'
+                },
+                tn: {
+                    liveChatTitle: 'PUISANO YA MATENG',
+                    onlineStatus: '•Mo mafaratlheng',
+                    welcomeMessage: 'Dumela! Ke mothusi wa gago wa GreenCard Diary. Nka go thusa jang gompieno?',
+                    inputPlaceholder: 'Kwala molaetsa wa gago fano...',
+                    whatsappPromptText: 'Ke batla go go kopanya le mongwe wa ditswerere tsa rona tse di ka go thusang sentle! A o batla go bua nabo mo WhatsApp?',
+                    whatsappButtonText: 'Bua le Seitsanape'
+                }
+            };
+            
+            // Bilingual knowledge base
+            const knowledgeBase = {
+                // Greetings and politeness
+                'greeting': {
+                    pattern: {
+                        en: /\b(hello|hi|hey|greetings|howdy|good morning|good afternoon|good evening|sup|wassup)\b/i,
+                        tn: /\b(dumela|thobela|aowa|tsamaya sentle|o tsogile jang|o kae)\b/i
+                    },
+                    response: {
+                        en: 'Hello! Welcome to Green Card Diary Botswana. How can I assist you with your Green Card application today? 😊',
+                        tn: 'Dumela! O amogelwe ko Green Card Diary Botswana. Nka go thusa jang ka kopo ya gago ya Green Card gompieno? 😊'
+                    }
+                },
+                'how_are_you': {
+                    pattern: {
+                        en: /how are you|how do you do|how\'s it going|what\'s up/i,
+                        tn: /o kae|o tsogile jang|o phela jang|go direga eng/i
+                    },
+                    response: {
+                        en: 'I\'m doing great, thank you for asking! I\'m here and ready to help you with any questions about Green Card applications or our products. How are you doing today? 😊',
+                        tn: 'Ke siame, ke lebogile gore o botsa! Ke mo mafaratlheng mme ke ipaakantse go go thusa ka dipotso dipe fela tsa dikopo tsa Green Card kgotsa dilo tse re di rekisang. O kae gompieno? 😊'
+                    }
+                },
+                'goodbye': {
+                    pattern: {
+                        en: /bye|goodbye|see you|farewell|talk later|gtg|gotta go/i,
+                        tn: /sala sentle|tsamaya sentle|re bone|ke tsamaile|ke tsamaya/i
+                    },
+                    response: {
+                        en: 'Goodbye! Thank you for chatting with Green Card Diary. Feel free to reach out anytime if you need help with your Green Card application. Have a wonderful day! 👋',
+                        tn: 'Tsamaya sentle! Ke lebogile gore o buile le Green Card Diary. Ikutlwe o gololesegile go re letsetsa nako nngwe le nngwe fa o tlhoka thuso ka kopo ya gago ya Green Card. Nna le letsatsi le lentle! 👋'
+                    }
+                },
+                
+                // Products and services
+                'products': {
+                    pattern: {
+                        en: /\b(products|what do you offer|diaries|calendars|organizers|kits|tools|sell|buy|purchase|shop)\b/i,
+                        tn: /\b(dilo|se lo se rekisang|dipuku|dikhalendara|sengwe|reka|rekisa)\b/i
+                    },
+                    response: {
+                        en: 'We offer a range of products including:<br>• Green Card diaries with tracking sheets<br>• Custom calendars with important deadlines<br>• Document organizers and checklists<br>• Photo compliance guides<br>• Interview preparation kits<br>• Application timeline planners<br><br>All designed specifically for applicants from Botswana! 🇧🇼',
+                        tn: 'Re rekisa dilo di le dintsi jaaka:<br>• Dipuku tsa Green Card tse di nang le matlapa a go latela<br>• Dikhalendara tse di beilweng ka dinako tsa botlhokwa<br>• Baokedi ba dipampiri le di-checklist<br>• Dikgakololo tsa difoto<br>• Didirisiwa tsa go ipaakanyetsa puisano<br>• Baikaelelo ba nako ya dikopo<br><br>Tsotlhe di dirilwe ke bao ba ba kopadikang bo tswang Botswana! 🇧🇼'
+                    }
+                },
+                'services': {
+                    pattern: {
+                        en: /\b(services|help|support|assistance|guidance|consulting|advice)\b/i,
+                        tn: /\b(ditirelo|thuso|tshegetso|kaelo|kgakololo)\b/i
+                    },
+                    response: {
+                        en: 'We provide comprehensive application assistance including:<br>• Eligibility assessment and evaluation<br>• Document preparation guidance<br>• Photo compliance checking<br>• Application review and feedback<br>• Interview preparation coaching<br>• Timeline planning and tracking<br><br>We\'ve helped hundreds of applicants from Botswana succeed! 🎉',
+                        tn: 'Re tlamela ka thuso e e feletseng ya dikopo go akaretsa:<br>• Tekolo ya boitekanelo jwa go kopela<br>• Kaelo ya go baakanya dipampiri<br>• Tlhatlhobo ya maleba a difoto<br>• Tshekatsheko ya kopo le kaelo<br>• Katiso ya go ipaakanyetsa puisano<br>• Thulaganyo le go latela dinako<br><br>Re thusitse makgolokgolo a bao ba kopadikang bo tswang Botswana ba atlega! 🎉'
+                    }
+                },
+                
+                // Location and contact
+                'location': {
+                    pattern: {
+                        en: /\b(where|location|address|place|find|visit|office|shop)\b/i,
+                        tn: /\b(kae|lefelo|aterese|etela|ofisi|lebenkeleng)\b/i
+                    },
+                    response: {
+                        en: 'We are located in Gaborone, Botswana. 📍<br><br>Check out the map <a href="https://www.google.com/maps/place/Greencard+Diary/@-24.6387602,25.8197703,17.35z/data=!4m6!3m5!1s0x1ebb503b7667c351:0x186f2277505b1ded!8m2!3d-24.6384704!4d25.8215759!16s%2Fg%2F11f190wmst?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">here</a> for specific directions. We welcome walk-ins during business hours!',
+                        tn: 'Re kwa Gaborone, Botswana. 📍<br><br>Leba mmapa <a href="https://www.google.com/maps/place/Greencard+Diary/@-24.6387602,25.8197703,17.35z/data=!4m6!3m5!1s0x1ebb503b7667c351:0x186f2277505b1ded!8m2!3d-24.6384704!4d25.8215759!16s%2Fg%2F11f190wmst?entry=ttu&g_ep=EgoyMDI5MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">fano</a> go bona dikgakololo tse di tlhamaletseng. Re amogela ba ba tsenang ka dinako tsa tiro!'
+                    }
+                },
+                'contact': {
+                    pattern: {
+                        en: /\b(contact|phone|number|email|whatsapp|call|reach|communicate)\b/i,
+                        tn: /\b(golagana|mogala|nomoro|email|whatsapp|letsa|fitlhela)\b/i
+                    },
+                    response: {
+                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a><br>💬 WhatsApp: <a href="https://wa.me/26771724795" target="_blank" style="color:#2c9c56;text-decoration:underline;">Chat with us</a>',
+                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a><br>💬 WhatsApp: <a href="https://wa.me/26771724795" target="_blank" style="color:#2c9c56;text-decoration:underline;">Bua le rona</a>'
+                    }
+                },
+                
+                // Delivery and logistics
+                'delivery': {
+                    pattern: {
+                        en: /\b(deliver|delivery|ship|shipping|mail|post|courier|send|dispatch)\b/i,
+                        tn: /\b(romela|kabo|poso|tisa|romelela)\b/i
+                    },
+                    response: {
+                        en: 'Yes, we offer delivery services across Botswana! 🚚<br><br>• Free delivery in Gaborone for orders over P200<br>• Nationwide delivery within 2-3 business days<br>• Express delivery options available<br>• Safe packaging guaranteed<br><br>Contact us at <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> for more details.',
+                        tn: 'Ee, re tlamela ka ditirelo tsa kabo mo Botswana yotlhe! 🚚<br><br>• Kabo e e mahala mo Gaborone ya di-order tse di feta P200<br>• Kabo mo lefatsheng lotlhe mo malatsing a 2-3 a tiro<br>• Dikgetho tsa kabo e e bonako di teng<br>• Phutego e e babalesegileng e netefaditswe<br><br>Re letsetse ko <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> go bona dintlha tse dingwe.'
+                    }
+                },
+                
+                // Environmental and sustainability
+                'eco-friendly': {
+                    pattern: {
+                        en: /\b(eco.*friendly|environment|sustainable|green|recycle|planet|nature|carbon)\b/i,
+                        tn: /\b(tikologo|tlhago|sireletsa|phela|lefatshe)\b/i
+                    },
+                    response: {
+                        en: 'Yes! 🌱 We are committed to sustainability:<br>• Use recycled materials whenever possible<br>• Employ environmentally friendly printing processes<br>• Minimize waste in our operations<br>• Partner with eco-conscious suppliers<br>• Carbon-neutral delivery options<br><br>We believe in helping our clients while protecting our planet!',
+                        tn: 'Ee! 🌱 Re ikanyegile go sireletsa tikologo:<br>• Re dirisa didirisiwa tse di setseng di dirisitswe gape fa go kgonega<br>• Re dirisa mekgwa ya go gatisa e e sireletsang tikologo<br>• Re fokotsa matlakala mo tirong ya rona<br>• Re dirisana le bao ba ba sireletsang tikologo<br>• Dikgetho tsa kabo tse di sa senyang tikologo<br><br>Re dumela mo go thuseng bareki ba rona fa re sireletsa lefatshe la rona!'
+                    }
+                },
+                
+                // Thank you responses
+                'thank_you': {
+                    pattern: {
+                        en: /\b(thank|thanks|appreciate|grateful|cheers)\b/i,
+                        tn: /\b(leboga|ke lebogile|kea leboga|ke itumetse)\b/i
+                    },
+                    response: {
+                        en: 'You\'re very welcome! I\'m happy to help. If you have more questions about Green Card applications or our products, feel free to ask anytime. We\'re here to support your journey! 😊',
+                        tn: 'O amogelwe thata! Ke itumetse go thusa. Fa o na le dipotso tse dingwe ka dikopo tsa Green Card kgotsa dilo tsa rona, ikutlwe o gololesegile go botsa nako nngwe le nngwe. Re teng go tshegetsa leeto la gago! 😊'
+                    }
+                },
+                
+                // Pricing and payment
+                'pricing': {
+                    pattern: {
+                        en: /\b(price|cost|how much|fee|payment|pay|afford|expensive|cheap|discount)\b/i,
+                        tn: /\b(tshenyo|madi|makae|tefo|duela|seleka|tiriso|bonnye)\b/i
+                    },
+                    response: {
+                        en: 'Our pricing varies based on the products and services you need. We offer:<br>• Basic application kits starting from P150<br>• Premium packages with full support from P500<br>• Individual consultations from P250<br>• Student discounts available<br>• Group discounts for families<br>• Multiple payment methods accepted<br><br>Contact us for a personalized quote! 💰',
+                        tn: 'Ditlhwatlhwa tsa rona di farologane go ya ka dilo le ditirelo tse o di tlhokang. Re tlamela ka:<br>• Didirisiwa tsa motheo tse di simololang ko P150<br>• Diphakeiti tse di botoka tse di nang le tshegetso e e feletseng ko P500<br>• Dikgothatsiso tsa motho ka mong ko P250<br>• Bonnye jwa baithuti bo teng<br>• Bonnye jwa malapa a le mantsi<br>• Mekgwa e le mentsi ya tefo e amogelesegile<br><br>Re letsetse go go naya tekanyetso e e beilweng! 💰'
+                    }
+                },
+                
+                // Website and online presence
+                'website': {
+                    pattern: {
+                        en: /\b(website|online|internet|web|site|digital|portal)\b/i,
+                        tn: /\b(webbosaete|mo inthaneteng|inthanete|webe|saete|didijithale)\b/i
+                    },
+                    response: {
+                        en: 'Our website is <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">greencarddiary.co.bw</a> where you can:<br>• Browse our complete product range<br>• Read success stories from clients<br>• Place orders online securely<br>• Download free resources<br>• Book consultations<br><br>Visit us online anytime! 🌐',
+                        tn: 'Webbosaete ya rona ke <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">greencarddiary.co.bw</a> mo o ka:<br>• Sekasekang dilo tsa rona tse di feletseng<br>• Balang ditiragalo tsa katlholo go tswa go bareki<br>• Beaya di-order ka inthanete ka poloko<br>• Jala didiriswa tsa mahala<br>• Bukela dikgothatsiso<br><br>Re etelele mo inthaneteng nako nngwe le nngwe! 🌐'
+                    }
+                },
+                
+                // Business hours and availability
+                'hours': {
+                    pattern: {
+                        en: /\b(hours|open|closed|time|when|business hours|available|operating)\b/i,
+                        tn: /\b(diura|bula|tswalwa|nako|leng|diura tsa tiro|e gona|tiro)\b/i
+                    },
+                    response: {
+                        en: 'Our business hours are:<br>• Monday - Friday: 8:00 AM - 5:00 PM<br>• Saturday: 9:00 AM - 2:00 PM<br>• Sunday: Closed<br><br>But you can reach us on WhatsApp anytime for urgent inquiries! We typically respond within a few hours. ⏰',
+                        tn: 'Diura tsa rona tsa tiro ke:<br>• Mantaga - Labotlhano: 8:00 AM - 5:00 PM<br>• Matlhatso: 9:00 AM - 2:00 PM<br>• Tshipi: E tswetswe<br><br>Lefa go le jalo o ka re fitlhelela mo WhatsApp nako nngwe le nngwe go batla tshedimosetso e e kgakala! Gantsi re araba mo diuring di se mmalwa. ⏰'
+                    }
+                },
+                
+                // Green Card specific information
+                'green_card': {
+                    pattern: {
+                        en: /\b(green card|dv lottery|diversity visa|immigration|visa|usa|america|united states)\b/i,
+                        tn: /\b(karete e tala|lotari ya dv|visa ya mefuta|bafaladi|visa|usa|amerika|united states)\b/i
+                    },
+                    response: {
+                        en: 'We specialize in helping Botswana residents with their Green Card (Diversity Visa) applications! Our services include:<br>• DV lottery application assistance<br>• Documentation preparation<br>• Photo compliance verification<br>• Interview preparation<br>• Process timeline guidance<br><br>Let us help make your American dream come true! 🇺🇸',
+                        tn: 'Re itsise ka go thusa baagi ba Botswana ka dikopo tsa bona tsa Karete e Tala (Visa ya Mefuta)! Ditirelo tsa rona di akaretsa:<br>• Thuso ya kopo ya lotari ya DV<br>• Boipeelo jwa ditokomane<br>• Tlhathollo ya maleba a difoto<br>• Boipeelo jwa puisano<br>• Kaelo ya nako ya tirisanyo<br><br>A re go thuseng go dira toro ya gago ya Amerika e direge! 🇺🇸'
+                    }
+                }
+            };
+            
+            // Enhanced default responses in both languages
+            const enhancedDefaultResponses = {
+                en: [
+                    "That's an interesting question! While I specialize in Green Card applications, I'd love to help you with information about our visa services. What would you like to know? 🤔",
+                    "I appreciate you sharing that with me! Though my expertise is in immigration services, I'm happy to discuss how we can help with your Green Card journey. What specific assistance do you need? 😊",
+                    "Thanks for that! While I focus on Green Card applications and our products, I'm curious - are you considering applying for a US visa? I'd love to help you get started! 🇺🇸",
+                    "Interesting topic! I'm most helpful when discussing Green Card applications, our services, or immigration to the US. Is there anything in those areas I can assist you with today? 🤝",
+                    "I hear you! While that's outside my main area of expertise, I'm excellent at helping with Green Card applications and visa guidance. Would you like to explore those opportunities? 🌟"
+                ],
+                tn: [
+                    "Potso e e itumedisang! Le fa ke itsise ka dikopo tsa Green Card, ke batla go go thusa ka tshedimosetso ya ditirelo tsa rona tsa di-visa. O batla go itse eng? 🤔",
+                    "Ke itumetse gore o nkabelane seo! Le fa boitsanape jwa me bo le mo ditirelelong tsa bafaladi, ke itumetse go bua ka kafa re ka go thusang ka leeto la gago la Green Card. O tlhoka thuso efe? 😊",
+                    "Ke lebogile seo! Le fa ke lebeletse dikopo tsa Green Card le dilo tsa rona, ke batla go itse - a o akantse go kopela visa ya US? Ke batla go go thusa o simolole! 🇺🇸",
+                    "Setlhogo se se itumedisang! Ke thusa thata fa re bua ka dikopo tsa Green Card, ditirelo tsa rona, kgotsa go falela kwa US. A go na le sengwe mo dikarolong tseo se nka go thusang ka sone gompieno? 🤝",
+                    "Ke go utlwile! Le fa seo se le kgakala le tse ke di itseng, ke botoka thata mo go thuseng ka dikopo tsa Green Card le kaelo ya di-visa. A o batla go sekaseka ditšhono tseo? 🌟"
+                ]
+            };
+            
+            // Language switching function
+            function switchLanguage(lang) {
+                currentLanguage = lang;
+                
+                // Update UI elements
+                document.getElementById('live-chat-text').textContent = translations[lang].liveChatTitle;
+                document.getElementById('online-status').textContent = translations[lang].onlineStatus;
+                document.getElementById('welcome-message').textContent = translations[lang].welcomeMessage;
+                document.getElementById('chat-input-field').placeholder = translations[lang].inputPlaceholder;
+                
+                // Update suggested questions
+                suggestedQuestions.forEach(question => {
+                    question.textContent = question.getAttribute('data-' + lang);
+                });
+            }
+            
+            // Language selector event listener
+            languageSelect.addEventListener('change', function() {
+                switchLanguage(this.value);
+            });
+            
+            // Function to get response in current language
+            function getResponse(key) {
+                const item = knowledgeBase[key];
+                if (item && item.response[currentLanguage]) {
+                    return item.response[currentLanguage];
+                }
+                return null;
+            }
+            
+            // Function to test pattern in current language
+            function testPattern(key, message) {
+                const item = knowledgeBase[key];
+                if (item && item.pattern[currentLanguage]) {
+                    return item.pattern[currentLanguage].test(message);
+                }
+                // Fallback to English pattern if current language pattern doesn't exist
+                if (item && item.pattern.en) {
+                    return item.pattern.en.test(message);
+                }
+                return false;
+            }
+            
+            // Function to get a random enhanced default response in current language
+            function getRandomDefaultResponse() {
+                const responses = enhancedDefaultResponses[currentLanguage] || enhancedDefaultResponses.en;
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+            
+            // Toggle chat window
+            chatButton.addEventListener('click', function() {
+                chatWindow.classList.toggle('active');
+                if (chatWindow.classList.contains('active')) {
+                    chatInput.focus();
+                }
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message to chat
+                addMessage(message, 'user');
+                
+                // Process the message and generate response
+                processMessage(message);
+                
+                // Clear input
+                chatInput.value = '';
+            }
+            
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Send message on Enter key
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Add click events to suggested questions
+            suggestedQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const text = this.textContent;
+                    addMessage(text, 'user');
+                    processMessage(text);
+                });
+            });
+            
+            // Enhanced addMessage function to use innerHTML for bot messages
+            function addMessage(text, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+                
+                if (sender === 'bot') {
+                    messageElement.innerHTML = text;  // This makes links clickable
+                } else {
+                    messageElement.textContent = text;  // Keep textContent for user messages (security)
+                }
+                
+                chatMessages.appendChild(messageElement);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Enhanced message processing with bilingual pattern matching
+            function processMessage(message) {
+                let responded = false;
+                let matchedResponse = null;
+                
+                // Check all patterns and find the best match using current language
+                for (const key in knowledgeBase) {
+                    if (testPattern(key, message)) {
+                        matchedResponse = getResponse(key);
+                        break;
+                    }
+                }
+                
+                if (matchedResponse) {
+                    setTimeout(() => {
+                        addMessage(matchedResponse, 'bot');
+                    }, 500);
+                    responded = true;
+                    unansweredCount = 0; // Reset counter on successful response
+                }
+                
+                // If no match found, use enhanced default response in current language
+                if (!responded) {
+                    unansweredCount++;
+                    
+                    setTimeout(() => {
+                        addMessage(getRandomDefaultResponse(), 'bot');
+                        
+                        // After 2 unanswered questions, show WhatsApp prompt
+                        if (unansweredCount >= 2 && !whatsappPromptShown) {
+                            showWhatsAppPrompt();
+                        }
+                    }, 500);
+                }
+            }
+            
+            // Show WhatsApp prompt with clickable link in current language
+            function showWhatsAppPrompt() {
+                whatsappPromptShown = true;
+                
+                setTimeout(() => {
+                    const promptElement = document.createElement('div');
+                    promptElement.classList.add('whatsapp-prompt');
+
+                    promptElement.innerHTML = `
+                        <p>${translations[currentLanguage].whatsappPromptText}</p>
+                        <a href="https://wa.me/26771724795" class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> ${translations[currentLanguage].whatsappButtonText}
+                        </a>
+                    `;
+                    
+                    chatMessages.appendChild(promptElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+            
+            // Auto-open chat after 3 seconds for demo
+            setTimeout(() => {
+                chatWindow.classList.add('active');
+            }, 3000);
+        });
+    </script>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Main Slider Start-->
+        <section class="main-slider clearfix">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                "delay": 5000
+                }}'>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/PROMOTIONAL-SLIDES.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider__content">
+                                        <div class="main-slider__icon">
+                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
+                                        </div>
+                                        <div class="main-slider__sub-title-box">
+                                            <p class="main-slider__sub-title">welcome</p>
+                                            <div class="main-slider__border-left"></div>
+                                            <div class="main-slider__border-right"></div>
+                                        </div>
+                                        <h2 class="main-slider__title">Proudly Made <br> in Botswana </h2>
+                                        <div class="main-slider__btn-box">
+                                            <a href="#" class="thm-btn main-slider__btn">Discover More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/PROMOTIONAL-SLIDES-2.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider__content">
+                                        <div class="main-slider__icon">
+                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
+                                        </div>
+                                        <div class="main-slider__sub-title-box">
+                                            <p class="main-slider__sub-title">welcome</p>
+                                            <div class="main-slider__border-left"></div>
+                                            <div class="main-slider__border-right"></div>
+                                        </div>
+                                        <h2 class="main-slider__title">Genuine <br> Quality <br> Products  
+                                        </h2>
+                                        <div class="main-slider__btn-box">
+                                            <a href="#" class="thm-btn main-slider__btn">Discover More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/PROMOTIONAL-SLIDES3.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider__content">
+                                        <div class="main-slider__icon">
+                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
+                                        </div>
+                                        <div class="main-slider__sub-title-box">
+                                            <p class="main-slider__sub-title">welcome</p>
+                                            <div class="main-slider__border-left"></div>
+                                            <div class="main-slider__border-right"></div>
+                                        </div>
+                                        <h2 class="main-slider__title">Fully <br> Customisable Diaries <span>&</span> <br>
+                                            Calendars</h2>
+                                        <div class="main-slider__btn-box">
+                                            <a href="#" class="thm-btn main-slider__btn">Discover More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                        <i class="fa fa-angle-left"></i>
+                    </div>
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--Main Slider End-->
+
+        <!--About One Start-->
+        <section class="about-one" id="about">
+            <div class="about-one-shape-2 float-bob-x"></div>
+            <div class="about-one-wall">
+                <img src="assets/images/shapes/about-one-wall.png" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                <div class="col-xl-6">
+                    <div class="about-one__left">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">About our company</span>
+                            <h2 class="section-title__title">Pioneering Eco-Friendly Stationery Solutions</h2>
+                            <div class="section-title__line"></div>
+                        </div>
+                        <p class="about-one__text-1">With 20+ years of printing expertise, we deliver sustainable quality products.</p>
+                        <ul class="list-unstyled about-one__points">
+                            <li>
+                                <div class="about-one__points-content-box">
+                                    <div class="about-one__points-icon">
+                                        <span class="icon-wallpaper"></span>
+                                    </div>
+                                    <div class="about-one__points-text-box">
+                                        <p class="about-one__points-text">100% Tree-Free Paper Production</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about-one__points-content-box">
+                                    <div class="about-one__points-icon">
+                                        <span class="icon-high-quality"></span>
+                                    </div>
+                                    <div class="about-one__points-text-box">
+                                        <p class="about-one__points-text">Fully Customizable Brand Solutions</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="about-one__text-2">Based in Gaborone, Botswana, Greencard Diary revolutionizes stationery by using sugarcane bagasse - a sustainable byproduct of sugar production. Our eco-friendly process ensures zero deforestation, with wastewater recycled back to sugarcane farms. From corporate diaries to educational materials, we help brands showcase their environmental commitment.</p>
+                        <div class="about-one__contact-us">
+                            <div class="about-one__btn-box">
+                                <a href="#" class="thm-btn about-one__btn">Discover Our Process</a>
+                            </div>
+                            <div class="about-one__call">
+                                <div class="about-one__call-icon">
+                                    <span class="icon-phone-call"></span>
+                                </div>
+                                <div class="about-one__call-text">
+                                    <p>Call anytime</p>
+                                    <a href="tel:+2673930709">+267 393 0709</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-xl-6">
+                        <div class="about-one__right">
+                            <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms"
+                                data-wow-duration="2500ms">
+                                <div class="about-one__img">
+                                    <img src="assets/images/resources/Diary-Sizes.jpg" alt="">
+                                </div>
+                                <div class="about-one__small-img">
+                                    <img src="assets/images/resources/abt-pic.png" alt="">
+                                </div>
+                                <div class="about-one__project">
+                                    <div class="about-one__project-icon">
+                                        <span class="icon-wallpaper-1"></span>
+                                    </div>
+                                    <div class="about-one__project-content">
+                                        <h3 class="odometer" data-count="3690">00</h3>
+                                        <p class="about-one__project-text">Successful Project</p>
+                                    </div>
+                                </div>
+                                <div class="about-one__shape-1 float-bob-y"></div>
+                                <div class="about-one__dot">
+                                    <img src="assets/images/shapes/about-one-dots.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--About One End-->
+
+        <!--Feature One Start-->
+        <section class="feature-one" >
+            <div class="container">
+                <ul class="list-unstyled feature-one__list">
+                    <!--Feature One Single-->
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="icon-mind"></span>
+                            </div>
+                        <h3 class="feature-one__title"><a href="#">Eco-Smart Production</a></h3>
+                            <p class="feature-one__text">Our innovative sugarcane bagasse paper technology demonstrates smart environmental solutions for modern businesses.</p>
+                            <div class="feature-one__arrow">
+                                <a href="#"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--Feature One Single-->
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="icon-wallpaper-2"></span>
+                            </div>
+                          <h3 class="feature-one__title"><a href="customization.html">Tailored Brand Solutions</a></h3>
+<p class="feature-one__text">Our fully customizable designs let you create unique corporate gifts that perfectly represent your brand's identity.</p>
+                            <div class="feature-one__arrow">
+                                <a href="#"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--Feature One Single-->
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="icon-programmer"></span>
+                            </div>
+<h3 class="feature-one__title"><a href="team.html">Creative Solutions Team</a></h3>
+<p class="feature-one__text">Our design experts create fully customized stationery that showcases your brand while protecting the environment.</p>
+                            <div class="feature-one__arrow">
+                                <a href="team.html"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--Feature One Single-->
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="icon-best-price"></span>
+                            </div>
+                   <h3 class="feature-one__title"><a href="contact.html">Exceptional Value</a></h3>
+<p class="feature-one__text">Premium eco-friendly diaries and stationery at competitive local prices - quality sustainability within reach. Available at bulk pricing</p>
+                            <div class="feature-one__arrow">
+                                <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Feature One End-->
+
+        <!--Services One Start-->
+        <section class="services-one" id="services">
+            <div class="services-one-bg-box">
+                <div class="services-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+                    style="background-image: url(assets/images/backgrounds/PROMOTIONAL-SLIDES18\ -\ Edited.png);"></div>
+            </div>
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Our Services</span>
+                    <h2 class="section-title__title">Services We’re Offering</h2>
+                    <div class="section-title__line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/diaries.png" alt="">
+                            </div>
+                   <div class="services-one__content">
+    <h3 class="services-one__title"><a href="room-wallpapers.html">DIARIES</a></h3>
+    <p class="services-one__text">Custom-branded sustainable diaries that showcase your company's environmental commitment.</p>
+</div>
+                        </div>
+                    </div>
+   
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/calendars.png" alt="">
+                     
+                            </div>
+                            <div class="services-one__content">
+                                <h3 class="services-one__title"><a href="wall-painting.html">CALENDARS</a></h3>
+                            <p class="services-one__text">Beautifully designed calendars featuring premium artwork and clean layouts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/bibles.png" alt="">
+                            
+                            </div>
+                            <div class="services-one__content">
+                                <h3 class="services-one__title"><a href="wall-painting.html">BIBLES</a></h3>
+                         <p class="services-one__text">Thoughtfully designed study Bibles with insightful, helpful reference materials.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/notebooks.png" alt="">
+                         
+                            </div>
+                            <div class="services-one__content">
+                                <h3 class="services-one__title"><a href="wall-painting.html">NOTEBOOKS & STATIONERY</a></h3>
+                            <p class="services-one__text">Premium writing companions for professionals who value both form and function.</p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/binders.png" alt="">
+                           
+                            </div>
+                            <div class="services-one__content">
+                                <h3 class="services-one__title"><a href="wall-painting.html">ARCH LEVER FILE / BINDERS</a></h3>
+                      <p class="services-one__text">Heavy-duty binders professionally crafted to withstand rigorous office use and secure document storage.</p>
+                            </div>
+                        </div>
+                    </div>
+                                     <div class="col-xl-4 col-lg-4">
+                        <!--Services One Single-->
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
+                            <div class="services-one__img">
+                                <img src="assets/images/services/filafox.png" alt="">
+                            
+                            </div>
+                            <div class="services-one__content">
+                                <h3 class="services-one__title"><a href="wall-sheets.html">FILAFOX <br> DIARIES</a></h3>
+<p class="services-one__text">Premium quality diaries designed for professionals who value both style and functionality.</p>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                </div>
+            </div>
+        </section>
+        <!--Services One End-->
+
+        <!--Quality Work Start-->
+        <section class="quality-work">
+            <div class="quality-work-shape-1 float-bob-x">
+                <img src="assets/images/shapes/quality-work-shape-1.png" alt="">
+            </div>
+            <div class="quality-work-shape-2 float-bob-y">
+                <img src="assets/images/shapes/quality-work-shape-2.png" alt="">
+            </div>
+            <div class="quality-work-shape-3 float-bob-x">
+                <img src="assets/images/shapes/quality-work-shape-3.png" alt="">
+            </div>
+            <div class="quality-work-shape-4">
+                <img src="assets/images/shapes/quality-work-shape-4.png" alt="">
+            </div>
+            <div class="quality-work-shape-5 float-bob-x">
+                <img src="assets/images/shapes/quality-work-shape-5.png" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="quality-work__left">
+                            <div class="quality-work__img-box">
+                                <div class="quality-work__img">
+                                    <img src="assets/images/services/sugarcane.png" alt="">
+                                </div>
+                                <div class="quality-work__small-img">
+                                    <img src="assets/images/services/paperprocess.png" alt="" style="width: 200px; height: 200px;">
+                                </div>
+                                <div class="quality-work__video-box">
+                                    <div class="quality-work__curved-circle-box">
+                                        <div class="curved-circle">
+                                            <span class="curved-circle--item">SUGARCANE TO PAPER</span>
+                                        </div><!-- /.curved-circle -->
+                                        <div class="quality-work__video-link">
+                                            <a href="https://youtube.com/watch?v=w9axcXOGSVo" class="video-popup">
+                                                <div class="quality-work__video-icon">
+                                                    <span class="fa fa-play"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="quality-work__right">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline">Sustainability Stationery</span>
+                                 <h2 class="section-title__title">Botswana's First Eco-Friendly Papers</h2>
+                                <div class="section-title__line"></div>
+                            </div>
+                                 <p class="quality-work__text-1">Printed on 100% tree-free sugarcane paper in Gaborone - turning agricultural waste into premium planning tools.</p>
+                            <ul class="list-unstyled quality-work__feature">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-image-gallery1"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Innovative <br> Calendars</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-wallpaper-5"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>High Quality<br> Papers</p>
+                                    </div>
+                                </li>
+                            </ul>
+                           <p class="quality-work__text-2">Each page turns guilt-free: Our closed-loop manufacturing recycles water to sugarcane farms, while soy inks ensure vibrant Botswana landscapes fade - not forests.</p>
+                            <div class="quality-work__progress">
+                                <div class="quality-work__progress-single">
+                                     <h4 class="quality-work__progress-title">Corporate Adoption Rate</h4>
+                                    <div class="bar">
+                                        <div class="bar-inner count-bar" data-percent="88%">
+                                            <div class="count-text">88%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quality-work__progress-single">
+                                     <h4 class="quality-work__progress-title">Custom Design Requests</h4>
+                                    <div class="bar marb-0">
+                                        <div class="bar-inner count-bar" data-percent="60%">
+                                            <div class="count-text">60%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Quality Work End-->
+
+        <!--Project One Start-->
+        <section class="project-one" id="projects">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Successful Project</span>
+                    <h2 class="section-title__title">Keep your Eye on Our <br> Latest Projects</h2>
+                    <div class="section-title__line"></div>
+                </div>
+                <div class="project-one__inner">
+                    <div class="project-one__main-content">
+                        <div class="swiper-container" id="project-one__carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__left">
+                                                <div class="project-one__img">
+                                                    <img src="assets/images/services/restaurentmenu.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__right">
+                                                <div class="project-one__content-box">
+                                                    <div class="project-one-shape-1 float-bob-y">
+                                                        <img src="assets/images/shapes/project-one-shape-1.png" alt="">
+                                                    </div>
+                                                    <div class="project-one__content">
+                                                        <h4 class="project-one__title">RESTAURENT MENUS</h4>
+                                                        <p class="project-one__text">We create unique, custom restaurant menus designed to showcase your cuisine. 
+                                                            We'll help you organize your menu items and craft descriptions that make every dish sound delicious. 
+                                                            From elegant typography to vibrant food photography, we'll ensure your menu perfectly reflects your brand.</p>
+                                                        <a href="#"
+                                                            class="thm-btn project-one__btn">Read More About</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__left">
+                                                <div class="project-one__img">
+                                                    <img src="assets/images/services/authors.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__right">
+                                                <div class="project-one__content-box">
+                                                    <div class="project-one-shape-1 float-bob-y">
+                                                        <img src="assets/images/shapes/project-one-shape-1.png" alt="">
+                                                    </div>
+                                                    <div class="project-one__content">
+                                                       <h4 class="project-one__title">AUTHORS & PUBLISHERS</h4>
+<p class="project-one__text">We empower authors and publishers to bring their stories to life. We'll help you organize your manuscript and craft compelling narratives that captivate readers. 
+    From elegant cover design to meticulous editing, we'll ensure your book perfectly reflects your vision and brand.</p>
+                                                        <a href="#"
+                                                            class="thm-btn project-one__btn">Read More About</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__left">
+                                                <div class="project-one__img">
+                                                    <img src="assets/images/services/churchpublications.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__right">
+                                                <div class="project-one__content-box">
+                                                    <div class="project-one-shape-1 float-bob-y">
+                                                        <img src="assets/images/shapes/project-one-shape-1.png" alt="">
+                                                    </div>
+                                                    <div class="project-one__content">
+                                                       <h4 class="project-one__title">CHURCH PUBLICATIONS</h4>
+<p class="project-one__text">We specialize in creating meaningful publications that connect and inspire your congregation. 
+    Our services include designing weekly bulletins, seasonal newsletters, and special event flyers. 
+    We use thoughtful layouts and inspiring imagery to ensure your message is clear, reverent, and beautifully presented.</p>
+                                                        <a href="#"
+                                                            class="thm-btn project-one__btn">Read More About</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__left">
+                                                <div class="project-one__img">
+                                                    <img src="assets/images/services/manuals.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__right">
+                                                <div class="project-one__content-box">
+                                                    <div class="project-one-shape-1 float-bob-y">
+                                                        <img src="assets/images/shapes/project-one-shape-1.png" alt="">
+                                                    </div>
+                                                    <div class="project-one__content">
+                                                        <h4 class="project-one__title">CORPORATE TRAINING MANUAL</h4>
+<p class="project-one__text">We create effective and professional training manuals that empower your employees. 
+    Our services include designing comprehensive guides, procedure handbooks, and onboarding materials. 
+    We use clear layouts and concise language to ensure your information is easy to understand, engaging, and beautifully organized.</p>
+                                                        <a href="#"
+                                                            class="thm-btn project-one__btn">Read More About</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-one__thumb-box">
+                        <div class="swiper-container" id="project-one__thumb">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="project-one__img-holder">
+                                        <img src="assets/images/services/restaurentmenu.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project-one__img-holder">
+                                        <img src="assets/images/services/authors.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project-one__img-holder">
+                                        <img src="assets/images/services/churchpublications.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project-one__img-holder">
+                                        <img src="assets/images/services/manuals.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-one__nav">
+                            <div class="swiper-button-prev" id="project-one__swiper-button-next">
+                                <i class="fa fa-angle-right angle-left"></i>
+                            </div>
+                            <div class="swiper-button-next" id="project-one__swiper-button-prev">
+                                <i class="fa fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="project-one__more-project">
+                            <div class="project-one__more-project-content">
+                                <p>We’re always ready to serve you. <a href="#">View more
+                                        projects</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Project One End-->
+
+        <!--Team One Start-->
+        <section class="team-one">
+            <div class="container">
+                <div class="team-one__top">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6">
+                            <div class="team-one__top-left">
+                                <div class="section-title text-left">
+                                    <span class="section-title__tagline">Team members</span>
+                                    <h2 class="section-title__title">Meet the Expert Team</h2>
+                                    <div class="section-title__line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="team-one__top-right">
+                             <p class="team-one__top-text">Meet the innovators behind Africa's first tree-free diary: agricultural scientists, recycled materials specialists, and eco-conscious designers working in harmony.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-one__bottom">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                            <!--Team One single-->
+                            <div class="team-one__single">
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="assets/images/team/HenleyJohn.jpg" alt="">
+                                        <div class="team-one__social">
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="https://www.facebook.com/henley.john/about"><i class="fab fa-facebook"></i></a>
+                                            <a href="https://www.linkedin.com/in/henley-john-2670386/?originalSubdomain=bw"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <div class="team-one__title-box">
+                                        <div class="team-one__title-shape">
+                                            <img src="assets/images/shapes/team-one-title-box-shape.png" alt="">
+                                            <div class="team-one__title-text">
+                                                <p class="team-one__title">Founder</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="team-one__name"><a href="team-details.html">Henley John</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">  
+                            <!--Team One single-->
+                            <div class="team-one__single">
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="assets/images/team/teams.png" alt="">
+                                        <div class="team-one__social">
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-facebook"></i></a>
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <div class="team-one__title-box">
+                                        <div class="team-one__title-shape">
+                                            <img src="assets/images/shapes/team-one-title-box-shape.png" alt="">
+                                            <div class="team-one__title-text">
+                                                <p class="team-one__title">Manager</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="team-one__name"><a href="team-details.html">Team Member</a></h3>
+                                </div>
+                            </div> 
+                         </div> 
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">  
+                            <!--Team One single-->
+                            <div class="team-one__single">
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="assets/images/team/teams.png" alt="">
+                                        <div class="team-one__social">
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-facebook"></i></a>
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <div class="team-one__title-box">
+                                        <div class="team-one__title-shape">
+                                            <img src="assets/images/shapes/team-one-title-box-shape.png" alt="">
+                                            <div class="team-one__title-text">
+                                                <p class="team-one__title">Designer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="team-one__name"><a href="team-details.html">Team Member</a></h3>
+                                </div>
+                            </div> 
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Team One End
+
+        <!--Testimonial One Start-->
+        <section class="testimonial-one">
+            <div class="testimonial-one-bg-box">
+                <div class="testimonial-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+                    style="background-image: url(assets/images/backgrounds/testimonial-one-bg.jpg);"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="testimonial-one__left">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline">testimonials</span>
+                                <h2 class="section-title__title">What Our Customers Say?</h2>
+                                <div class="section-title__line"></div>
+                            </div>
+                            <p class="testimonial-one__text">From CEOs to school principals, our tree-free diaries are redefining corporate responsibility. 
+                                Don’t take our word for it—hear from those who’ve made the switch:</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-9">
+                        <div class="testimonial-one__right">
+                            <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
+                                data-owl-options='{
+                                "loop": true,
+                                "autoplay": false,
+                                "margin": 30,
+                                "nav": false,
+                                "dots": true,
+                                "smartSpeed": 500,
+                                "autoplayTimeout": 10000,
+                                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                                "responsive": {
+                                    "0": {
+                                        "items": 1
+                                    },
+                                    "768": {
+                                        "items": 1
+                                    },
+                                    "992": {
+                                        "items": 2
+                                    },
+                                    "1200": {
+                                        "items": 2.25545
+                                    }
+                                }
+                            }'>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"GreenCard Diary's sustainable solutions align perfectly with our commitment to partialment – their sugarcane paper sets the standard for responsible corporate stationery in Botswana."</p>
+    <div class="testimonial-one__client-info">
+      
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Odirile T.</h4>
+            <p class="testimonial-one__client-title">CEO, Partialment of Botsung</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+                              <div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"As a global bank, we demand both professionalism and sustainability. GreenCard's customized diaries impress clients while reducing our environmental footprint – a true win-win."</p>
+    <div class="testimonial-one__client-info">
+  
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Mpho D.</h4>
+            <p class="testimonial-one__client-title">Country Head, Standard Chartered Botswana</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"These diaries empower results beyond expectations. The quality rivals traditional paper while supporting Botswana's circular economy – exactly the innovation we champion."</p>
+    <div class="testimonial-one__client-info">
+
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Kagiso M.</h4>
+            <p class="testimonial-one__client-title">Managing Director, AON Botswana</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"As Botswana's leading retailer, we value partners who share our commitment to local production. GreenCard's diaries showcase African innovation at its finest."</p>
+    <div class="testimonial-one__client-info">
+
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Otlaadisa K.</h4>
+            <p class="testimonial-one__client-title">CEO, Choppies Superstores</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"Powering Botswana responsibly extends to our office supplies. GreenCard's tree-free diaries complement our renewable energy initiatives perfectly."</p>
+    <div class="testimonial-one__client-info">
+
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Boineelo H.</h4>
+            <p class="testimonial-one__client-title">Managing Director, BPC</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"Preserving Botswana's lands begins with sustainable choices. These diaries demonstrate how agricultural waste can become premium products without deforestation."</p>
+    <div class="testimonial-one__client-info">
+ 
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Hon. Lebang M.</h4>
+            <p class="testimonial-one__client-title">Permanent Secretary, Ministry of Lands</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+ <div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"Just as we protect families on the road, GreenCard protects our forests. Their diaries bring parents peace of mind through ethical production."</p>
+    <div class="testimonial-one__client-info">
+
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Ontiretse P.</h4>
+            <p class="testimonial-one__client-title">CEO, MVA Fund</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"As aviation regulators, we value precision and responsibility. GreenCard's certified sustainable stationery meets our stringent standards effortlessly."</p>
+    <div class="testimonial-one__client-info">
+
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Olebile M.</h4>
+            <p class="testimonial-one__client-title">Director, Civil Aviation Authority</p>
+        </div>
+    </div>
+</div>
+                                <!--Testimonial One Single-->
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"From seabed to stationery, sustainability matters. GreenCard's innovative approach mirrors our own ocean conservation efforts across borders."</p>
+    <div class="testimonial-one__client-info">
+   
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Willem K.</h4>
+            <p class="testimonial-one__client-title">Managing Director, Debmarine Namibia</p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonial-one__single">
+    <div class="testimonial-one__quote">
+        <span class="icon-quotation"></span>
+    </div>
+    <p class="testimonial-one__text-2">"Representing Botswana's public employees means advocating for their future. GreenCard's forest-friendly diaries demonstrate true social responsibility in action."</p>
+    <div class="testimonial-one__client-info">
+      
+        <div class="testimonial-one__client-content">
+            <h4 class="testimonial-one__client-name">Masego M.</h4>
+            <p class="testimonial-one__client-title">President, BOPEU</p>
+        </div>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Testimonial One End-->
+
+<!--Brand One Start-->
+<section class="brand-one">
+    <div class="container">
+        <div class="brand-one__inner">
+            <div class="row align-items-center">
+                <div class="col-xl-3">
+                    <div class="brand-one__title">
+                        <h2>Trusted by Botswana's Leading Organizations</h2>
+                    </div>
+                </div>
+                <div class="col-xl-9">
+                    <div class="brand-one__main-content">
+                        <div class="thm-swiper__slider swiper-container" 
+                             data-swiper-options='{
+                                 "spaceBetween": 30,
+                                 "slidesPerView": 5,
+                                 "autoplay": { 
+                                     "delay": 5000,
+                                     "pauseOnMouseEnter": true
+                                 },
+                                 "loop": true,
+                                 "breakpoints": {
+                                     "0": { "spaceBetween": 15, "slidesPerView": 2 },
+                                     "575": { "spaceBetween": 20, "slidesPerView": 3 },
+                                     "767": { "spaceBetween": 25, "slidesPerView": 4 },
+                                     "991": { "spaceBetween": 30, "slidesPerView": 5 },
+                                     "1199": { "spaceBetween": 40, "slidesPerView": 5 }
+                                 }
+                             }'>
+<div class="swiper-wrapper">
+    <!-- Slides 1-10 -->
+    <!-- <div class="swiper-slide"><img src="assets/images/customers/1.png" alt="Client Logo 1"></div>
+
+    <div class="swiper-slide"><img src="assets/images/customers/3.png" alt="Client Logo 3"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/4.png" alt="Client Logo 4"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/5.png" alt="Client Logo 5"></div> -->
+    <div class="swiper-slide"><img src="assets/images/customers/6.png" alt="Client Logo 6"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/7.png" alt="Client Logo 7"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/8.png" alt="Client Logo 8"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/9.png" alt="Client Logo 9"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/10.png" alt="Client Logo 10"></div>
+
+    <!-- Slides 11-20 -->
+    <div class="swiper-slide"><img src="assets/images/customers/11.png" alt="Client Logo 11"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/12.png" alt="Client Logo 12"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/13.png" alt="Client Logo 13"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/14.png" alt="Client Logo 14"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/15.png" alt="Client Logo 15"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/16.png" alt="Client Logo 16"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/17.png" alt="Client Logo 17"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/18.png" alt="Client Logo 18"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/19.png" alt="Client Logo 19"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/20.png" alt="Client Logo 20"></div>
+
+    <!-- Slides 21-30 -->
+    <div class="swiper-slide"><img src="assets/images/customers/21.png" alt="Client Logo 21"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/22.png" alt="Client Logo 22"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/23.png" alt="Client Logo 23"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/24.png" alt="Client Logo 24"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/25.png" alt="Client Logo 25"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/26.png" alt="Client Logo 26"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/27.png" alt="Client Logo 27"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/28.png" alt="Client Logo 28"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/29.png" alt="Client Logo 29"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/30.png" alt="Client Logo 30"></div>
+
+    <!-- Slides 31-40 -->
+    <div class="swiper-slide"><img src="assets/images/customers/31.png" alt="Client Logo 31"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/32.png" alt="Client Logo 32"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/33.png" alt="Client Logo 33"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/34.png" alt="Client Logo 34"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/35.png" alt="Client Logo 35"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/36.png" alt="Client Logo 36"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/37.png" alt="Client Logo 37"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/38.png" alt="Client Logo 38"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/39.png" alt="Client Logo 39"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/40.png" alt="Client Logo 40"></div>
+
+    <!-- Slides 41-43 -->
+    <div class="swiper-slide"><img src="assets/images/customers/41.png" alt="Client Logo 41"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/42.png" alt="Client Logo 42"></div>
+    <div class="swiper-slide"><img src="assets/images/customers/43.png" alt="Client Logo 43"></div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Brand One End-->
+
+        <!--Blog One Start-->
+        <!-- <section class="blog-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">News & Updates</span>
+                    <h2 class="section-title__title">News & Articles</h2>
+                    <div class="section-title__line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <!--Blog One Start-->
+                        <!-- <div class="blog-one__single">
+                            <div class="blog-one__img">
+                                <img src="assets/images/blog/blog-1-1.jpg" alt="">
+                                <a href="blog-details.html">
+                                    <span class="blog-one__plus"></span>
+                                </a>
+                            </div>
+                            <div class="blog-one__content">
+                                <div class="blog-one__date">
+                                    <p>20 Feb, 2022</p>
+                                </div>
+                                <ul class="list-unstyled blog-one__meta">
+                                    <li><a href="blog-details.html"><i class="far fa-user-circle"></i> by Admin </a>
+                                    </li>
+                                    <li><span>/</span></li>
+                                    <li><a href="blog-details.html"><i class="far fa-comments"></i> 02 Comments</a>
+                                    </li>
+                                </ul>
+                                <h3 class="blog-one__title"><a href="blog-details.html">Learn the Right Way to Use Wall
+                                        Sheet</a></h3>
+                            </div>
+                        </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <!--Blog One Start-->
+                        <!-- <div class="blog-one__single">
+                            <div class="blog-one__img">
+                                <img src="assets/images/blog/blog-1-2.jpg" alt="">
+                                <a href="blog-details.html">
+                                    <span class="blog-one__plus"></span>
+                                </a>
+                            </div>
+                            <div class="blog-one__content">
+                                <div class="blog-one__date">
+                                    <p>20 Feb, 2022</p>
+                                </div>
+                                <ul class="list-unstyled blog-one__meta">
+                                    <li><a href="blog-details.html"><i class="far fa-user-circle"></i> by Admin </a>
+                                    </li>
+                                    <li><span>/</span></li>
+                                    <li><a href="blog-details.html"><i class="far fa-comments"></i> 02 Comments</a>
+                                    </li>
+                                </ul>
+                                <h3 class="blog-one__title"><a href="blog-details.html">Leverage agile frameworks to
+                                        provide</a></h3>
+                            </div>
+                        </div> -->
+                    <!-- </div> --> 
+                    <!-- <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <!--Blog One Start-->
+                        <!-- <div class="blog-one__single">
+                            <div class="blog-one__img">
+                                <img src="assets/images/blog/blog-1-3.jpg" alt="">
+                                <a href="blog-details.html">
+                                    <span class="blog-one__plus"></span>
+                                </a>
+                            </div>
+                            <div class="blog-one__content">
+                                <div class="blog-one__date">
+                                    <p>20 Feb, 2022</p>
+                                </div>
+                                <ul class="list-unstyled blog-one__meta">
+                                    <li><a href="blog-details.html"><i class="far fa-user-circle"></i> by Admin </a>
+                                    </li>
+                                    <li><span>/</span></li>
+                                    <li><a href="blog-details.html"><i class="far fa-comments"></i> 02 Comments</a>
+                                    </li>
+                                </ul>
+                                <h3 class="blog-one__title"><a href="blog-details.html">Bring to the table win-win
+                                        survival strategis</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+        <!-- </section> --> 
+        <!--Blog One End-->
+
+<!--Newsletter Start-->
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
+            <div class="newsletter-shape-1" style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
+            <div class="newsletter__left">
+                <h3 class="newsletter__title">Join Our Eco-Community</h3>
+                <p class="newsletter__text">Get sustainability tips, exclusive offers, and tree-planting updates</p>
+            </div>
+            <div class="newsletter__right">
+                <form class="newsletter__form" id="newsletterForm">
+                    <div class="newsletter__input-box">
+                        <!-- EMAIL INPUT (VISUALLY UNCHANGED) -->
+                        <input type="email" placeholder="Enter your email" name="email" required>
+                        
+                        <!-- SUBSCRIBE BUTTON (VISUALLY UNCHANGED) -->
+                        <button type="submit" class="thm-btn newsletter__btn">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.querySelector('input[name="email"]').value;
+        
+        // WhatsApp message format
+        const whatsappUrl = `https://wa.me/26771548257?text=New%20Newsletter%20Subscription:%0A%0AEmail:%20${encodeURIComponent(email)}%0A%0A(Please%20confirm%20subscription)`;
+        
+        window.open(whatsappUrl, '_blank');
+        alert('Please send the pre-filled WhatsApp message to complete your subscription.');
+        this.reset();
+    });
+</script>
+<!--Newsletter End-->
+
+    <!--Site Footer Start-->
+<footer class="site-footer">
+    <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);"></div>
+    <div class="site-footer__top">
+        <div class="container">
+            <div class="row">
+                <!-- About Column -->
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="footer-widget__column footer-widget__about">
+                        <div class="footer-widget__logo">
+                            <a href="index.html"><img src="assets/images/resources/logo-3.png" alt="GreenCard Diaries" style="height: 85px; width: 100%;"></a>
+                        </div>
+                        <div class="footer-widget__about-text-box">
+                            <p class="footer-widget__about-text">Botswana's premier eco-friendly stationery brand, crafting sustainable diaries and calendars from sugarcane waste since 2010.</p>
+                        </div>
+                        <div class="site-footer__social">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explore Column -->
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="footer-widget__column footer-widget__explore clearfix">
+                        <h3 class="footer-widget__title">Explore</h3>
+                        <ul class="footer-widget__explore-list list-unstyled clearfix">
+                            <li><a href="#">Our Green Story</a></li>
+                            <li><a href="products.html">Eco-Friendly Products</a></li>
+                            <li><a href="impact.html">Environmental Impact</a></li>
+                            <li><a href="blog.html">Sustainability Blog</a></li>
+                            <li><a href="wholesale.html">Wholesale Inquiry</a></li>
+                            <li><a href="contact.html">Custom Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Products Column -->
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="footer-widget__column footer-widget__services clearfix">
+                        <h3 class="footer-widget__title">Our Products</h3>
+                        <ul class="footer-widget__services-list list-unstyled clearfix">
+                            <li><a href="diaries.html">Sugarcane Diaries</a></li>
+                            <li><a href="calendars.html">Eco Calendars</a></li>
+                            <li><a href="corporate.html">Corporate Gifts</a></li>
+                            <li><a href="school.html">School Stationery</a></li>
+                            <li><a href="custom.html">Custom Branding</a></li>
+                            <li><a href="new.html">New Arrivals</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="footer-widget__column footer-widget__contact clearfix">
+                        <h3 class="footer-widget__title">Contact</h3>
+                        <ul class="footer-widget__contact-list list-unstyled clearfix">
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-phone-call"></span>
+                                </div>
+                                <div class="text">
+                                    <h5>Call us</h5>
+                                    <p><a href="tel:+26771548257">+267 7154 8257</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-message"></span>
+                                </div>
+                                <div class="text">
+                                    <h5>Email us</h5>
+                                    <p><a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-location"></span>
+                                </div>
+                                <div class="text">
+                                    <h5>Visit us</h5>
+                                    <p>Plot 22017/3, Kgomokasitwa Road<br>Gaborone, Botswana</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="site-footer__bottom-inner">
+                        <p class="site-footer__bottom-text">© Copyright 2025 by <a href="index.html">GreenCard Diaries</a>. Proudly made with sustainable materials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="index.html" aria-label="GreenCard Diaries Logo">
+                <img src="assets/images/resources/logo-3.png" width="155" alt="GreenCard Diaries" />
+            </a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:+26771548257">+267 7154 8257</a>
+            </li>
+            <li>
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/26771548257">Chat on WhatsApp</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
+                <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                <a href="#" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+                <a href="https://wa.me/26771548257" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+    <!-- /.mobile-nav__wrapper -->
+
+  
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/timepicker/timePicker.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="assets/js/ambed.js"></script>
+
+
+    <!-- toolbar js -->
+    <script src="assets/vendors/toolbar/js/js.cookie.min.js"></script>
+    <script src="assets/vendors/toolbar/js/jQuery.style.switcher.min.js"></script>
+    <script src="assets/vendors/toolbar/js/toolbar.js"></script>
+
+</body>
+
+</html>
