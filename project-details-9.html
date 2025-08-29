@@ -689,7 +689,7 @@
             <div class="container">
                 <div class="project-details__img-box">
                     <div class="project-details__img">
-                        <img src="assets/images/project/SLIDES ARTWORKS 1-1.jpg" alt="">
+                        <img src="assets/images/project/SLIDES ARTWORKS 1-10.jpg" alt="">
                     </div>
                     <div class="project-details__details-box">
                         <ul class="list-unstyled project-details__details">
@@ -1132,6 +1132,7 @@
 
     <!-- template js -->
     <script src="assets/js/ambed.js"></script>
+        <script src="assets/js/project-pagination.js"></script>
 
 
     <!-- toolbar js -->
@@ -1139,93 +1140,7 @@
     <script src="assets/vendors/toolbar/js/jQuery.style.switcher.min.js"></script>
     <script src="assets/vendors/toolbar/js/toolbar.js"></script>
 
-<script>
-    // Pagination functionality for project details
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get the pagination elements
-        const prevPagination = document.querySelector('.projectc-details__pagination-single:first-child');
-        const nextPagination = document.querySelector('.projectc-details__pagination-single-two');
-        
-        if (prevPagination && nextPagination) {
-            const prevLink = prevPagination.querySelector('a');
-            const nextLink = nextPagination.querySelector('a');
-            
-            // Sample project data - you should replace this with your actual project data
-            // This should match the projects shown in the "Similar Projects" section
-            const projects = [
-                { 
-                    title: "Room Wallpapers", 
-                    url: "project-details.html",
-                    image: "assets/images/project/project-3-1.jpg",
-                    category: "Room Wallsheet"
-                },
-                { 
-                    title: "Interior Wall Designing", 
-                    url: "project-details-2.html",
-                    image: "assets/images/project/project-3-2.jpg",
-                    category: "Wall Protection"
-                },
-                { 
-                    title: "Exterior Design", 
-                    url: "project-details-3.html",
-                    image: "assets/images/project/project-3-3.jpg",
-                    category: "Room Wallsheet"
-                }
-            ];
-            
-            // Get current project index from URL or default to 0
-            let currentIndex = 0;
-            const currentUrl = window.location.pathname;
-            const currentPage = currentUrl.split('/').pop();
-            
-            // Determine current project index based on URL
-            projects.forEach((project, index) => {
-                if (currentPage === project.url) {
-                    currentIndex = index;
-                }
-            });
-            
-            // Set up previous project link
-            if (currentIndex > 0) {
-                const prevProject = projects[currentIndex - 1];
-                prevLink.href = prevProject.url;
-                prevPagination.querySelector('.projectc-details__pagination-content p').textContent = prevProject.title;
-            } else {
-                // If first project, disable previous link
-                prevLink.removeAttribute('href');
-                prevPagination.classList.add('disabled');
-                prevLink.style.cursor = 'not-allowed';
-                prevLink.style.opacity = '0.5';
-            }
-            
-            // Set up next project link
-            if (currentIndex < projects.length - 1) {
-                const nextProject = projects[currentIndex + 1];
-                nextLink.href = nextProject.url;
-                nextPagination.querySelector('.projectc-details__pagination-content p').textContent = nextProject.title;
-            } else {
-                // If last project, disable next link
-                nextLink.removeAttribute('href');
-                nextPagination.classList.add('disabled');
-                nextLink.style.cursor = 'not-allowed';
-                nextLink.style.opacity = '0.5';
-            }
-            
-            // Add click handlers to prevent default if disabled
-            prevLink.addEventListener('click', function(e) {
-                if (!this.href) {
-                    e.preventDefault();
-                }
-            });
-            
-            nextLink.addEventListener('click', function(e) {
-                if (!this.href) {
-                    e.preventDefault();
-                }
-            });
-        }
-    });
-</script>
+
 
 </body>
 
