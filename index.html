@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -463,7 +462,7 @@
             <div class="main-header__top">
                 <div class="container">
                     <div class="main-header__top-inner clearfix">
-     <div class="main-header__logo">
+                        <div class="main-header__logo">
                             <a href="index.html">
                                 <img src="assets/images/resources/logo-3.png" alt="" class="dark-logo" style="height: 85px; width: 100%;">
                                 <img src="assets/images/resources/logo-3.png" alt="" class="light-logo" style="height: 85px; width: 100%;">
@@ -502,21 +501,21 @@
                                         </li>
                                     </ul>
                                 </div>
-                         <div class="main-header__top-right-social">
-    <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://www.facebook.com/GreenCardDiaries" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-    </a>
+                                <div class="main-header__top-right-social">
+                                            <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
+                                                <i class="fab fa-linkedin"></i>
+                                            </a>
+                                            <a href="https://www.facebook.com/GreenCardDiaries" target="_blank" aria-label="Facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
 
-    <a href="https://www.instagram.com/greencarddiaries" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-        <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+                                            <a href="https://www.instagram.com/greencarddiaries" target="_blank" aria-label="Instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                                <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
+                                                <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -556,21 +555,497 @@
                                     </ul>
                                 </div>
                             </div>
+                            
+
                             <div class="main-menu__right">
                                 <div class="main-menu__search-btn-box">
                                     <div class="main-menu__search-box">
-                                        <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
+                                        <input type="text" class="header-search-input search-toggler icon-magnifying-glass">
+                                        <button class="header-search-button">
+                                            <i class="fas fa-search" ></i>
+                                        </button>
                                     </div>
                                     <div class="main-menu__btn-box">
                                         <a href="contact.html" class="thm-btn main-menu__btn">Book Appointment</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
+                   
                         </div>
                     </div>
                 </div>
             </nav>
         </header>
+        
+
+    <style>
+        
+        /* .main-menu__wrapper-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .main-menu__list {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .main-menu__list a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .main-menu__list a:hover {
+            color: #3498db;
+        }
+        
+        .main-menu__search-btn-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .main-menu__search {
+            font-size: 20px;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .main-menu__search:hover {
+            color: #3498db;
+        }
+         */
+
+        /* Header Search Bar */
+        /* .header-search-bar {
+            display: flex;
+            align-items: center;
+            background: #f1f2f6;
+            border-radius: 30px;
+            padding: 5px 15px;
+            margin-right: 5px;
+            width: 50px;
+            transition: all 0.3s ease;
+        } */
+        
+        /* .header-search-bar:focus-within {
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+            background: white;
+        }
+         */
+        .header-search-input {
+            border: none;
+            background: transparent;
+            padding: 8px 10px;
+            width: 100%;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .header-search-button {
+            background: none;
+            border: none;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        /* Search Modal Styles */
+        .search-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 9999;
+            padding-top: 100px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .search-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .search-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.5s ease;
+        }
+        
+        .search-modal.active .search-modal-content {
+            transform: translateY(0);
+        }
+        
+        .search-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s;
+        }
+        
+        .search-close:hover {
+            color: #e74c3c;
+        }
+        
+        .search-form {
+            margin-top: 20px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .search-submit {
+            background: #3498db;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .search-submit:hover {
+            background: #2980b9;
+        }
+        
+        .search-results {
+            margin-top: 25px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        
+        .search-result-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .search-result-item h4 {
+            margin-bottom: 8px;
+            color: #3498db;
+        }
+        
+        .search-result-item p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .search-result-item:hover {
+            background: #f9f9f9;
+        }
+        
+        .no-results {
+            padding: 15px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        /* Demo Content */
+        .demo-content {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .demo-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .demo-content p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #7f8c8d;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .main-header__top-address {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-menu__list {
+                gap: 15px;
+            }
+            
+            .header-search-bar {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-header__top-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .main-header__top-address-box {
+                width: 100%;
+            }
+            
+            .main-header__top-address {
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .main-menu__wrapper-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .main-menu__list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-search-bar {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .search-modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <span class="search-close" id="searchClose">&times;</span>
+            <h2>Search Our Website</h2>
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
+                <button type="submit" class="search-submit">Search</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const headerSearchInput = document.querySelector('.header-search-input');
+            const headerSearchButton = document.querySelector('.header-search-button');
+            const searchToggler = document.querySelector('.search-toggler');
+            const searchModal = document.getElementById('searchModal');
+            const searchClose = document.getElementById('searchClose');
+            const searchForm = document.getElementById('searchForm');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            
+            // Sample search data - replace with your actual content
+            const searchData = [
+                { 
+                    title: 'About Our Company', 
+                    url: '#about', 
+                    excerpt: 'Learn more about Green Card Diaries and our mission to help with immigration processes.' 
+                },
+                { 
+                    title: 'Our Services', 
+                    url: '#services', 
+                    excerpt: 'We offer consultation services, document preparation, and application guidance.' 
+                },
+                { 
+                    title: 'Service of Users', 
+                    url: '#services', 
+                    excerpt: 'Our user services include personalized consultations and application assistance.' 
+                },
+                { 
+                    title: 'Consultation Services', 
+                    url: '#services', 
+                    excerpt: 'Professional consultation services for immigration and green card applications.' 
+                },
+                { 
+                    title: 'Recent Projects', 
+                    url: '#projects', 
+                    excerpt: 'Take a look at our recently completed successful immigration cases.' 
+                },
+                { 
+                    title: 'Blog - Immigration Tips', 
+                    url: 'blog.html', 
+                    excerpt: 'Read our latest article on tips for a successful green card application.' 
+                },
+                { 
+                    title: 'Contact Us', 
+                    url: 'contact.html', 
+                    excerpt: 'Get in touch with our team to schedule a consultation appointment.' 
+                },
+                { 
+                    title: 'Online Shop', 
+                    url: '#shop', 
+                    excerpt: 'Check out our resources and guides for purchase in our online shop.' 
+                }
+            ];
+            
+            // Open search modal
+            searchToggler.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchModal.classList.add('active');
+                searchInput.focus();
+                // Prevent body from scrolling when modal is open
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close search modal
+            searchClose.addEventListener('click', function() {
+                searchModal.classList.remove('active');
+                // Re-enable body scrolling
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside
+            searchModal.addEventListener('click', function(e) {
+                if (e.target === searchModal) {
+                    searchModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Handle header search
+            headerSearchButton.addEventListener('click', function() {
+                performSearch(headerSearchInput.value.trim(), 'header');
+            });
+            
+            headerSearchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch(headerSearchInput.value.trim(), 'header');
+                }
+            });
+            
+            // Handle modal search form submission
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                performSearch(searchInput.value.trim(), 'modal');
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+                    searchModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Function to perform search
+            function performSearch(query, source) {
+                if (query.length === 0) {
+                    if (source === 'modal') {
+                        searchResults.innerHTML = '<p class="no-results">Please enter a search term</p>';
+                    } else {
+                        // For header search, open modal with message
+                        searchModal.classList.add('active');
+                        searchInput.value = '';
+                        searchResults.innerHTML = '<p class="no-results">Please enter a search term</p>';
+                        document.body.style.overflow = 'hidden';
+                    }
+                    return;
+                }
+                
+                // If search initiated from header, open modal and transfer query
+                if (source === 'header') {
+                    searchModal.classList.add('active');
+                    searchInput.value = query;
+                    document.body.style.overflow = 'hidden';
+                }
+                
+                // Show loading state
+                searchResults.innerHTML = '<p class="no-results">Searching...</p>';
+                
+                // Simulate search with a timeout
+                setTimeout(() => {
+                    // Filter results based on query
+                    const results = searchData.filter(item => 
+                        item.title.toLowerCase().includes(query.toLowerCase()) || 
+                        item.excerpt.toLowerCase().includes(query.toLowerCase())
+                    );
+                    
+                    if (results.length > 0) {
+                        let resultsHTML = '';
+                        results.forEach(result => {
+                            resultsHTML += `
+                                <div class="search-result-item">
+                                    <a href="${result.url}">
+                                        <h4>${result.title}</h4>
+                                        <p>${result.excerpt}</p>
+                                    </a>
+                                </div>
+                            `;
+                        });
+                        searchResults.innerHTML = resultsHTML;
+                    } else {
+                        searchResults.innerHTML = `<p class="no-results">No results found for "${query}"</p>`;
+                    }
+                }, 500);
+            }
+            
+            // Optional: Perform search as user types in modal (debounced)
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    performSearch(this.value.trim(), 'modal');
+                }, 300);
+            });
+        });
+    </script>
+
 
   <style>
         /* Chat Bot Styles */
@@ -1160,7 +1635,7 @@
                     },
                     response: {
                         en: 'Yes, we offer delivery services across Botswana! 🚚<br><br>• Free delivery in Gaborone for orders over P200<br>• Nationwide delivery within 2-3 business days<br>• Express delivery options available<br>• Safe packaging guaranteed<br><br>Contact us at <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> for more details.',
-                        tn: 'Ee, re tlamela ka ditirelo tsa kabo mo Botswana yotlhe! 🚚<br><br>• Kabo e e mahala mo Gaborone ya di-order tse di feta P200<br>• Kabo mo lefatsheng lotlhe mo malatsing a 2-3 a tiro<br>• Dikgetho tsa kabo e e bonako di teng<br>• Phutego e e babalesegileng e netefaditswe<br><br>Re letsetse ko <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> go bona dintlha tse dingwe.'
+                        tn: 'Ee, re tlamela ka ditirelo tsa kabo mo Botswana yotlhe! 🚚<br><br>• Kabo e e mahala mo Gaborone ya di-order tse di feta P200<br>• Kabo mo lefatsheng lotlhe mo malatsing a 2-3 a tiro<br>• Dikgetho tsa kabo e e bonako di teng<br>• Phutego e e babalesegileng e netefitswe<br><br>Re letsetse ko <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> go bona dintlha tse dingwe.'
                     }
                 },
                 
@@ -1232,7 +1707,7 @@
                     },
                     response: {
                         en: 'We specialize in helping Botswana residents with their Green Card (Diversity Visa) applications! Our services include:<br>• DV lottery application assistance<br>• Documentation preparation<br>• Photo compliance verification<br>• Interview preparation<br>• Process timeline guidance<br><br>Let us help make your American dream come true! 🇺🇸',
-                        tn: 'Re itsise ka go thusa baagi ba Botswana ka dikopo tsa bona tsa Karete e Tala (Visa ya Mefuta)! Ditirelo tsa rona di akaretsa:<br>• Thuso ya kopo ya lotari ya DV<br>• Boipeelo jwa ditokomane<br>• Tlhathollo ya maleba a difoto<br>• Boipeelo jwa puisano<br>• Kaelo ya nako ya tirisanyo<br><br>A re go thuseng go dira toro ya gago ya Amerika e direge! 🇺🇸'
+                        tn: 'Re itsise ka go thusa baagi ba Botswana ka dikopo tsa bona tsa Karete e Tala (Visa ya Mefuta)! Ditirelo tsa rona di akaretsa:<br>• Thuso ya kopo ya lotari ya DV<br>• Boipeelo jwa ditokomane<br>• Tlhathollo ya maleba a difoto<br>• Boipelo jwa puisano<br>• Kaelo ya nako ya tirisanyo<br><br>A re go thuseng go dira toro ya gago ya Amerika e direge! 🇺🇸'
                     }
                 }
             };
@@ -1498,6 +1973,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer"
                         </div>
                     </div>
                     <div class="swiper-slide">

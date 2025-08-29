@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Website - Search Functionality</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #2c3e50;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3498db;
+        }
+        
+        .logo span {
+            color: #e74c3c;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .component-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .component-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+        
+        /* Main menu styles */
+        .main-menu__right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .main-menu__search-btn-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .main-menu__search-box {
+            position: relative;
+        }
+        
+        .main-menu__search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .main-menu__search:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .main-menu__btn-box {
+            display: flex;
+            align-items: center;
+        }
+        
+        .thm-btn {
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+        }
+        
+        .thm-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Search popup styles */
+        .search-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .search-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .search-popup__content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.5s ease;
+        }
+        
+        .search-popup.active .search-popup__content {
+            transform: translateY(0);
+        }
+        
+        .search-popup__close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #7f8c8d;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .search-popup__close:hover {
+            color: #e74c3c;
+        }
+        
+        .search-popup__form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .search-popup__form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #3498db;
+            border-radius: 50px 0 0 50px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-popup__form button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .search-popup__form button:hover {
+            background: #2980b9;
+        }
+        
+        /* Mobile nav styles */
+        .mobile-nav__wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            padding: 30px;
+        }
+        
+        .mobile-nav__wrapper.expanded {
+            transform: translateX(0);
+        }
+        
+        .mobile-nav__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #7f8c8d;
+            cursor: pointer;
+        }
+        
+        /* Instructions section */
+        .instructions {
+            margin-top: 40px;
+            background: #e8f4fc;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            list-style-position: inside;
+            line-height: 1.8;
+            color: #34495e;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-menu__right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-menu__search-btn-box {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .thm-btn {
+                padding: 12px 25px;
+            }
+        }
+        
+        body.locked {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Medi<span>Care</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="main-content">
+            <h1 class="component-title">Search Functionality with Your Existing Code</h1>
+            
+            <div class="component-container">
+                <div class="main-menu__right">
+                    <div class="main-menu__search-btn-box">
+                        <div class="main-menu__search-box">
+                            <a href="#" class="main-menu__search search-toggler">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <div class="main-menu__btn-box">
+                            <a href="contact.html" class="thm-btn main-menu__btn">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Implementation Details</h3>
+                <p>Your existing jQuery code has been integrated with the following functionality:</p>
+                <ul>
+                    <li>Clicking the search icon toggles the search popup</li>
+                    <li>When the search popup is active, the body is locked from scrolling</li>
+                    <li>The mobile navigation wrapper is hidden when search is active</li>
+                    <li>All animations and transitions are smooth and responsive</li>
+                </ul>
+                
+                <div class="code-block">
+                    // Your existing jQuery code<br>
+                    if ($(".search-toggler").length) {<br>
+                    &nbsp;&nbsp;$(".search-toggler").on("click", function (e) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(".search-popup").toggleClass("active");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$(".mobile-nav__wrapper").removeClass("expanded");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$("body").toggleClass("locked");<br>
+                    &nbsp;&nbsp;});<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Popup -->
+    <div class="search-popup">
+        <div class="search-popup__content">
+            <span class="search-popup__close">&times;</span>
+            <h2>Search Our Website</h2>
+            <p>Find information about our services, doctors, and more.</p>
+            
+            <form class="search-popup__form">
+                <input type="text" placeholder="Enter search terms..." aria-label="Search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (for demonstration) -->
+    <div class="mobile-nav__wrapper">
+        <span class="mobile-nav__close">&times;</span>
+        <h2>Mobile Navigation</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Doctors</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Your existing jQuery code
+        if ($(".search-toggler").length) {
+            $(".search-toggler").on("click", function (e) {
+                e.preventDefault();
+                $(".search-popup").toggleClass("active");
+                $(".mobile-nav__wrapper").removeClass("expanded");
+                $("body").toggleClass("locked");
+            });
+        }
+        
+        // Close search popup when clicking close button
+        $(".search-popup__close").on("click", function() {
+            $(".search-popup").removeClass("active");
+            $("body").removeClass("locked");
+        });
+        
+        // Close mobile nav when clicking close button
+        $(".mobile-nav__close").on("click", function() {
+            $(".mobile-nav__wrapper").removeClass("expanded");
+        });
+        
+        // Demo button to show mobile nav
+        $(".mobile-nav-toggler").on("click", function() {
+            $(".mobile-nav__wrapper").addClass("expanded");
+        });
+    </script>
+</body>
+</html>
