@@ -1047,7 +1047,7 @@
     </script>
 
 
-  <style>
+    <style>
         /* Chat Bot Styles */
         .chat-bot-container {
             position: fixed;
@@ -1082,7 +1082,7 @@
         }
 
         .chat-window {
-            width: 350px;
+            width: 500px;
             height: 600px;
             background-color: white;
             border-radius: 15px;
@@ -1294,6 +1294,48 @@
             animation: wave 8s linear infinite;
         }
 
+        /* Typing indicator */
+        .typing-indicator {
+            background-color: #e6e6e6;
+            padding: 10px 15px;
+            border-radius: 18px;
+            display: inline-block;
+            margin-bottom: 15px;
+            max-width: 80%;
+            border-top-left-radius: 4px;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 1px;
+            background-color: #9E9EA1;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .typing-indicator span:nth-of-type(1) {
+            animation: typing 1s infinite;
+        }
+
+        .typing-indicator span:nth-of-type(2) {
+            animation: typing 1s 0.33s infinite;
+        }
+
+        .typing-indicator span:nth-of-type(3) {
+            animation: typing 1s 0.66s infinite;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #2c9c56;
+            white-space: nowrap;
+            animation: blink-caret .75s step-end infinite;
+        }
+
         /* ANIMATIONS */
         @keyframes wave {
             0% { transform: translateX(0); }
@@ -1343,6 +1385,26 @@
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
+        }
+
+        @keyframes typing {
+            0% {
+                opacity: 0.4;
+                transform: translateY(0px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+            100% {
+                opacity: 0.4;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #2c9c56; }
         }
 
         /* Mobile styles */
@@ -1468,22 +1530,25 @@
                     <select id="languageSelect" style="background: #2c9c56;; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; padding: 5px; font-size: 12px;">
                         <option value="en">English</option>
                         <option value="tn">Setswana</option>
+                        <option value="sn">Shona</option>
                     </select>
                 </div>
+            </div>
+
+                   <div class="suggested-questions">
+                <div class="suggested-question" data-en="What products do you offer?" data-tn="Dilo dife tse lo di rekisang?" data-sn="Munei zvigadzirwa zvaunotengesa?">What products do you offer?</div>
+                <div class="suggested-question" data-en="Tell me about your diaries" data-tn="Naya ka dipuku tsa lona" data-sn="Ndiudze nezvemadhayari ako">Tell me about your diaries</div>
+                <div class="suggested-question" data-en="Where are you located?" data-tn="Lo kae?" data-sn="Uripi?">Where are you located?</div>
+                <div class="suggested-question" data-en="Do you do custom orders?" data-tn="A lo dira di-order tse di beilweng?" data-sn="Munoita maodha akasarudzika here?">Do you do custom orders?</div>
             </div>
             
             <div class="chat-messages">
                 <div class="message bot-message" id="welcome-message">
-                    Hello! I'm your GreenCard Diary assistant. How can I help you today?
+                    Hello! I'm your Greencarddiary assistant. How can I help you with our products today?
                 </div>
             </div>
             
-            <div class="suggested-questions">
-                <div class="suggested-question" data-en="What products do you offer?" data-tn="Dilo dife tse lo di rekisang?">What products do you offer?</div>
-                <div class="suggested-question" data-en="Are you eco-friendly?" data-tn="A lo sireletsa tikologo?">Are you eco-friendly?</div>
-                <div class="suggested-question" data-en="Where are you located?" data-tn="Lo kae?">Where are you located?</div>
-                <div class="suggested-question" data-en="Do you do deliveries?" data-tn="A lo romela dilo?">Do you do deliveries?</div>
-            </div>
+     
             
             <div class="chat-input">
                 <input type="text" id="chat-input-field" placeholder="Type your message here...">
@@ -1528,13 +1593,14 @@
             let unansweredCount = 0;
             let whatsappPromptShown = false;
             let currentLanguage = 'en';
+            let isTyping = false;
             
-            // Translation object
+            // Translation object with Shona added
             const translations = {
                 en: {
                     liveChatTitle: 'LIVE CHAT',
                     onlineStatus: '•Online',
-                    welcomeMessage: 'Hello! I\'m your GreenCard Diary assistant. How can I help you today?',
+                    welcomeMessage: 'Hello! I\'m your Greencarddiary assistant. How can I help you with our products today?',
                     inputPlaceholder: 'Type your message here...',
                     whatsappPromptText: 'I\'d love to connect you with one of our human experts who can provide more detailed assistance! Would you like to chat with them on WhatsApp?',
                     whatsappButtonText: 'Chat with Expert'
@@ -1542,112 +1608,172 @@
                 tn: {
                     liveChatTitle: 'PUISANO YA MATENG',
                     onlineStatus: '•Mo mafaratlheng',
-                    welcomeMessage: 'Dumela! Ke mothusi wa gago wa GreenCard Diary. Nka go thusa jang gompieno?',
+                    welcomeMessage: 'Dumela! Ke mothusi wa gago wa Greencarddiary. Nka go thusa jang ka dilo tsa rona gompieno?',
                     inputPlaceholder: 'Kwala molaetsa wa gago fano...',
                     whatsappPromptText: 'Ke batla go go kopanya le mongwe wa ditswerere tsa rona tse di ka go thusang sentle! A o batla go bua nabo mo WhatsApp?',
                     whatsappButtonText: 'Bua le Seitsanape'
+                },
+                sn: {
+                    liveChatTitle: 'HURUKURO YEPAMHEPO',
+                    onlineStatus: '•Pamhepo',
+                    welcomeMessage: 'Mhoro! Ndiri mushandi wako weGreencarddiary. Ndingakubatsire sei nezvezvigadzirwa zvedu nhasi?',
+                    inputPlaceholder: 'Nyora meseji yako pano...',
+                    whatsappPromptText: 'Ndinoda kukubatanidza neumwe wenyanzvi dzedu dzinogona kupa rubatsiro rwakadzama! Ungada here kutaura navo paWhatsApp?',
+                    whatsappButtonText: 'Taura neNyanzvi'
                 }
             };
             
-            // Bilingual knowledge base
+            // Enhanced knowledge base with Greencarddiary products
             const knowledgeBase = {
                 // Greetings and politeness
                 'greeting': {
                     pattern: {
                         en: /\b(hello|hi|hey|greetings|howdy|good morning|good afternoon|good evening|sup|wassup)\b/i,
-                        tn: /\b(dumela|thobela|aowa|tsamaya sentle|o tsogile jang|o kae)\b/i
+                        tn: /\b(dumela|thobela|aowa|tsamaya sentle|o tsogile jang|o kae)\b/i,
+                        sn: /\b(mhoro|masikati|manheru|marara sei|mwakanaka|ndewe|horoi)\b/i
                     },
                     response: {
-                        en: 'Hello! Welcome to Green Card Diary Botswana. How can I assist you with your Green Card application today? 😊',
-                        tn: 'Dumela! O amogelwe ko Green Card Diary Botswana. Nka go thusa jang ka kopo ya gago ya Green Card gompieno? 😊'
+                        en: 'Hello! Welcome to Greencarddiary. We specialize in custom diaries, calendars, and stationery products. How can I assist you today? 😊',
+                        tn: 'Dumela! O amogelwe ko Greencarddiary. Re itsise ka go dira dipuku tse di beilweng, dikhalendara, le dilo tsa ofisi. Nka go thusa jang gompieno? 😊',
+                        sn: 'Mhoro! Tigamuchirwe kuGreencarddiary. Isu tinonyanya kugadzira madhayari akasarudzika, makarenda, uye zvigadzirwa zvepamabasa. Ndingakubatsire sei nhasi? 😊'
                     }
                 },
                 'how_are_you': {
                     pattern: {
                         en: /how are you|how do you do|how\'s it going|what\'s up/i,
-                        tn: /o kae|o tsogile jang|o phela jang|go direga eng/i
+                        tn: /o kae|o tsogile jang|o phela jang|go direga eng/i,
+                        sn: /wakadii|maswera sei|marara sei|zviri kufamba sei/i
                     },
                     response: {
-                        en: 'I\'m doing great, thank you for asking! I\'m here and ready to help you with any questions about Green Card applications or our products. How are you doing today? 😊',
-                        tn: 'Ke siame, ke lebogile gore o botsa! Ke mo mafaratlheng mme ke ipaakantse go go thusa ka dipotso dipe fela tsa dikopo tsa Green Card kgotsa dilo tse re di rekisang. O kae gompieno? 😊'
+                        en: 'I\'m doing great, thank you for asking! I\'m here and ready to help you with any questions about our custom diaries, calendars, or other stationery products. How are you doing today? 😊',
+                        tn: 'Ke siame, ke lebogile gore o botsa! Ke mo mafaratlheng mme ke ipaakantse go go thusa ka dipotso dipe fela tsa dipuku tsa rona tse di beilweng, dikhalendara, kgotsa dilo tse dingwe tsa ofisi. O kae gompieno? 😊',
+                        sn: 'Ndiri mushanda zvakanaka, ndatenda nekubvunza! Ndiri pano uye ndakagadzirira kukubatsira nemibvunzo yese pamusoro pemadhayari edu akasarudzika, makarenda, kana zvimwe zvigadzirwa zvemumabasa. Wakadii nhasi? 😊'
                     }
                 },
                 'goodbye': {
                     pattern: {
                         en: /bye|goodbye|see you|farewell|talk later|gtg|gotta go/i,
-                        tn: /sala sentle|tsamaya sentle|re bone|ke tsamaile|ke tsamaya/i
+                        tn: /sala sentle|tsamaya sentle|re bone|ke tsamaile|ke tsamaya/i,
+                        sn: /sara mushe|enda mushe|tichaonana|taura gare gare|ndofanira kuenda/i
                     },
                     response: {
-                        en: 'Goodbye! Thank you for chatting with Green Card Diary. Feel free to reach out anytime if you need help with your Green Card application. Have a wonderful day! 👋',
-                        tn: 'Tsamaya sentle! Ke lebogile gore o buile le Green Card Diary. Ikutlwe o gololesegile go re letsetsa nako nngwe le nngwe fa o tlhoka thuso ka kopo ya gago ya Green Card. Nna le letsatsi le lentle! 👋'
+                        en: 'Goodbye! Thank you for chatting with Greencarddiary. Feel free to reach out anytime if you need help with custom diaries or stationery products. Have a wonderful day! 👋',
+                        tn: 'Tsamaya sentle! Ke lebogile gore o buile le Greencarddiary. Ikutlwe o gololesegile go re letsetsa nako nngwe le nngwe fa o tlhoka thuso ka dipuku tse di beilweng kgotsa dilo tsa ofisi. Nna le letsatsi le lentle! 👋',
+                        sn: 'Sara mushe! Ndatenda nekutaura neGreencarddiary. Inzwa wakasununguka kubata nesu chero nguva kana uchida rubatsiro nemadhayari akasarudzika kana zvigadzirwa zvemumabasa. Iva nezuva rakanaka! 👋'
                     }
                 },
                 
                 // Products and services
                 'products': {
                     pattern: {
-                        en: /\b(products|what do you offer|diaries|calendars|organizers|kits|tools|sell|buy|purchase|shop)\b/i,
-                        tn: /\b(dilo|se lo se rekisang|dipuku|dikhalendara|sengwe|reka|rekisa)\b/i
+                        en: /\b(products|what do you offer|diaries|calendars|organizers|stationery|sell|buy|purchase|shop|items)\b/i,
+                        tn: /\b(dilo|se lo se rekisang|dipuku|dikhalendara|sengwe|dilo tsa ofisi|reka|rekisa|dintho)\b/i,
+                        sn: /\b(zvigadzirwa|zvaunotengesa|madhayari|makarenda|masisitimu|zvemumabasa|tenga|kutenga|shop|zvinhu)\b/i
                     },
                     response: {
-                        en: 'We offer a range of products including:<br>• Green Card diaries with tracking sheets<br>• Custom calendars with important deadlines<br>• Document organizers and checklists<br>• Photo compliance guides<br>• Interview preparation kits<br>• Application timeline planners<br><br>All designed specifically for applicants from Botswana! 🇧🇼',
-                        tn: 'Re rekisa dilo di le dintsi jaaka:<br>• Dipuku tsa Green Card tse di nang le matlapa a go latela<br>• Dikhalendara tse di beilweng ka dinako tsa botlhokwa<br>• Baokedi ba dipampiri le di-checklist<br>• Dikgakololo tsa difoto<br>• Didirisiwa tsa go ipaakanyetsa puisano<br>• Baikaelelo ba nako ya dikopo<br><br>Tsotlhe di dirilwe ke bao ba ba kopadikang bo tswang Botswana! 🇧🇼'
+                        en: 'We offer a wide range of products including:<br>• Custom corporate diaries (A4, A5, A6 sizes)<br>• Printed & laminated diaries with QR code options<br>• Executive diary organizers (Filofax style)<br>• Custom calendars with creative designs<br>• Branded paper bags (200 gsm glossy)<br>• Lever arch files (A5 to A3 sizes)<br>• Register books (A3/A4, 200 pages)<br>• Photo albums with premium paper<br>• NCR books (duplicate, triplicate, quadruplicate)<br>• Custom school notebooks & student diaries<br>• Graduation scroll holders<br>• Restaurant menus<br>• Business cards<br><br>All products can be customized to your needs!',
+                        tn: 'Re rekisa dilo di le dintsi jaaka:<br>• Dipuku tsa dikhampani tse di beilweng (A4, A5, A6)<br>• Dipuku tse di gatiseditsweng le tse di laminetsweng di na le dikhoutu tsa QR<br>• Baokedi ba dipuku ba baeteledipele (mokgwa wa Filofax)<br>• Dikhalendara tse di beilweng tse di nang le mekgwa e meintši<br>• Diposete tse di nang le brand (200 gsm glossy)<br>• Mafaele a lever arch (A5 go ya ko A3)<br>• Dipuku tsa go kwala (A3/A4, matlakana a 200)<br>• Dialebamo tsa difoto tse di nang le pampiri e e botoka<br>• Dipuku tsa NCR (duplicate, triplicate, quadruplicate)<br>• Dipuku tsa sekolo tse di beilweng le dipuku tsa barutwana<br>• Dihouldara tsa dikwarata tsa graduation<br>• Menyu ya maresterante<br>• Dikarete tsa kgwebo<br><br>Dilo tsotlhe di ka dirwa go ya ka dithata tsa lona!',
+                        sn: 'Tinopa huwandu hwakawanda hwezvigadzirwa zvinosanganisira:<br>• Madhayari emakambani akasarudzika (saizi A4, A5, A6)<br>• Madhayari akadhindwa & akaputirwa ane sarudzo dzeQR code<br>• Masisitimu emadhayari evakuru (maitiro eFilofax)<br>• Makarenda akasarudzika ane magadzirirwo ekugadzira<br>• Mabhegi emapepa ane mabhureki (200 gsm glossy)<br>• Mafaera eLever arch (saizi kubva A5 kusvika A3)<br>• Mabhuku ekunyoresa (A3/A4, mapeji 200)<br>• Maalbum emifananidzo ane mapepa epremium<br>• Mabhuku eNCR (duplicate, triplicate, quadruplicate)<br>• Mabhuku echikoro akasarudzika & madhayari evadzidzi<br>• Zvibato zvezvikwata zvekupedza kudzidza<br>• Mamenu emaresitorendi<br>• Makadhi ebhizinesi<br><br>Zvese zvigadzirwa zvinogona kugadziridzwa kuti zvienderane nezvaunoda!'
                     }
                 },
-                'services': {
+                'diaries': {
                     pattern: {
-                        en: /\b(services|help|support|assistance|guidance|consulting|advice)\b/i,
-                        tn: /\b(ditirelo|thuso|tshegetso|kaelo|kgakololo)\b/i
+                        en: /\b(diaries|journal|notebook|planner|organizer|filofax)\b/i,
+                        tn: /\b(dipuku|kwala|notebook|planara|baokedi)\b/i,
+                        sn: /\b(madhayari|jenaguru|notibhuku|planner|sisitimu|filofax)\b/i
                     },
                     response: {
-                        en: 'We provide comprehensive application assistance including:<br>• Eligibility assessment and evaluation<br>• Document preparation guidance<br>• Photo compliance checking<br>• Application review and feedback<br>• Interview preparation coaching<br>• Timeline planning and tracking<br><br>We\'ve helped hundreds of applicants from Botswana succeed! 🎉',
-                        tn: 'Re tlamela ka thuso e e feletseng ya dikopo go akaretsa:<br>• Tekolo ya boitekanelo jwa go kopela<br>• Kaelo ya go baakanya dipampiri<br>• Tlhatlhobo ya maleba a difoto<br>• Tshekatsheko ya kopo le kaelo<br>• Katiso ya go ipaakanyetsa puisano<br>• Thulaganyo le go latela dinako<br><br>Re thusitse makgolokgolo a bao ba kopadikang bo tswang Botswana ba atlega! 🎉'
+                        en: 'Our diaries come in various sizes (A4, A5, Slimline/A6) and binding options:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Customization options include:<br>• Leather finish in various colors<br>• Cover design patterns<br>• Front end-sheet customization<br>• Client information lead-in pages<br>• Section wrap around with client info<br>• Silver, gold or blind embossing of logo<br>• Single, two, three and 4 panel cover options<br>• Square back, round spine and flexible cover<br>• Gilt or Nickel corner clips, round corners<br>• Personalization with names<br><br>We also offer hybrid diaries with QR code integration!',
+                        tn: 'Dipuku tsa rona di tla ka disaize di farologanyeng (A4, A5, Slimline/A6) le dikgetho tsa go bopa:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Dikgetho tsa go ipeola di akaretsa:<br>• Lefelo la letlalo ka mmala o o farologaneng<br>• Mekgwa ya disaine ya dikhava<br>• Go ipeola ga letlapele la khavare<br>• Matlakana a tshedimosetso ya moreki<br>• Karolo e e potolotseng tshedimosetso ya moreki<br>• Go embossa logo ka selefera, gouta kgotsa go se bonale<br>• Dikgetho tsa dikhava tsa panel e le nngwe, pedi, tharo kgotsa nne<br>• Mokwatla o o sekwere, mokwatla o o potologang le khavare e e flexibole<br>• Diklipi tsa konere tsa gilt kgotsa Nickel, dikhona tse di potologang<br>• Go bewa ga maina<br><br>Re tlamela ka dipuku tsa hybrid tse di nang le go kopanya khoutu ya QR!',
+                        sn: 'Madhayari edu anouya nemasaizi akasiyana (A4, A5, Slimline/A6) uye sarudzo dzekusunga:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Sarudzo dzekugadziridza dzinosanganisira:<br>• Kupedzisa kweganda mumavara akasiyana<br>• Mapatani ekugadzira mabutiro<br>• Kugadziridzwa kwepepa rekupedzisira kwekumberi<br>• Mapeji ekutungamira ruzivo rwevatengi<br>• Chikamu chakatenderedza neruzivo rwevatengi<br>• Sirivheri, goridhe kana blind embossing yelogo<br>• Imwe, mbiri, matatu uye 4 panel sarudzo dzebhutiro<br>• Square back, round spine uye flexible cover<br>• Gilt kana Nickel korona makipi, makona akatenderedza<br>• Kugadziridzwa nemazita<br><br>Tinopawo madhayari ehybrid ane QR code integration!'
+                    }
+                },
+                'calendars': {
+                    pattern: {
+                        en: /\b(calendars|calendar|pyramid|yearly|monthly)\b/i,
+                        tn: /\b(dikhalendara|khalendara|piramide|ngwaga|kgwedi)\b/i,
+                        sn: /\b(makarenda|karenda|piramidhi|pagore|pamwedzi)\b/i
+                    },
+                    response: {
+                        en: 'Our calendars feature creative designs and are available in different sizes:<br>• Wide variety of design templates<br>• Gloss lamination for durability<br>• Public holidays for 14 African countries listed<br>• Advertising space for users and visitors<br>• Highly durable Wiro binding<br>• Portable, trendy and easy to use<br>• Strong rigid pyramid stand<br>• Fully customized options available<br><br>Perfect for corporate gifts and promotions!',
+                        tn: 'Dikhalendara tsa rona di na le mekgwa e meintši ya disaine mme di wanala ka disaize di farologaneng:<br>• Mekgwa e meintši ya dithempleite tsa disaine<br>• Lamination ya gloss bakeng sa go nonofala<br>• Matšatši a phomolo a ditšhaba tse 14 tsa Aforika di kwadilwe<br>• Lefelo la go ikgaketsa bakeng sa badiri le baeti<br>• Go bopa ga Wiro go nonofile thata<br>• Go rwalwa go bonolo, go ya ka mekgwa le go dirisa go bonolo<br>• Seteite ya piramide e e nonofileng<br>• Dikgetho tse di beilweng ka botlalo di wanala<br><br>E maleba thata bakeng sa dimpho tsa dikhampani le ditiro tsa go ikgaketsa!',
+                        sn: 'Makarenda edu ane magadzirirwo ekugadzira uye anowanikwa nemasaizi akasiyana:<br>• Yakasiyana-siyana yematemplate ekugadzira<br>• Gloss lamination yekusimba<br>• Mazororo eruzhinji enyika gumi neina dzeAfrica akanyorwa<br>• Nzvimbo yekushambadzira yevashandisi nevashanyi<br>• Yakasimba kwazvo Wiro inosunga<br>• Inotakurika, ine fashoni uye iri nyore kushandisa<br>• Yakasimba rigid pyramid stand<br>• Yakazara sarudzo dzakagadziridzwa dzinowanikwa<br><br>Yakanyatso kukodzera zvipo zvemakambani uye kukwidziridzwa!'
+                    }
+                },
+                'paper_bags': {
+                    pattern: {
+                        en: /\b(paper bags|bags|gift bags|packaging|carry bags)\b/i,
+                        tn: /\b(diposete tsa pampiri|diposete|diposete tsa dimpho|go phuthegela|diposete tsa go rwala)\b/i,
+                        sn: /\b(mabhegi emapepa|mabhegi|mabhegi ezvipo|kurongedza|mabhegi ekutakura)\b/i
+                    },
+                    response: {
+                        en: 'Our custom branded paper bags are:<br>• Printed and laminated on 200 gsm glossy paper<br>• Available in different sizes (A4, A5 or custom sizes)<br>• Fully customized design to suit your needs<br>• Black & White on Kraft Paper options<br>• Ideal for packaging gifts for employees, customers and stakeholders<br><br>Great for corporate gifting and brand visibility!',
+                        tn: 'Diposete tsa rona tse di nang le brand ke:<br>• Di gatisiwa di bo di laminwa mo pampiring ya 200 gsm glossy<br>• Di wanala ka disaize di farologaneng (A4, A5 kgotsa disaize tse di beilweng)<br>• Disaine e e beilweng ka botlalo go go direla<br>• Dikgetho tsa Black & White mo Kraft Paper<br>• Tse di malebang thata bakeng sa go phuthegela dimpho tsa baseberi, bareki le ba ba amegang<br><br>Tse di molemolelang thata bakeng sa go nea dimpho tsa dikhampani le go bonala ga brand!',
+                        sn: 'Mabhegi edu emapepa ane mabhureki akasarudzika:<br>• Akadhindwa uye akaputirwa pa200 gsm glossy paper<br>• Anowanikwa nemasaizi akasiyana (A4, A5 kana saizi dzakasarudzika)<br>• Dhizaini yakanyatso gadziridzwa kuti ienderane nezvaunoda<br>• Black & White paKraft Paper sarudzo<br>• Yakanakira kurongedza zvipo zvevashandi, vatengi uye vanobatanidzwa<br><br>Yakanakira kupa zvipo zvemakambani uye kuonekwa kwemhando!'
+                    }
+                },
+                'lever_arch': {
+                    pattern: {
+                        en: /\b(lever arch|arch files|files|binders|folders)\b/i,
+                        tn: /\b(lever arch|mafaele a arch|mafaele|dibaokedi|difolata)\b/i,
+                        sn: /\b(lever arch|mafaera earch|mafaera|zvisungo|mafolda)\b/i
+                    },
+                    response: {
+                        en: 'Our Lever Arch Files feature:<br>• Made of various material mixes and colors<br>• Matt or Gloss laminated on both sides<br>• Attractive 2 colour printing<br>• Rado file locking system<br>• Sturdy and durable (2000-micron European grey board)<br>• File sizes ranging from A5 to A3<br>• Fully recyclable and environmentally friendly<br><br>Perfect for office organization and document storage!',
+                        tn: 'Mafaele a rona a Lever Arch a na le:<br>• A dirilwe ka didirisiwa le mmala o o farologaneng<br>• Matt kgotsa Gloss laminated ka mabaka a mabedi<br>• Go gatisa ga mmala o mebedi o o kgabisang<br>• Tsamaiso ya go tswala mafaele ya Rado<br>• Go nonofala le go nonofala (2000-micron European grey board)<br>• Disaize tsa faiele go tswa ko A5 go ya ko A3<br>• Go kgonwa go di dirisa gape ka botlalo le go sireletsa tikologo<br><br>Tse di malebang thata bakeng sa go rulaganya ofisi le go boloka ditokomane!',
+                        sn: 'Mafaera edu eLever Arch ane:<br>• Akagadzirwa nemidziyo yakasiyana-siyana uye mavara<br>• Matt kana Gloss yakaputirwa kumativi ese<br>• Inodhinda ine mavara maviri anoyevedza<br>• Rado file locking system<br>• Yakasimba uye yakasimba (2000-micron European grey board)<br>• Saizi dzemafaera kubva paA5 kusvika paA3<br>• Inogona kudzokororwa zvizere uye ine hushamwari kwezvakatipoteredza<br><br>Yakanyatso kukodzera kurongeka kwemahofisi uye kuchengetedza zvinyorwa!'
+                    }
+                },
+                'custom_orders': {
+                    pattern: {
+                        en: /\b(custom|personalized|bespoke|tailored|branded|logo|minimum order)\b/i,
+                        tn: /\b(go ipeola|go bewa|go dirwa|go direlwa|go nwa le brand|logo|order e e kwa tlase)\b/i,
+                        sn: /\b(akasarudzika|akagadziridzwa|bespoke|akagadzirirwa|ane brand|logo|minimum order)\b/i
+                    },
+                    response: {
+                        en: 'We specialize in custom orders with low minimum quantities:<br>• Minimum order of just 20 units for most products<br>• Wide range of customization options available<br>• Your logo, colors, and branding incorporated<br>• Various binding and finishing options<br>• Multiple paper types and weights available<br>• Expert design assistance if needed<br><br>Make your brand stand out with our custom products!',
+                        tn: 'Re itsise ka di-order tse di beilweng tse di nang le palo e e kwa tlase:<br>• Order e e kwa tlase ya diyuniti tse 20 fela bakeng sa dilo di le dintsi<br>• Dikgetho tse di farologaneng tsa go ipeola di wanala<br>• Logo ya lona, mmala, le brand di akarediwa<br>• Dikgetho tse di farologaneng tsa go bopa le go fetsa<br>• Mefuta e le mentsi ya pampiri le boima bo wanala<br>• Thuso ya disaine ya baitseane fa go tlhokega<br><br>Dirang gore brand ya lona e gakgamale ka dilo tsa rona tse di beilweng!',
+                        sn: 'Isu tinonyanya kugadzira maodha akasarudzika ane huwandu hwakaderera hwepazasi:<br>• Odha shoma yemayuniti makumi maviri chete yezvigadzirwa zvakawanda<br>• Huwandu hwakawanda hwesarudzo dzekugadziridza dzinawanikwa<br>• Logo yako, mavara, uye branding zvakabatanidzwa<br>• Sarudzo dzakasiyana dzekusunga uye kupedzisa<br>• Mhando dzakawanda dzemapepa uye huremu hunowanikwa<br>• Nyanzvi yekugadzira rubatsiro kana uchida<br><br>Ita kuti brand yako isimuke nezvigadzirwa zvedu zvakasarudzika!'
                     }
                 },
                 
                 // Location and contact
                 'location': {
                     pattern: {
-                        en: /\b(where|location|address|place|find|visit|office|shop)\b/i,
-                        tn: /\b(kae|lefelo|aterese|etela|ofisi|lebenkeleng)\b/i
+                        en: /\b(where|location|address|place|find|visit|office|shop|botswana)\b/i,
+                        tn: /\b(kae|lefelo|aterese|etela|ofisi|lebenkeleng|botswana)\b/i,
+                        sn: /\b(kupi|nzvimbo|kero|nzvimbo|tsvaga|shanyira|hofisi|chitoro|botswana)\b/i
                     },
                     response: {
-                        en: 'We are located in Gaborone, Botswana. 📍<br><br>Check out the map <a href="https://www.google.com/maps/place/Greencard+Diary/@-24.6387602,25.8197703,17.35z/data=!4m6!3m5!1s0x1ebb503b7667c351:0x186f2277505b1ded!8m2!3d-24.6384704!4d25.8215759!16s%2Fg%2F11f190wmst?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">here</a> for specific directions. We welcome walk-ins during business hours!',
-                        tn: 'Re kwa Gaborone, Botswana. 📍<br><br>Leba mmapa <a href="https://www.google.com/maps/place/Greencard+Diary/@-24.6387602,25.8197703,17.35z/data=!4m6!3m5!1s0x1ebb503b7667c351:0x186f2277505b1ded!8m2!3d-24.6384704!4d25.8215759!16s%2Fg%2F11f190wmst?entry=ttu&g_ep=EgoyMDI5MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">fano</a> go bona dikgakololo tse di tlhamaletseng. Re amogela ba ba tsenang ka dinako tsa tiro!'
+                        en: 'We are located in Botswana, Africa. 🇧🇼<br><br>Our physical address is:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>We export to Zimbabwe, Zambia, South Africa, and Namibia under SADC FTA agreements.',
+                        tn: 'Re kwa Botswana, Aforika. 🇧🇼<br><br>Aterese ya rona ke:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Re romela dikonego kwa Zimbabwe, Zambia, Aforika Borwa, le Namibia ka tumalano ya SADC FTA.',
+                        sn: 'Tiri muBotswana, Africa. 🇧🇼<br><br>Kero yedu chaiyo ndeye:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Tinotumira kunze kwenyika kuZimbabwe, Zambia, South Africa, neNamibia pasi pezvibvumirano zveSADC FTA.'
                     }
                 },
                 'contact': {
                     pattern: {
                         en: /\b(contact|phone|number|email|whatsapp|call|reach|communicate)\b/i,
-                        tn: /\b(golagana|mogala|nomoro|email|whatsapp|letsa|fitlhela)\b/i
+                        tn: /\b(golagana|mogala|nomoro|email|whatsapp|letsa|fitlhela|buisanya)\b/i,
+                        sn: /\b(bata|runhare|nhamba|email|whatsapp|fona|svika|taurirana)\b/i
                     },
                     response: {
-                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a><br>💬 WhatsApp: <a href="https://wa.me/26771724795" target="_blank" style="color:#2c9c56;text-decoration:underline;">Chat with us</a>',
-                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a><br>💬 WhatsApp: <a href="https://wa.me/26771724795" target="_blank" style="color:#2c9c56;text-decoration:underline;">Bua le rona</a>'
+                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        sn: 'Unogona kutibata ne:<br>📞 Runhare: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Webhusaiti: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>'
                     }
                 },
                 
-                // Delivery and logistics
-                'delivery': {
+                // Business information
+                'about': {
                     pattern: {
-                        en: /\b(deliver|delivery|ship|shipping|mail|post|courier|send|dispatch)\b/i,
-                        tn: /\b(romela|kabo|poso|tisa|romelela)\b/i
+                        en: /\b(about|company|history|background|story|established)\b/i,
+                        tn: /\b(ka|khampani|histori|bokao|kano|e simolotswe)\b/i,
+                        sn: /\b(nemusoro|kambani|nhoroondo|kumashure|nyaya|yakavambwa)\b/i
                     },
                     response: {
-                        en: 'Yes, we offer delivery services across Botswana! 🚚<br><br>• Free delivery in Gaborone for orders over P200<br>• Nationwide delivery within 2-3 business days<br>• Express delivery options available<br>• Safe packaging guaranteed<br><br>Contact us at <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> for more details.',
-                        tn: 'Ee, re tlamela ka ditirelo tsa kabo mo Botswana yotlhe! 🚚<br><br>• Kabo e e mahala mo Gaborone ya di-order tse di feta P200<br>• Kabo mo lefatsheng lotlhe mo malatsing a 2-3 a tiro<br>• Dikgetho tsa kabo e e bonako di teng<br>• Phutego e e babalesegileng e netefitswe<br><br>Re letsetse ko <a href="tel:+26771724795" style="color:#2c9c56;text-decoration:underline;">+267 7172 4795</a> go bona dintlha tse dingwe.'
-                    }
-                },
-                
-                // Environmental and sustainability
-                'eco-friendly': {
-                    pattern: {
-                        en: /\b(eco.*friendly|environment|sustainable|green|recycle|planet|nature|carbon)\b/i,
-                        tn: /\b(tikologo|tlhago|sireletsa|phela|lefatshe)\b/i
-                    },
-                    response: {
-                        en: 'Yes! 🌱 We are committed to sustainability:<br>• Use recycled materials whenever possible<br>• Employ environmentally friendly printing processes<br>• Minimize waste in our operations<br>• Partner with eco-conscious suppliers<br>• Carbon-neutral delivery options<br><br>We believe in helping our clients while protecting our planet!',
-                        tn: 'Ee! 🌱 Re ikanyegile go sireletsa tikologo:<br>• Re dirisa didirisiwa tse di setseng di dirisitswe gape fa go kgonega<br>• Re dirisa mekgwa ya go gatisa e e sireletsang tikologo<br>• Re fokotsa matlakala mo tirong ya rona<br>• Re dirisana le bao ba ba sireletsang tikologo<br>• Dikgetho tsa kabo tse di sa senyang tikologo<br><br>Re dumela mo go thuseng bareki ba rona fa re sireletsa lefatshe la rona!'
+                        en: 'Greencarddiary (Pty) Ltd is a 100% manufacturing industry in Botswana specializing in:<br>• Lever Arch Files, Diaries, Pyramid Calendars<br>• Sketch pads, Exam pads, Photo Books<br>• Branded Paper Bags, Graduation Scroll Holders<br>• Register Books, Restaurant Menus, Receipt Books<br>• Business Cards and Bibles<br><br>We started in 2000 as an advertising agency and transitioned to manufacturing in 2011-2012. We now have 35+ staff and export to multiple African countries.',
+                        tn: 'Greencarddiary (Pty) Ltd ke indaseteri ya go dira dilo e e 100% kwa Botswana e e itseng ka:<br>• Mafaele a Lever Arch, Dipuku, Dikhalendara tsa Piramide<br>• Dipuku tsa go sketcha, dipuku tsa ditlhahlobo, Dipuku tsa Difoto<br>• Diposete tse di nang le brand, Dihouldara tsa dikwarata tsa graduation<br>• Dipuku tsa go kwala, Menyu ya maresterante, Dipuku tsa dirisiti<br>• Dikarete tsa kgwebo le Dibaibele<br><br>Re simolotse ka 2000 e le agentsi ya go ikgaketsa mme re fetogile go dira dilo ka 2011-2012. Jaanong re na le baseberi ba ba fetang 35 mme re romela dikonego kwa dinageng di le dintsi tsa Aforika.',
+                        sn: 'Greencarddiary (Pty) Ltd iindasitiri yekugadzira 100% muBotswana inonyanya:<br>• Mafaera eLever Arch, Madhayari, Makarenda ePiramidhi<br>• Sketch pads, Exam pads, Mabhuku emifananidzo<br>• Mabhegi emapepa ane mabhureki, Zvibato zvezvikwata zvekupedza kudzidza<br>• Mabhuku ekunyoresa, Mamenu emaresitorendi, Mabhuku ekutambira<br>• Makadhi ebhizinesi neBhaibheri<br><br>Takatanga muna 2000 sesangano rekushambadzira uye takachinja kuita kugadzira muna 2011-2012. Iye tine vashandi vanopfuura makumi matatu nevashanu uye tinotumira kunze kwenyika kunyika dzakawanda dzeAfrica.'
                     }
                 },
                 
@@ -1655,11 +1781,13 @@
                 'thank_you': {
                     pattern: {
                         en: /\b(thank|thanks|appreciate|grateful|cheers)\b/i,
-                        tn: /\b(leboga|ke lebogile|kea leboga|ke itumetse)\b/i
+                        tn: /\b(leboga|ke lebogile|kea leboga|ke itumetse)\b/i,
+                        sn: /\b(waita|ndatenda|tenda|ndinotenda|ndinokutendai|makorokoto)\b/i
                     },
                     response: {
-                        en: 'You\'re very welcome! I\'m happy to help. If you have more questions about Green Card applications or our products, feel free to ask anytime. We\'re here to support your journey! 😊',
-                        tn: 'O amogelwe thata! Ke itumetse go thusa. Fa o na le dipotso tse dingwe ka dikopo tsa Green Card kgotsa dilo tsa rona, ikutlwe o gololesegile go botsa nako nngwe le nngwe. Re teng go tshegetsa leeto la gago! 😊'
+                        en: 'You\'re very welcome! I\'m happy to help. If you have more questions about our products or services, feel free to ask anytime. We\'re here to support your branding needs! 😊',
+                        tn: 'O amogelwe thata! Ke itumetse go thusa. Fa o na le dipotso tse dingwe ka dilo kgotsa ditirelo tsa rona, ikutlwe o gololesegile go botsa nako nngwe le nngwe. Re teng go tshegetsa dithata tsa lona tsa brand! 😊',
+                        sn: 'Unogamuchirwa kwazvo! Ndinofara kukubatsira. Kana uine mimwe mibvunzo nezvezvigadzirwa zvedu kana masevhisi, inzwa wakasununguka kubvunza chero nguva. Tiri pano kutsigira zvaunoda zvebrand! 😊'
                     }
                 },
                 
@@ -1667,66 +1795,53 @@
                 'pricing': {
                     pattern: {
                         en: /\b(price|cost|how much|fee|payment|pay|afford|expensive|cheap|discount)\b/i,
-                        tn: /\b(tshenyo|madi|makae|tefo|duela|seleka|tiriso|bonnye)\b/i
+                        tn: /\b(tshenyo|madi|makae|tefo|duela|seleka|tiriso|bonnye)\b/i,
+                        sn: /\b(mutengo|mari|ingani|muripo|kubhadhara|kubhadhara|kukwanisa|inodhura|yakachipa|discount)\b/i
                     },
                     response: {
-                        en: 'Our pricing varies based on the products and services you need. We offer:<br>• Basic application kits starting from P150<br>• Premium packages with full support from P500<br>• Individual consultations from P250<br>• Student discounts available<br>• Group discounts for families<br>• Multiple payment methods accepted<br><br>Contact us for a personalized quote! 💰',
-                        tn: 'Ditlhwatlhwa tsa rona di farologane go ya ka dilo le ditirelo tse o di tlhokang. Re tlamela ka:<br>• Didirisiwa tsa motheo tse di simololang ko P150<br>• Diphakeiti tse di botoka tse di nang le tshegetso e e feletseng ko P500<br>• Dikgothatsiso tsa motho ka mong ko P250<br>• Bonnye jwa baithuti bo teng<br>• Bonnye jwa malapa a le mantsi<br>• Mekgwa e le mentsi ya tefo e amogelesegile<br><br>Re letsetse go go naya tekanyetso e e beilweng! 💰'
+                        en: 'Our pricing varies based on the products, customization, and quantity. We offer:<br>• Competitive pricing for all products<br>• Quantity discounts available<br>• Customization affects final price<br>• Export pricing for international orders<br><br>Contact us for a personalized quote based on your specific needs! 💰',
+                        tn: 'Ditlhwatlhwa tsa rona di farologana go ya ka dilo, go ipeola, le palo. Re tlamela ka:<br>• Ditlhwatlhwa tse di kgonang go phadisanya bakeng sa dilo tsotlhe<br>• Bonnye jwa palo bo wanala<br>• Go ipeola go ama ditlhwatlhwa tsa bofelo<br>• Ditlhwatlhwa tsa go romela konego kwa ntle<br><br>Re letsetse go go naya tekanyetso e e beilweng go ya ka dithata tsa lona! 💰',
+                        sn: 'Mitengo yedu inosiyana zvichienderana nezvigadzirwa, kugadziridzwa, uye huwandu. Tinopa:<br>• Mitengo inokwikwidza yezvigadzirwa zvese<br>• Mitengo yekuderera inawanikwa<br>• Kugadziridzwa kunokanganisa mutengo wekupedzisira<br>• Mitengo yekutumira kunze kwenyika yemaodha epasi rose<br><br>Tibate kuti tiwane quote yakagadzirirwa zvinoenderana nezvaunoda! 💰'
                     }
                 },
                 
-                // Website and online presence
-                'website': {
+                // Delivery and logistics
+                'delivery': {
                     pattern: {
-                        en: /\b(website|online|internet|web|site|digital|portal)\b/i,
-                        tn: /\b(webbosaete|mo inthaneteng|inthanete|webe|saete|didijithale)\b/i
+                        en: /\b(deliver|delivery|ship|shipping|mail|post|courier|send|dispatch|export)\b/i,
+                        tn: /\b(romela|kabo|poso|tisa|romelela|exporta)\b/i,
+                        sn: /\b(kuendesa|kuendesa|ngarava|kuendesa|tsamba|posvo|courier|tumira|tumira|export)\b/i
                     },
                     response: {
-                        en: 'Our website is <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">greencarddiary.co.bw</a> where you can:<br>• Browse our complete product range<br>• Read success stories from clients<br>• Place orders online securely<br>• Download free resources<br>• Book consultations<br><br>Visit us online anytime! 🌐',
-                        tn: 'Webbosaete ya rona ke <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;font-weight:bold;">greencarddiary.co.bw</a> mo o ka:<br>• Sekasekang dilo tsa rona tse di feletseng<br>• Balang ditiragalo tsa katlholo go tswa go bareki<br>• Beaya di-order ka inthanete ka poloko<br>• Jala didiriswa tsa mahala<br>• Bukela dikgothatsiso<br><br>Re etelele mo inthaneteng nako nngwe le nngwe! 🌐'
-                    }
-                },
-                
-                // Business hours and availability
-                'hours': {
-                    pattern: {
-                        en: /\b(hours|open|closed|time|when|business hours|available|operating)\b/i,
-                        tn: /\b(diura|bula|tswalwa|nako|leng|diura tsa tiro|e gona|tiro)\b/i
-                    },
-                    response: {
-                        en: 'Our business hours are:<br>• Monday - Friday: 8:00 AM - 5:00 PM<br>• Saturday: 9:00 AM - 2:00 PM<br>• Sunday: Closed<br><br>But you can reach us on WhatsApp anytime for urgent inquiries! We typically respond within a few hours. ⏰',
-                        tn: 'Diura tsa rona tsa tiro ke:<br>• Mantaga - Labotlhano: 8:00 AM - 5:00 PM<br>• Matlhatso: 9:00 AM - 2:00 PM<br>• Tshipi: E tswetswe<br><br>Lefa go le jalo o ka re fitlhelela mo WhatsApp nako nngwe le nngwe go batla tshedimosetso e e kgakala! Gantsi re araba mo diuring di se mmalwa. ⏰'
-                    }
-                },
-                
-                // Green Card specific information
-                'green_card': {
-                    pattern: {
-                        en: /\b(green card|dv lottery|diversity visa|immigration|visa|usa|america|united states)\b/i,
-                        tn: /\b(karete e tala|lotari ya dv|visa ya mefuta|bafaladi|visa|usa|amerika|united states)\b/i
-                    },
-                    response: {
-                        en: 'We specialize in helping Botswana residents with their Green Card (Diversity Visa) applications! Our services include:<br>• DV lottery application assistance<br>• Documentation preparation<br>• Photo compliance verification<br>• Interview preparation<br>• Process timeline guidance<br><br>Let us help make your American dream come true! 🇺🇸',
-                        tn: 'Re itsise ka go thusa baagi ba Botswana ka dikopo tsa bona tsa Karete e Tala (Visa ya Mefuta)! Ditirelo tsa rona di akaretsa:<br>• Thuso ya kopo ya lotari ya DV<br>• Boipeelo jwa ditokomane<br>• Tlhathollo ya maleba a difoto<br>• Boipelo jwa puisano<br>• Kaelo ya nako ya tirisanyo<br><br>A re go thuseng go dira toro ya gago ya Amerika e direge! 🇺🇸'
+                        en: 'We offer delivery and export services:<br>• Local delivery within Botswana<br>• Export to Zimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA accredited for duty-free exports to Zimbabwe<br>• Reliable courier services<br>• Tracking available for shipments<br><br>Contact us for specific delivery options and costs! 🚚',
+                        tn: 'Re tlamela ka ditirelo tsa kabo le go romela konego kwa ntle:<br>• Kabo ya selegae mo Botswana<br>• Go romela konego kwa Zimbabwe, Zambia, Aforika Borwa, Namibia<br>• Re dumalantswe ke SADC FTA bakeng sa go romela konego kwa Zimbabwe ntle le madi<br>• Ditirelo tsa courier tse di ikanyegang<br>• Go latela konego di wanala<br><br>Re letsetse go dikgakololo tse di tlhamaletseng tsa kabo le ditshenyo! 🚚',
+                        sn: 'Tinopa masevhisi ekuendesa uye ekutumira kunze kwenyika:<br>• Kuendesa kwenzvimbo mukati meBotswana<br>• Kutumira kunze kwenyika kuZimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA yakasimbiswa yekutumira kunze kwenyika zvisina mutero kuZimbabwe<br>• Masevhisi ekuvimbika eCourier<br>• Kuteedzera kunowanikwa kune zvinotumirwa<br><br>Tibate kuti tiwane sarudzo dzakananga dzekuendesa uye mutengo! 🚚'
                     }
                 }
             };
             
-            // Enhanced default responses in both languages
+            // Enhanced default responses in all three languages
             const enhancedDefaultResponses = {
                 en: [
-                    "That's an interesting question! While I specialize in Green Card applications, I'd love to help you with information about our visa services. What would you like to know? 🤔",
-                    "I appreciate you sharing that with me! Though my expertise is in immigration services, I'm happy to discuss how we can help with your Green Card journey. What specific assistance do you need? 😊",
-                    "Thanks for that! While I focus on Green Card applications and our products, I'm curious - are you considering applying for a US visa? I'd love to help you get started! 🇺🇸",
-                    "Interesting topic! I'm most helpful when discussing Green Card applications, our services, or immigration to the US. Is there anything in those areas I can assist you with today? 🤝",
-                    "I hear you! While that's outside my main area of expertise, I'm excellent at helping with Green Card applications and visa guidance. Would you like to explore those opportunities? 🌟"
+                    "That's an interesting question! While I specialize in our diary and stationery products, I'd love to help you with information about our services. What would you like to know? 🤔",
+                    "I appreciate you sharing that with me! Though my expertise is in our manufacturing products, I'm happy to discuss how we can help with your custom printing needs. What specific assistance do you need? 😊",
+                    "Thanks for that! While I focus on our diary and calendar products, I'm curious - are you looking for custom corporate gifts or promotional items? I'd love to help you get started! 🎁",
+                    "Interesting topic! I'm most helpful when discussing our custom diaries, calendars, or other stationery products. Is there anything in those areas I can assist you with today? 🤝",
+                    "I hear you! While that's outside my main area of expertise, I'm excellent at helping with custom printing and manufacturing solutions. Would you like to explore those opportunities? 🌟"
                 ],
                 tn: [
-                    "Potso e e itumedisang! Le fa ke itsise ka dikopo tsa Green Card, ke batla go go thusa ka tshedimosetso ya ditirelo tsa rona tsa di-visa. O batla go itse eng? 🤔",
-                    "Ke itumetse gore o nkabelane seo! Le fa boitsanape jwa me bo le mo ditirelelong tsa bafaladi, ke itumetse go bua ka kafa re ka go thusang ka leeto la gago la Green Card. O tlhoka thuso efe? 😊",
-                    "Ke lebogile seo! Le fa ke lebeletse dikopo tsa Green Card le dilo tsa rona, ke batla go itse - a o akantse go kopela visa ya US? Ke batla go go thusa o simolole! 🇺🇸",
-                    "Setlhogo se se itumedisang! Ke thusa thata fa re bua ka dikopo tsa Green Card, ditirelo tsa rona, kgotsa go falela kwa US. A go na le sengwe mo dikarolong tseo se nka go thusang ka sone gompieno? 🤝",
-                    "Ke go utlwile! Le fa seo se le kgakala le tse ke di itseng, ke botoka thata mo go thuseng ka dikopo tsa Green Card le kaelo ya di-visa. A o batla go sekaseka ditšhono tseo? 🌟"
+                    "Potso e e itumedisang! Le fa ke itsise ka dilo tsa rona tsa dipuku le tsa ofisi, ke batla go go thusa ka tshedimosetso ya ditirelo tsa rona. O batla go itse eng? 🤔",
+                    "Ke itumetse gore o nkabelane seo! Le fa boitsanape jwa me bo le mo dilong tsa rona tsa go dira, ke itumetse go bua ka kafa re ka go thusang ka dithata tsa gago tsa go gatisa tse di beilweng. O tlhoka thuso efe? 😊",
+                    "Ke lebogile seo! Le fa ke lebeletse dilo tsa rona tsa dipuku le dikhalendara, ke batla go itse - a o batla dimpho tse di beilweng tsa dikhampani kgotsa dilo tsa go ikgaketsa? Ke batla go go thusa o simolole! 🎁",
+                    "Setlhogo se se itumedisang! Ke thusa thata fa re bua ka dipuku tsa rona tse di beilweng, dikhalendara, kgotsa dilo tse dingwe tsa ofisi. A go na le sengwe mo dikarolong tseo se nka go thusang ka sone gompieno? 🤝",
+                    "Ke go utlwile! Le fa seo se le kgakala le tse ke di itseng, ke botoka thata mo go thuseng ka ditharabololo tsa go gatisa le go dira tse di beilweng. A o batla go sekaseka ditšhono tseo? 🌟"
+                ],
+                sn: [
+                    "Imubvunzo unonakidza! Kunyange ndichinyanya kugadzira madhayari edu nezvigadzirwa zvemumabasa, ndinoda kukubatsira neruzivo rwemasevhisi edu. Chii chaungade kuziva? 🤔",
+                    "Ndinokutendai nekugovana izvozvo neni! Kunyange ruzivo rwangu rwuri muzvigadzirwa zvedu zvekugadzira, ndinofara kukurukura kuti tingakubatsira sei nezvaunoda zvekudhinda zvakasarudzika. Rudzi rwei rwerubatsiro rwaunoda? 😊",
+                    "Ndatenda neizvozvo! Kunyange ndichitarisa pazvigadzirwa zvedu zvemadhayari nemakarenda, ndiri kuda kuziva - urikutsvaga zvipo zvemakambani zvakasarudzika kana zvinhu zvekusimudzira? Ndingada kukubatsira kuti utange! 🎁",
+                    "Nyaya inonakidza! Ndinonyanya kubatsira kana tichikurukura nezvemadhayari edu akasarudzika, makarenda, kana zvimwe zvigadzirwa zvemumabasa. Pane chero chinhu mumativi iwayo chandingakubatsira nacho nhasi? 🤝",
+                    "Ndakunzwa! Kunyange izvo zviri kunze kwehunyanzvi hwangu hukuru, ndiri nyanzvi pakubatsira nemhinduro dzekudhinda dzakasarudzika uye dzekugadzira. Ungada here kuongorora mikana iyoyo? 🌟"
                 ]
             };
             
@@ -1821,25 +1936,76 @@
                 });
             });
             
-            // Enhanced addMessage function to use innerHTML for bot messages
-            function addMessage(text, sender) {
+            // Function to show typing indicator
+            function showTypingIndicator() {
+                if (isTyping) return;
+                
+                isTyping = true;
+                const typingElement = document.createElement('div');
+                typingElement.classList.add('typing-indicator');
+                typingElement.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(typingElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return typingElement;
+            }
+            
+            // Function to remove typing indicator
+            function removeTypingIndicator(typingElement) {
+                if (typingElement && typingElement.parentNode) {
+                    typingElement.parentNode.removeChild(typingElement);
+                }
+                isTyping = false;
+            }
+            
+            // Function to add message with typewriter effect
+            function addMessage(text, sender, speed = 20) {
                 const messageElement = document.createElement('div');
                 messageElement.classList.add('message');
                 messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
                 
-                if (sender === 'bot') {
-                    messageElement.innerHTML = text;  // This makes links clickable
+                if (sender === 'user') {
+                    messageElement.textContent = text;
+                    chatMessages.appendChild(messageElement);
                 } else {
-                    messageElement.textContent = text;  // Keep textContent for user messages (security)
+                    // For bot messages, add empty element first
+                    chatMessages.appendChild(messageElement);
+                    
+                    // Then animate the typing
+                    let i = 0;
+                    let currentText = '';
+                    const timer = setInterval(function() {
+                        if (i < text.length) {
+                            currentText += text.charAt(i);
+                            
+                            // Handle HTML tags specially
+                            if (text.charAt(i) === '<') {
+                                const tagEnd = text.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    currentText += text.substring(i+1, tagEnd+1);
+                                    i = tagEnd;
+                                }
+                            }
+                            
+                            messageElement.innerHTML = currentText;
+                            i++;
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        } else {
+                            clearInterval(timer);
+                            // Remove the typewriter cursor after completion
+                            messageElement.classList.remove('typewriter');
+                        }
+                    }, speed);
+                    
+                    // Add typewriter class for cursor effect
+                    messageElement.classList.add('typewriter');
                 }
-                
-                chatMessages.appendChild(messageElement);
                 
                 // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
             
-            // Enhanced message processing with bilingual pattern matching
+            // Enhanced message processing with trilingual pattern matching
             function processMessage(message) {
                 let responded = false;
                 let matchedResponse = null;
@@ -1852,27 +2018,34 @@
                     }
                 }
                 
-                if (matchedResponse) {
-                    setTimeout(() => {
-                        addMessage(matchedResponse, 'bot');
-                    }, 500);
-                    responded = true;
-                    unansweredCount = 0; // Reset counter on successful response
-                }
+                // Show typing indicator
+                const typingElement = showTypingIndicator();
                 
-                // If no match found, use enhanced default response in current language
-                if (!responded) {
-                    unansweredCount++;
+                // Calculate response time based on message length
+                const thinkingTime = Math.min(2000, Math.max(800, message.length * 30));
+                
+                setTimeout(() => {
+                    // Remove typing indicator
+                    removeTypingIndicator(typingElement);
                     
-                    setTimeout(() => {
-                        addMessage(getRandomDefaultResponse(), 'bot');
+                    if (matchedResponse) {
+                        addMessage(matchedResponse, 'bot', 15 + Math.random() * 10);
+                        responded = true;
+                        unansweredCount = 0; // Reset counter on successful response
+                    }
+                    
+                    // If no match found, use enhanced default response in current language
+                    if (!responded) {
+                        unansweredCount++;
+                        
+                        addMessage(getRandomDefaultResponse(), 'bot', 15 + Math.random() * 10);
                         
                         // After 2 unanswered questions, show WhatsApp prompt
                         if (unansweredCount >= 2 && !whatsappPromptShown) {
                             showWhatsAppPrompt();
                         }
-                    }, 500);
-                }
+                    }
+                }, thinkingTime);
             }
             
             // Show WhatsApp prompt with clickable link in current language
@@ -1885,7 +2058,7 @@
 
                     promptElement.innerHTML = `
                         <p>${translations[currentLanguage].whatsappPromptText}</p>
-                        <a href="https://wa.me/26771724795" class="whatsapp-button" target="_blank">
+                        <a href="https://wa.me/2673180708" class="whatsapp-button" target="_blank">
                             <i class="fab fa-whatsapp"></i> ${translations[currentLanguage].whatsappButtonText}
                         </a>
                     `;
@@ -1901,6 +2074,7 @@
             }, 3000);
         });
     </script>
+
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
