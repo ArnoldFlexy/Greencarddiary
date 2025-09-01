@@ -23,28 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 category: "Calendars"
             },
             { 
-                title: "Exterior Design", 
+                title: "Printed & Laminated Diaries, Analog Precision, Digital Agility", 
                 url: "project-details-3.html",
                 image: "assets/images/project/project-3-3.jpg",
-                category: "Room Wallsheet"
+                category: "Diaries"
             },
             { 
-                title: "Room Wallpapers", 
+                title: "Filofax/ Executive Diary Organizers", 
                 url: "project-details-4.html",
                 image: "assets/images/project/project-3-1.jpg",
-                category: "Room Wallsheet"
+                category: "Diaries"
             },
             { 
-                title: "Interior Wall Designing", 
+                title: "Custom Branded Paper Bags", 
                 url: "project-details-5.html",
                 image: "assets/images/project/project-3-2.jpg",
                 category: "Wall Protection"
             },
             { 
-                title: "Exterior Design", 
+                title: "Lever Arch Files", 
                 url: "project-details-6.html",
                 image: "assets/images/project/project-3-3.jpg",
-                category: "Room Wallsheet"
+                category: "Files"
             },
             { 
                 title: "Room Wallpapers", 
