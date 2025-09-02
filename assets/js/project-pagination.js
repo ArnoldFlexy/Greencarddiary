@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: "Custom Branded Paper Bags", 
                 url: "project-details-5.html",
                 image: "assets/images/project/project-3-2.jpg",
-                category: "Wall Protection"
+                category: "Bags"
             },
             { 
                 title: "Lever Arch Files", 
@@ -47,34 +47,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 category: "Files"
             },
             { 
-                title: "Room Wallpapers", 
+                title: "Register Books", 
                 url: "project-details-7.html",
                 image: "assets/images/project/project-3-1.jpg",
-                category: "Room Wallsheet"
+                category: "Books"
             },
             { 
-                title: "Interior Wall Designing", 
+                title: "Photo Albums", 
                 url: "project-details-8.html",
                 image: "assets/images/project/project-3-2.jpg",
-                category: "Wall Protection"
+                category: "Photo"
             },
             { 
-                title: "Exterior Design", 
+                title: "NCR (Self Carbonating)", 
                 url: "project-details-9.html",
                 image: "assets/images/project/project-3-3.jpg",
-                category: "Room Wallsheet"
+                category: "Receipts"
             },
             { 
-                title: "Exterior Design", 
+                title: "Customized School Notebooks & Student Communication Diary", 
                 url: "project-details-10.html",
                 image: "assets/images/project/project-3-3.jpg",
-                category: "Room Wallsheet"
+                category: "Books"
             },
             { 
-                title: "Exterior Design", 
+                title: "Customized Corporate Diaries & Journals", 
                 url: "project-details-11.html",
                 image: "assets/images/project/project-3-3.jpg",
-                category: "Room Wallsheet"
+                category: "Diaries"
             }
         ];
         
