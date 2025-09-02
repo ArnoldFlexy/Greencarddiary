@@ -1,4 +1,4 @@
-// assets/js/project-pagination.js
+// assets/js/pagination.js
 document.addEventListener('DOMContentLoaded', function() {
     // Get the pagination elements
     const prevPagination = document.querySelector('.projectc-details__pagination-single:first-child');
