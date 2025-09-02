@@ -1046,8 +1046,7 @@
         });
 </script>
 
-<!-- Chat bot CSS -->
-<style>
+    <style>
         /* Chat Bot Styles */
         .chat-bot-container {
             position: fixed;
@@ -1083,7 +1082,7 @@
 
         .chat-window {
             width: 500px;
-            height: 600px;
+            height: 700px;
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.2);
@@ -1336,6 +1335,98 @@
             animation: blink-caret .75s step-end infinite;
         }
 
+        /* Quotation Form Styles */
+        .quotation-form {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #2c9c56;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #2c9c56;
+            color: #2c9c56;
+        }
+
+        .quotation-summary {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .summary-item {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-label {
+            font-weight: bold;
+        }
+
+        .confirmation-checkbox {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .confirmation-checkbox input {
+            margin-right: 8px;
+        }
+
         /* ANIMATIONS */
         @keyframes wave {
             0% { transform: translateX(0); }
@@ -1513,9 +1604,9 @@
                 height: 44px;
             }
         }
-</style>
+    </style>
 
-<!-- Chat Bot Container -->
+    <!-- Chat Bot Container -->
     <div class="chat-bot-container">
         <div class="chat-window">
             <div class="chat-header header-waves">
@@ -1535,11 +1626,12 @@
                 </div>
             </div>
 
-                   <div class="suggested-questions">
+            <div class="suggested-questions">
                 <div class="suggested-question" data-en="What products do you offer?" data-tn="Dilo dife tse lo di rekisang?" data-sn="Munei zvigadzirwa zvaunotengesa?">What products do you offer?</div>
                 <div class="suggested-question" data-en="Tell me about your diaries" data-tn="Naya ka dipuku tsa lona" data-sn="Ndiudze nezvemadhayari ako">Tell me about your diaries</div>
                 <div class="suggested-question" data-en="Where are you located?" data-tn="Lo kae?" data-sn="Uripi?">Where are you located?</div>
                 <div class="suggested-question" data-en="Do you do custom orders?" data-tn="A lo dira di-order tse di beilweng?" data-sn="Munoita maodha akasarudzika here?">Do you do custom orders?</div>
+                <div class="suggested-question" data-en="Do you need a quotation?" data-tn="A o batla tekanyetso?" data-sn="Unoda quotation here?" id="quotation-suggestion">Do you need a quotation?</div>
             </div>
             
             <div class="chat-messages">
@@ -1547,8 +1639,6 @@
                     Hello! I'm your Greencarddiary assistant. How can I help you with our products today?
                 </div>
             </div>
-            
-     
             
             <div class="chat-input">
                 <input type="text" id="chat-input-field" placeholder="Type your message here...">
@@ -1578,7 +1668,6 @@
         </div>
     </div>
 
-<!-- Chat bot script  -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // DOM Elements
@@ -1589,12 +1678,31 @@
             const chatMessages = document.querySelector('.chat-messages');
             const suggestedQuestions = document.querySelectorAll('.suggested-question');
             const languageSelect = document.querySelector('#languageSelect');
+            const quotationSuggestion = document.querySelector('#quotation-suggestion');
             
             // State variables
             let unansweredCount = 0;
             let whatsappPromptShown = false;
             let currentLanguage = 'en';
             let isTyping = false;
+            let quotationData = {
+                productType: '',
+                quantity: '',
+                size: '',
+                bindingType: '',
+                customization: [],
+                paperType: '',
+                coverDetails: '',
+                specialRequirements: '',
+                contactInfo: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: ''
+                }
+            };
+            let currentStep = 0;
+            const quotationSteps = ['product', 'specifications', 'customization', 'contact'];
             
             // Translation object with Shona added
             const translations = {
@@ -1604,7 +1712,30 @@
                     welcomeMessage: 'Hello! I\'m your Greencarddiary assistant. How can I help you with our products today?',
                     inputPlaceholder: 'Type your message here...',
                     whatsappPromptText: 'I\'d love to connect you with one of our human experts who can provide more detailed assistance! Would you like to chat with them on WhatsApp?',
-                    whatsappButtonText: 'Chat with Expert'
+                    whatsappButtonText: 'Chat with Expert',
+                    needQuotation: "Do you need a quotation?",
+                    quotationTitle: "Custom Quotation Request",
+                    productType: "Product Type",
+                    quantity: "Quantity",
+                    size: "Size",
+                    bindingType: "Binding Type",
+                    customization: "Customization Options",
+                    paperType: "Paper Type",
+                    coverDetails: "Cover Details",
+                    specialRequirements: "Special Requirements",
+                    contactInfo: "Your Contact Information",
+                    name: "Full Name",
+                    email: "Email Address",
+                    phone: "Phone Number",
+                    company: "Company Name",
+                    next: "Next",
+                    previous: "Previous",
+                    submit: "Submit Request",
+                    summary: "Quotation Summary",
+                    confirmDetails: "Please confirm your details are correct:",
+                    correct: "Yes, my details are correct",
+                    sendWhatsApp: "Send via WhatsApp",
+                    quotationPrompt: "I'd be happy to help you with a quotation! Please provide some details about what you need."
                 },
                 tn: {
                     liveChatTitle: 'PUISANO YA MATENG',
@@ -1612,7 +1743,30 @@
                     welcomeMessage: 'Dumela! Ke mothusi wa gago wa Greencarddiary. Nka go thusa jang ka dilo tsa rona gompieno?',
                     inputPlaceholder: 'Kwala molaetsa wa gago fano...',
                     whatsappPromptText: 'Ke batla go go kopanya le mongwe wa ditswerere tsa rona tse di ka go thusang sentle! A o batla go bua nabo mo WhatsApp?',
-                    whatsappButtonText: 'Bua le Seitsanape'
+                    whatsappButtonText: 'Bua le Seitsanape',
+                    needQuotation: "A o batla tekanyetso?",
+                    quotationTitle: "Kopo ya Tekanyetso e e Beilweng",
+                    productType: "Mofuta wa Dilo",
+                    quantity: "Palo",
+                    size: "Bogolo",
+                    bindingType: "Mofuta wa go Bopa",
+                    customization: "Dikgetho tsa go Ipeola",
+                    paperType: "Mofuta wa Pampiri",
+                    coverDetails: "Ditlhakoretsi tsa Khavare",
+                    specialRequirements: "Dithata tse di Kgethegileng",
+                    contactInfo: "Tshedimosetso ya gago ya go Golagana",
+                    name: "Maina a Ruri",
+                    email: "Aterese ya Email",
+                    phone: "Nomoro ya Mogala",
+                    company: "Leina ya Khampani",
+                    next: "E setseng",
+                    previous: "E isagane",
+                    submit: "Tumela Kopo",
+                    summary: "Kakaretso ya Tekanyetso",
+                    confirmDetails: "Ka kopo, netefatsa gore tshedimosetso ya gago e nepagile:",
+                    correct: "Ee, tshedimosetso ya me e nepagile",
+                    sendWhatsApp: "Romela ka WhatsApp",
+                    quotationPrompt: "Ke itumetse go go thusa ka tekanyetso! Ka kopo, naya ka ditlhakoretsi tse di maleba le se o se tlhokang."
                 },
                 sn: {
                     liveChatTitle: 'HURUKURO YEPAMHEPO',
@@ -1620,7 +1774,30 @@
                     welcomeMessage: 'Mhoro! Ndiri mushandi wako weGreencarddiary. Ndingakubatsire sei nezvezvigadzirwa zvedu nhasi?',
                     inputPlaceholder: 'Nyora meseji yako pano...',
                     whatsappPromptText: 'Ndinoda kukubatanidza neumwe wenyanzvi dzedu dzinogona kupa rubatsiro rwakadzama! Ungada here kutaura navo paWhatsApp?',
-                    whatsappButtonText: 'Taura neNyanzvi'
+                    whatsappButtonText: 'Taura neNyanzvi',
+                    needQuotation: "Unoda quotation here?",
+                    quotationTitle: "Chikumbiro cheQuotation Chakasarudzika",
+                    productType: "Rudzi rweChigadzirwa",
+                    quantity: "Uwandu",
+                    size: "Saizi",
+                    bindingType: "Rudzi rweKusunga",
+                    customization: "Sarudzo dzeCustomization",
+                    paperType: "Rudzi rweBepa",
+                    coverDetails: "Ruzivo rweButiro",
+                    specialRequirements: "Zvinodiwa Zvakasarudzika",
+                    contactInfo: "Ruzivo rwako rweKuonana",
+                    name: "Zita Rose",
+                    email: "Kero yeEmail",
+                    phone: "Nhamba yeFoni",
+                    company: "Zita reKambani",
+                    next: "Zvinotevera",
+                    previous: "Zvapfuura",
+                    submit: "Tumira Chikumbiro",
+                    summary: "Pfupiso yeQuotation",
+                    confirmDetails: "Ndapota simbisa kuti ruzivo rwako rwakarurama:",
+                    correct: "Hongu, ruzivo rwangu rwakarurama",
+                    sendWhatsApp: "Tumira kuburikidza neWhatsApp",
+                    quotationPrompt: "Ndingafare kukubatsira nequotation! Ndapota ipa rumwe ruzivo nezve zvaunoda."
                 }
             };
             
@@ -1698,7 +1875,7 @@
                     response: {
                         en: 'Our calendars feature creative designs and are available in different sizes:<br>• Wide variety of design templates<br>• Gloss lamination for durability<br>• Public holidays for 14 African countries listed<br>• Advertising space for users and visitors<br>• Highly durable Wiro binding<br>• Portable, trendy and easy to use<br>• Strong rigid pyramid stand<br>• Fully customized options available<br><br>Perfect for corporate gifts and promotions!',
                         tn: 'Dikhalendara tsa rona di na le mekgwa e meintši ya disaine mme di wanala ka disaize di farologaneng:<br>• Mekgwa e meintši ya dithempleite tsa disaine<br>• Lamination ya gloss bakeng sa go nonofala<br>• Matšatši a phomolo a ditšhaba tse 14 tsa Aforika di kwadilwe<br>• Lefelo la go ikgaketsa bakeng sa badiri le baeti<br>• Go bopa ga Wiro go nonofile thata<br>• Go rwalwa go bonolo, go ya ka mekgwa le go dirisa go bonolo<br>• Seteite ya piramide e e nonofileng<br>• Dikgetho tse di beilweng ka botlalo di wanala<br><br>E maleba thata bakeng sa dimpho tsa dikhampani le ditiro tsa go ikgaketsa!',
-                        sn: 'Makarenda edu ane magadzirirwo ekugadzira uye anowanikwa nemasaizi akasiyana:<br>• Yakasiyana-siyana yematemplate ekugadzira<br>• Gloss lamination yekusimba<br>• Mazororo eruzhinji enyika gumi neina dzeAfrica akanyorwa<br>• Nzvimbo yekushambadzira yevashandisi nevashanyi<br>• Yakasimba kwazvo Wiro inosunga<br>• Inotakurika, ine fashoni uye iri nyore kushandisa<br>• Yakasimba rigid pyramid stand<br>• Yakazara sarudzo dzakagadziridzwa dzinowanikwa<br><br>Yakanyatso kukodzera zvipo zvemakambani uye kukwidziridzwa!'
+                        sn: 'Makarenda edu ane magadzirirwo ekugadzira uye anowanikwa nemasaizi akasiyana:<br>• Yakasiyana-siyana yematemplate ekugadzira<br>• Gloss lamination yekusimba<br>• Mazororo eruzhinji enyika gumi neina dzeAfrica akanyorwa<br>• Nzvimbo yekushambadzira yevashandisi nevashanyi<br>• Yakasimba kwazvo Wiro inosunga<br>• Inotakurika, ine fashoni uye iri nyore kushandisa<br>• Yakasimba rigid pyramid stand<br>• Yakazara sarudzo dzakagadziridzwa dzinawanikwa<br><br>Yakanyatso kukodzera zvipo zvemakambani uye kukwidziridzwa!'
                     }
                 },
                 'paper_bags': {
@@ -1758,9 +1935,9 @@
                         sn: /\b(bata|runhare|nhamba|email|whatsapp|fona|svika|taurirana)\b/i
                     },
                     response: {
-                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
-                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
-                        sn: 'Unogona kutibata ne:<br>📞 Runhare: <a href="tel:+2673180708" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Webhusaiti: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>'
+                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        sn: 'Unogona kutibata ne:<br>📞 Runhare: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Webhusaiti: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>'
                     }
                 },
                 
@@ -1817,6 +1994,20 @@
                         en: 'We offer delivery and export services:<br>• Local delivery within Botswana<br>• Export to Zimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA accredited for duty-free exports to Zimbabwe<br>• Reliable courier services<br>• Tracking available for shipments<br><br>Contact us for specific delivery options and costs! 🚚',
                         tn: 'Re tlamela ka ditirelo tsa kabo le go romela konego kwa ntle:<br>• Kabo ya selegae mo Botswana<br>• Go romela konego kwa Zimbabwe, Zambia, Aforika Borwa, Namibia<br>• Re dumalantswe ke SADC FTA bakeng sa go romela konego kwa Zimbabwe ntle le madi<br>• Ditirelo tsa courier tse di ikanyegang<br>• Go latela konego di wanala<br><br>Re letsetse go dikgakololo tse di tlhamaletseng tsa kabo le ditshenyo! 🚚',
                         sn: 'Tinopa masevhisi ekuendesa uye ekutumira kunze kwenyika:<br>• Kuendesa kwenzvimbo mukati meBotswana<br>• Kutumira kunze kwenyika kuZimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA yakasimbiswa yekutumira kunze kwenyika zvisina mutero kuZimbabwe<br>• Masevhisi ekuvimbika eCourier<br>• Kuteedzera kunowanikwa kune zvinotumirwa<br><br>Tibate kuti tiwane sarudzo dzakananga dzekuendesa uye mutengo! 🚚'
+                    }
+                },
+                
+                // Quotation requests
+                'quotation': {
+                    pattern: {
+                        en: /\b(quotation|quote|price|estimate|cost|how much|pricing)\b/i,
+                        tn: /\b(tekanyetso|tshenyo|madi|makae|bonnye)\b/i,
+                        sn: /\b(quotation|quote|mutengo|ingani|kubhadhara|discount)\b/i
+                    },
+                    response: {
+                        en: "I'd be happy to help you with a quotation! Please provide some details about what you need.",
+                        tn: "Ke itumetse go go thusa ka tekanyetso! Ka kopo, naya ka ditlhakoretsi tse di maleba le se o se tlhokang.",
+                        sn: "Ndingafare kukubatsira nequotation! Ndapota ipa rumwe ruzivo nezve zvaunoda."
                     }
                 }
             };
@@ -1933,7 +2124,13 @@
                 question.addEventListener('click', function() {
                     const text = this.textContent;
                     addMessage(text, 'user');
-                    processMessage(text);
+                    
+                    // Check if it's the quotation suggestion
+                    if (text.includes('quotation') || text.includes('tekanyetso') || text.includes('quotation')) {
+                        startQuotationProcess();
+                    } else {
+                        processMessage(text);
+                    }
                 });
             });
             
@@ -2067,6 +2264,363 @@
                     chatMessages.appendChild(promptElement);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }, 1000);
+            }
+            
+            // Quotation functions
+            function startQuotationProcess() {
+                addMessage(translations[currentLanguage].quotationPrompt, 'bot');
+                
+                // Create quotation form
+                const formHtml = `
+                    <div class="quotation-form">
+                        <h4>${translations[currentLanguage].quotationTitle}</h4>
+                        <div class="form-steps">
+                            <div class="form-step active" id="step-product">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].productType}</label>
+                                    <select class="form-control" id="productType">
+                                        <option value="">Select Product</option>
+                                        <option value="diary">Diary</option>
+                                        <option value="calendar">Calendar</option>
+                                        <option value="notebook">Notebook</option>
+                                        <option value="paper-bag">Paper Bag</option>
+                                        <option value="lever-arch">Lever Arch File</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].quantity}</label>
+                                    <input type="number" class="form-control" id="quantity" min="20" placeholder="Min. 20 units">
+                                </div>
+                                <div class="form-actions">
+                                    <div></div>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-specifications">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].size}</label>
+                                    <select class="form-control" id="size">
+                                        <option value="">Select Size</option>
+                                        <option value="A4">A4</option>
+                                        <option value="A5">A5</option>
+                                        <option value="A6">A6</option>
+                                        <option value="slimline">Slimline</option>
+                                        <option value="custom">Custom Size</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].bindingType}</label>
+                                    <select class="form-control" id="bindingType">
+                                        <option value="">Select Binding</option>
+                                        <option value="casebound">Casebound</option>
+                                        <option value="perfect-bound">Perfect Bound</option>
+                                        <option value="wiro-bound">Wiro Bound</option>
+                                        <option value="concealed-wiro">Concealed Wiro Bound</option>
+                                        <option value="ring-bound">Ring Bound</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].paperType}</label>
+                                    <select class="form-control" id="paperType">
+                                        <option value="">Select Paper Type</option>
+                                        <option value="70gsm">70 GSM</option>
+                                        <option value="80gsm">80 GSM</option>
+                                        <option value="100gsm">100 GSM</option>
+                                        <option value="120gsm">120 GSM</option>
+                                        <option value="200gsm-glossy">200 GSM Glossy</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-customization">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].customization}</label>
+                                    <div>
+                                        <input type="checkbox" id="customLogo" value="logo"> <label for="customLogo">Logo Printing</label><br>
+                                        <input type="checkbox" id="customEmbossing" value="embossing"> <label for="customEmbossing">Embossing (Silver/Gold)</label><br>
+                                        <input type="checkbox" id="customColors" value="colors"> <label for="customColors">Custom Colors</label><br>
+                                        <input type="checkbox" id="customDesign" value="design"> <label for="customDesign">Custom Design</label><br>
+                                        <input type="checkbox" id="qrCode" value="qr"> <label for="qrCode">QR Code Integration</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].coverDetails}</label>
+                                    <textarea class="form-control" id="coverDetails" rows="2" placeholder="Describe cover material, finish, etc."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].specialRequirements}</label>
+                                    <textarea class="form-control" id="specialRequirements" rows="3" placeholder="Any special instructions or requirements"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-contact">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].name}</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].email}</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].phone}</label>
+                                    <input type="tel" class="form-control" id="contactPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].company}</label>
+                                    <input type="text" class="form-control" id="contactCompany">
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary" id="submitQuotation">${translations[currentLanguage].submit}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add form to chat
+                const formElement = document.createElement('div');
+                formElement.innerHTML = formHtml;
+                chatMessages.appendChild(formElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Add event listeners for form navigation
+                const nextButtons = formElement.querySelectorAll('.next-step');
+                const prevButtons = formElement.querySelectorAll('.prev-step');
+                const submitButton = formElement.querySelector('#submitQuotation');
+                const steps = formElement.querySelectorAll('.form-step');
+                
+                nextButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        if (validateStep(currentStep)) {
+                            saveStepData(currentStep);
+                            steps[currentStep].classList.remove('active');
+                            currentStep++;
+                            steps[currentStep].classList.add('active');
+                        }
+                    });
+                });
+                
+                prevButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        steps[currentStep].classList.remove('active');
+                        currentStep--;
+                        steps[currentStep].classList.add('active');
+                    });
+                });
+                
+                submitButton.addEventListener('click', function() {
+                    if (validateStep(currentStep)) {
+                        saveStepData(currentStep);
+                        showQuotationSummary();
+                    }
+                });
+            }
+            
+            function validateStep(step) {
+                switch(step) {
+                    case 0: // Product step
+                        const productType = document.getElementById('productType').value;
+                        const quantity = document.getElementById('quantity').value;
+                        if (!productType || !quantity || quantity < 20) {
+                            alert('Please select a product type and enter a quantity (minimum 20 units)');
+                            return false;
+                        }
+                        return true;
+                        
+                    case 1: // Specifications step
+                        const size = document.getElementById('size').value;
+                        const bindingType = document.getElementById('bindingType').value;
+                        if (!size || !bindingType) {
+                            alert('Please select size and binding type');
+                            return false;
+                        }
+                        return true;
+                        
+                    case 3: // Contact step
+                        const name = document.getElementById('contactName').value;
+                        const email = document.getElementById('contactEmail').value;
+                        const phone = document.getElementById('contactPhone').value;
+                        if (!name || !email || !phone) {
+                            alert('Please fill in all required contact information');
+                            return false;
+                        }
+                        return true;
+                        
+                    default:
+                        return true;
+                }
+            }
+            
+            function saveStepData(step) {
+                switch(step) {
+                    case 0: // Product step
+                        quotationData.productType = document.getElementById('productType').value;
+                        quotationData.quantity = document.getElementById('quantity').value;
+                        break;
+                        
+                    case 1: // Specifications step
+                        quotationData.size = document.getElementById('size').value;
+                        quotationData.bindingType = document.getElementById('bindingType').value;
+                        quotationData.paperType = document.getElementById('paperType').value;
+                        break;
+                        
+                    case 2: // Customization step
+                        quotationData.customization = [];
+                        if (document.getElementById('customLogo').checked) quotationData.customization.push('logo');
+                        if (document.getElementById('customEmbossing').checked) quotationData.customization.push('embossing');
+                        if (document.getElementById('customColors').checked) quotationData.customization.push('colors');
+                        if (document.getElementById('customDesign').checked) quotationData.customization.push('design');
+                        if (document.getElementById('qrCode').checked) quotationData.customization.push('qr');
+                        
+                        quotationData.coverDetails = document.getElementById('coverDetails').value;
+                        quotationData.specialRequirements = document.getElementById('specialRequirements').value;
+                        break;
+                        
+                    case 3: // Contact step
+                        quotationData.contactInfo.name = document.getElementById('contactName').value;
+                        quotationData.contactInfo.email = document.getElementById('contactEmail').value;
+                        quotationData.contactInfo.phone = document.getElementById('contactPhone').value;
+                        quotationData.contactInfo.company = document.getElementById('contactCompany').value;
+                        break;
+                }
+            }
+            
+            function showQuotationSummary() {
+                // Remove the form
+                document.querySelector('.quotation-form').remove();
+                
+                // Create summary HTML
+                const summaryHtml = `
+                    <div class="quotation-summary">
+                        <h4>${translations[currentLanguage].summary}</h4>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].productType}:</span>
+                            <span>${quotationData.productType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].quantity}:</span>
+                            <span>${quotationData.quantity}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].size}:</span>
+                            <span>${quotationData.size}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].bindingType}:</span>
+                            <span>${quotationData.bindingType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].paperType}:</span>
+                            <span>${quotationData.paperType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].customization}:</span>
+                            <span>${quotationData.customization.join(', ') || 'None'}</span>
+                        </div>
+                        ${quotationData.coverDetails ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].coverDetails}:</span>
+                            <span>${quotationData.coverDetails}</span>
+                        </div>
+                        ` : ''}
+                        ${quotationData.specialRequirements ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].specialRequirements}:</span>
+                            <span>${quotationData.specialRequirements}</span>
+                        </div>
+                        ` : ''}
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].name}:</span>
+                            <span>${quotationData.contactInfo.name}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].email}:</span>
+                            <span>${quotationData.contactInfo.email}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].phone}:</span>
+                            <span>${quotationData.contactInfo.phone}</span>
+                        </div>
+                        ${quotationData.contactInfo.company ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].company}:</span>
+                            <span>${quotationData.contactInfo.company}</span>
+                        </div>
+                        ` : ''}
+                        
+                        <p>${translations[currentLanguage].confirmDetails}</p>
+                        <div class="confirmation-checkbox">
+                            <input type="checkbox" id="confirmDetails">
+                            <label for="confirmDetails">${translations[currentLanguage].correct}</label>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="sendWhatsApp" disabled>${translations[currentLanguage].sendWhatsApp}</button>
+                    </div>
+                `;
+                
+                // Add summary to chat
+                const summaryElement = document.createElement('div');
+                summaryElement.innerHTML = summaryHtml;
+                chatMessages.appendChild(summaryElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Enable WhatsApp button when confirmation is checked
+                document.getElementById('confirmDetails').addEventListener('change', function() {
+                    document.getElementById('sendWhatsApp').disabled = !this.checked;
+                });
+                
+                // Add event listener for WhatsApp button
+                document.getElementById('sendWhatsApp').addEventListener('click', function() {
+                    sendQuotationViaWhatsApp();
+                });
+            }
+            
+            function sendQuotationViaWhatsApp() {
+                // Format the message for WhatsApp
+                const message = `*New Quotation Request from Greencarddiary Chatbot*
+                
+*Product Details:*
+- Product Type: ${quotationData.productType}
+- Quantity: ${quotationData.quantity}
+- Size: ${quotationData.size}
+- Binding Type: ${quotationData.bindingType}
+- Paper Type: ${quotationData.paperType}
+- Customization: ${quotationData.customization.join(', ') || 'None'}
+${quotationData.coverDetails ? `- Cover Details: ${quotationData.coverDetails}\n` : ''}
+${quotationData.specialRequirements ? `- Special Requirements: ${quotationData.specialRequirements}\n` : ''}
+
+*Contact Information:*
+- Name: ${quotationData.contactInfo.name}
+- Email: ${quotationData.contactInfo.email}
+- Phone: ${quotationData.contactInfo.phone}
+${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.company}\n` : ''}
+
+*Generated on:* ${new Date().toLocaleString()}`;
+
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/2673180708?text=${encodedMessage}`;
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Show confirmation message
+                addMessage('Your quotation request has been sent via WhatsApp. Our team will contact you shortly with your custom quote!', 'bot');
             }
             
             // Auto-open chat after 3 seconds for demo
