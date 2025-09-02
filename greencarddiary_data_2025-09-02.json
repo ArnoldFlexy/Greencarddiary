@@ -1,0 +1,197 @@
+[
+  {
+    "id": "about",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Greencarddiary (Pty) Ltd is a 100% manufacturing industry in Botswana specializing in:<br>• Lever Arch Files, Diaries, Pyramid Calendars<br>• Sketch pads, Exam pads, Photo Books<br>• Branded Paper Bags, Graduation Scroll Holders<br>• Register Books, Restaurant Menus, Receipt Books<br>• Business Cards and Bibles<br><br>We started in 2000 as an advertising agency and transitioned to manufacturing in 2011-2012. We now have 35+ staff and export to multiple African countries.",
+      "tn": "Greencarddiary (Pty) Ltd ke indaseteri ya go dira dilo e e 100% kwa Botswana e e itseng ka:<br>• Mafaele a Lever Arch, Dipuku, Dikhalendara tsa Piramide<br>• Dipuku tsa go sketcha, dipuku tsa ditlhahlobo, Dipuku tsa Difoto<br>• Diposete tse di nang le brand, Dihouldara tsa dikwarata tsa graduation<br>• Dipuku tsa go kwala, Menyu ya maresterante, Dipuku tsa dirisiti<br>• Dikarete tsa kgwebo le Dibaibele<br><br>Re simolotse ka 2000 e le agentsi ya go ikgaketsa mme re fetogile go dira dilo ka 2011-2012. Jaanong re na le baseberi ba ba fetang 35 mme re romela dikonego kwa dinageng di le dintsi tsa Aforika.",
+      "sn": "Greencarddiary (Pty) Ltd iindasitiri yekugadzira 100% muBotswana inonyanya:<br>• Mafaera eLever Arch, Madhayari, Makarenda ePiramidhi<br>• Sketch pads, Exam pads, Mabhuku emifananidzo<br>• Mabhegi emapepa ane mabhureki, Zvibato zvezvikwata zvekupedza kudzidza<br>• Mabhuku ekunyoresa, Mamenu emaresitorendi, Mabhuku ekutambira<br>• Makadhi ebhizinesi neBhaibheri<br><br>Takatanga muna 2000 sesangano rekushambadzira uye takachinja kuita kugadzira muna 2011-2012. Iye tine vashandi vanopfuura makumi matatu nevashanu uye tinotumira kunze kwenyika kunyika dzakawanda dzeAfrica."
+    }
+  },
+  {
+    "id": "calendars",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Our calendars feature creative designs and are available in different sizes:<br>• Wide variety of design templates<br>• Gloss lamination for durability<br>• Public holidays for 14 African countries listed<br>• Advertising space for users and visitors<br>• Highly durable Wiro binding<br>• Portable, trendy and easy to use<br>• Strong rigid pyramid stand<br>• Fully customized options available<br><br>Perfect for corporate gifts and promotions!",
+      "tn": "Dikhalendara tsa rona di na le mekgwa e meintši ya disaine mme di wanala ka disaize di farologaneng:<br>• Mekgwa e meintši ya dithempleite tsa disaine<br>• Lamination ya gloss bakeng sa go nonofala<br>• Matšatši a phomolo a ditšhaba tse 14 tsa Aforika di kwadilwe<br>• Lefelo la go ikgaketsa bakeng sa badiri le baeti<br>• Go bopa ga Wiro go nonofile thata<br>• Go rwalwa go bonolo, go ya ka mekgwa le go dirisa go bonolo<br>• Seteite ya piramide e e nonofileng<br>• Dikgetho tse di beilweng ka botlalo di wanala<br><br>E maleba thata bakeng sa dimpho tsa dikhampani le ditiro tsa go ikgaketsa!",
+      "sn": "Makarenda edu ane magadzirirwo ekugadzira uye anowanikwa nemasaizi akasiyana:<br>• Yakasiyana-siyana yematemplate ekugadzira<br>• Gloss lamination yekusimba<br>• Mazororo eruzhinji enyika gumi neina dzeAfrica akanyorwa<br>• Nzvimbo yekushambadzira yevashandisi nevashanyi<br>• Yakasimba kwazvo Wiro inosunga<br>• Inotakurika, ine fashoni uye iri nyore kushandisa<br>• Yakasimba rigid pyramid stand<br>• Yakazara sarudzo dzakagadziridzwa dzinawanikwa<br><br>Yakanyatso kukodzera zvipo zvemakambani uye kukwidziridzwa!"
+    }
+  },
+  {
+    "id": "contact",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "You can reach us through:<br>📞 Phone: <a href=\"tel:+2673180708\" style=\"color:#2c9c56;text-decoration:underline;\">+267 3180708</a><br>📧 Email: <a href=\"mailto:info@greencarddiary.co.bw\" style=\"color:#2c9c56;text-decoration:underline;\">info@greencarddiary.co.bw</a><br>🌐 Website: <a href=\"https://greencarddiary.co.bw\" target=\"_blank\" style=\"color:#2c9c56;text-decoration:underline;\">greencarddiary.co.bw</a>",
+      "tn": "O ka re fitlhelela ka:<br>📞 Mogala: <a href=\"tel:+2673180708\" style=\"color:#2c9c56;text-decoration:underline;\">+267 3180708</a><br>📧 Email: <a href=\"mailto:info@greencarddiary.co.bw\" style=\"color:#2c9c56;text-decoration:underline;\">info@greencarddiary.co.bw</a><br>🌐 Website: <a href=\"https://greencarddiary.co.bw\" target=\"_blank\" style=\"color:#2c9c56;text-decoration:underline;\">greencarddiary.co.bw</a>",
+      "sn": "Unogona kutibata ne:<br>📞 Runhare: <a href=\"tel:+2673180708\" style=\"color:#2c9c56;text-decoration:underline;\">+267 3180708</a><br>📧 Email: <a href=\"mailto:info@greencarddiary.co.bw\" style=\"color:#2c9c56;text-decoration:underline;\">info@greencarddiary.co.bw</a><br>🌐 Webhusaiti: <a href=\"https://greencarddiary.co.bw\" target=\"_blank\" style=\"color:#2c9c56;text-decoration:underline;\">greencarddiary.co.bw</a>"
+    }
+  },
+  {
+    "id": "custom_orders",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "We specialize in custom orders with low minimum quantities:<br>• Minimum order of just 20 units for most products<br>• Wide range of customization options available<br>• Your logo, colors, and branding incorporated<br>• Various binding and finishing options<br>• Multiple paper types and weights available<br>• Expert design assistance if needed<br><br>Make your brand stand out with our custom products!",
+      "tn": "Re itsise ka di-order tse di beilweng tse di nang le palo e e kwa tlase:<br>• Order e e kwa tlase ya diyuniti tse 20 fela bakeng sa dilo di le dintsi<br>• Dikgetho tse di farologaneng tsa go ipeola di wanala<br>• Logo ya lona, mmala, le brand di akarediwa<br>• Dikgetho tse di farologaneng tsa go bopa le go fetsa<br>• Mefuta e le mentsi ya pampiri le boima bo wanala<br>• Thuso ya disaine ya baitseane fa go tlhokega<br><br>Dirang gore brand ya lona e gakgamale ka dilo tsa rona tse di beilweng!",
+      "sn": "Isu tinonyanya kugadzira maodha akasarudzika ane huwandu hwakaderera hwepazasi:<br>• Odha shoma yemayuniti makumi maviri chete yezvigadzirwa zvakawanda<br>• Huwandu hwakawanda hwesarudzo dzekugadziridza dzinawanikwa<br>• Logo yako, mavara, uye branding zvakabatanidzwa<br>• Sarudzo dzakasiyana dzekusunga uye kupedzisa<br>• Mhando dzakawanda dzemapepa uye huremu hunowanikwa<br>• Nyanzvi yekugadzira rubatsiro kana uchida<br><br>Ita kuti brand yako isimuke nezvigadzirwa zvedu zvakasarudzika!"
+    }
+  },
+  {
+    "id": "delivery",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "We offer delivery and export services:<br>• Local delivery within Botswana<br>• Export to Zimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA accredited for duty-free exports to Zimbabwe<br>• Reliable courier services<br>• Tracking available for shipments<br><br>Contact us for specific delivery options and costs! 🚚",
+      "tn": "Re tlamela ka ditirelo tsa kabo le go romela konego kwa ntle:<br>• Kabo ya selegae mo Botswana<br>• Go romela konego kwa Zimbabwe, Zambia, Aforika Borwa, Namibia<br>• Re dumalantswe ke SADC FTA bakeng sa go romela konego kwa Zimbabwe ntle le madi<br>• Ditirelo tsa courier tse di ikanyegang<br>• Go latela konego di wanala<br><br>Re letsetse go dikgakololo tse di tlhamaletseng tsa kabo le ditshenyo! 🚚",
+      "sn": "Tinopa masevhisi ekuendesa uye ekutumira kunze kwenyika:<br>• Kuendesa kwenzvimbo mukati meBotswana<br>• Kutumira kunze kwenyika kuZimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA yakasimbiswa yekutumira kunze kwenyika zvisina mutero kuZimbabwe<br>• Masevhisi ekuvimbika eCourier<br>• Kuteedzera kunowanikwa kune zvinotumirwa<br><br>Tibate kuti tiwane sarudzo dzakananga dzekuendesa uye mutengo! 🚚"
+    }
+  },
+  {
+    "id": "diaries",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Our diaries come in various sizes (A4, A5, Slimline/A6) and binding options:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Customization options include:<br>• Leather finish in various colors<br>• Cover design patterns<br>• Front end-sheet customization<br>• Client information lead-in pages<br>• Section wrap around with client info<br>• Silver, gold or blind embossing of logo<br>• Single, two, three and 4 panel cover options<br>• Square back, round spine and flexible cover<br>• Gilt or Nickel corner clips, round corners<br>• Personalization with names<br><br>We also offer hybrid diaries with QR code integration!",
+      "tn": "Dipuku tsa rona di tla ka disaize di farologanyeng (A4, A5, Slimline/A6) le dikgetho tsa go bopa:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Dikgetho tsa go ipeola di akaretsa:<br>• Lefelo la letlalo ka mmala o o farologaneng<br>• Mekgwa ya disaine ya dikhava<br>• Go ipeola ga letlapele la khavare<br>• Matlakana a tshedimosetso ya moreki<br>• Karolo e e potolotseng tshedimosetso ya moreki<br>• Go embossa logo ka selefera, gouta kgotsa go se bonale<br>• Dikgetho tsa dikhava tsa panel e le nngwe, pedi, tharo kgotsa nne<br>• Mokwatla o o sekwere, mokwatla o o potologang le khavare e e flexibole<br>• Diklipi tsa konere tsa gilt kgotsa Nickel, dikhona tse di potologang<br>• Go bewa ga maina<br><br>Re tlamela ka dipuku tsa hybrid tse di nang le go kopanya khoutu ya QR!",
+      "sn": "Madhayari edu anouya nemasaizi akasiyana (A4, A5, Slimline/A6) uye sarudzo dzekusunga:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Sarudzo dzekugadziridza dzinosanganisira:<br>• Kupedzisa kweganda mumavara akasiyana<br>• Mapatani ekugadzira mabutiro<br>• Kugadziridzwa kwepepa rekupedzisira kwekumberi<br>• Mapeji ekutungamira ruzivo rwevatengi<br>• Chikamu chakatenderedza neruzivo rwevatengi<br>• Sirivheri, goridhe kana blind embossing yelogo<br>• Imwe, mbiri, matatu uye 4 panel sarudzo dzebhutiro<br>• Square back, round spine uye flexible cover<br>• Gilt kana Nickel korona makipi, makona akatenderedza<br>• Kugadziridzwa nemazita<br><br>Tinopawo madhayari ehybrid ane QR code integration!"
+    }
+  },
+  {
+    "id": "goodbye",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Goodbye! Thank you for chatting with Greencarddiary. Feel free to reach out anytime if you need help with custom diaries or stationery products. Have a wonderful day! 👋",
+      "tn": "Tsamaya sentle! Ke lebogile gore o buile le Greencarddiary. Ikutlwe o gololesegile go re letsetsa nako nngwe le nngwe fa o tlhoka thuso ka dipuku tse di beilweng kgotsa dilo tsa ofisi. Nna le letsatsi le lentle! 👋",
+      "sn": "Sara mushe! Ndatenda nekutaura neGreencarddiary. Inzwa wakasununguka kubata nesu chero nguva kana uchida rubatsiro nemadhayari akasarudzika kana zvigadzirwa zvemumabasa. Iva nezuva rakanaka! 👋"
+    }
+  },
+  {
+    "id": "greeting",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Hello! Welcome to Greencarddiary. We specialize in custom diaries, calendars, and stationery products. How can I assist you today? 😊",
+      "tn": "Dumela! O amogelwe ko Greencarddiary. Re itsise ka go dira dipuku tse di beilweng, dikhalendara, le dilo tsa ofisi. Nka go thusa jang gompieno? 😊",
+      "sn": "Mhoro! Tigamuchirwe kuGreencarddiary. Isu tinonyanya kugadzira madhayari akasarudzika, makarenda, uye zvigadzirwa zvepamabasa. Ndingakubatsire sei nhasi? 😊"
+    }
+  },
+  {
+    "id": "how_are_you",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "I'm doing great, thank you for asking! I'm here and ready to help you with any questions about our custom diaries, calendars, or other stationery products. How are you doing today? 😊",
+      "tn": "Ke siame, ke lebogile gore o botsa! Ke mo mafaratlheng mme ke ipaakantse go go thusa ka dipotso dipe fela tsa dipuku tsa rona tse di beilweng, dikhalendara, kgotsa dilo tse dingwe tsa ofisi. O kae gompieno? 😊",
+      "sn": "Ndiri mushanda zvakanaka, ndatenda nekubvunza! Ndiri pano uye ndakagadzirira kukubatsira nemibvunzo yese pamusoro pemadhayari edu akasarudzika, makarenda, kana zvimwe zvigadzirwa zvemumabasa. Wakadii nhasi? 😊"
+    }
+  },
+  {
+    "id": "lever_arch",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Our Lever Arch Files feature:<br>• Made of various material mixes and colors<br>• Matt or Gloss laminated on both sides<br>• Attractive 2 colour printing<br>• Rado file locking system<br>• Sturdy and durable (2000-micron European grey board)<br>• File sizes ranging from A5 to A3<br>• Fully recyclable and environmentally friendly<br><br>Perfect for office organization and document storage!",
+      "tn": "Mafaele a rona a Lever Arch a na le:<br>• A dirilwe ka didirisiwa le mmala o o farologaneng<br>• Matt kgotsa Gloss laminated ka mabaka a mabedi<br>• Go gatisa ga mmala o mebedi o o kgabisang<br>• Tsamaiso ya go tswala mafaele ya Rado<br>• Go nonofala le go nonofala (2000-micron European grey board)<br>• Disaize tsa faiele go tswa ko A5 go ya ko A3<br>• Go kgonwa go di dirisa gape ka botlalo le go sireletsa tikologo<br><br>Tse di malebang thata bakeng sa go rulaganya ofisi le go boloka ditokomane!",
+      "sn": "Mafaera edu eLever Arch ane:<br>• Akagadzirwa nemidziyo yakasiyana-siyana uye mavara<br>• Matt kana Gloss yakaputirwa kumativi ese<br>• Inodhinda ine mavara maviri anoyevedza<br>• Rado file locking system<br>• Yakasimba uye yakasimba (2000-micron European grey board)<br>• Saizi dzemafaera kubva paA5 kusvika paA3<br>• Inogona kudzokororwa zvizere uye ine hushamwari kwezvakatipoteredza<br><br>Yakanyatso kukodzera kurongeka kwemahofisi uye kuchengetedza zvinyorwa!"
+    }
+  },
+  {
+    "id": "location",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "We are located in Botswana, Africa. 🇧🇼<br><br>Our physical address is:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>We export to Zimbabwe, Zambia, South Africa, and Namibia under SADC FTA agreements.",
+      "tn": "Re kwa Botswana, Aforika. 🇧🇼<br><br>Aterese ya rona ke:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Re romela dikonego kwa Zimbabwe, Zambia, Aforika Borwa, le Namibia ka tumalano ya SADC FTA.",
+      "sn": "Tiri muBotswana, Africa. 🇧🇼<br><br>Kero yedu chaiyo ndeye:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Tinotumira kunze kwenyika kuZimbabwe, Zambia, South Africa, neNamibia pasi pezvibvumirano zveSADC FTA."
+    }
+  },
+  {
+    "id": "paper_bags",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Our custom branded paper bags are:<br>• Printed and laminated on 200 gsm glossy paper<br>• Available in different sizes (A4, A5 or custom sizes)<br>• Fully customized design to suit your needs<br>• Black & White on Kraft Paper options<br>• Ideal for packaging gifts for employees, customers and stakeholders<br><br>Great for corporate gifting and brand visibility!",
+      "tn": "Diposete tsa rona tse di nang le brand ke:<br>• Di gatisiwa di bo di laminwa mo pampiring ya 200 gsm glossy<br>• Di wanala ka disaize di farologaneng (A4, A5 kgotsa disaize tse di beilweng)<br>• Disaine e e beilweng ka botlalo go go direla<br>• Dikgetho tsa Black & White mo Kraft Paper<br>• Tse di malebang thata bakeng sa go phuthegela dimpho tsa baseberi, bareki le ba ba amegang<br><br>Tse di molemolelang thata bakeng sa go nea dimpho tsa dikhampani le go bonala ga brand!",
+      "sn": "Mabhegi edu emapepa ane mabhureki akasarudzika:<br>• Akadhindwa uye akaputirwa pa200 gsm glossy paper<br>• Anowanikwa nemasaizi akasiyana (A4, A5 kana saizi dzakasarudzika)<br>• Dhizaini yakanyatso gadziridzwa kuti ienderane nezvaunoda<br>• Black & White paKraft Paper sarudzo<br>• Yakanakira kurongedza zvipo zvevashandi, vatengi uye vanobatanidzwa<br><br>Yakanakira kupa zvipo zvemakambani uye kuonekwa kwemhando!"
+    }
+  },
+  {
+    "id": "pricing",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "Our pricing varies based on the products, customization, and quantity. We offer:<br>• Competitive pricing for all products<br>• Quantity discounts available<br>• Customization affects final price<br>• Export pricing for international orders<br><br>Contact us for a personalized quote based on your specific needs! 💰",
+      "tn": "Ditlhwatlhwa tsa rona di farologana go ya ka dilo, go ipeola, le palo. Re tlamela ka:<br>• Ditlhwatlhwa tse di kgonang go phadisanya bakeng sa dilo tsotlhe<br>• Bonnye jwa palo bo wanala<br>• Go ipeola go ama ditlhwatlhwa tsa bofelo<br>• Ditlhwatlhwa tsa go romela konego kwa ntle<br><br>Re letsetse go go naya tekanyetso e e beilweng go ya ka dithata tsa lona! 💰",
+      "sn": "Mitengo yedu inosiyana zvichienderana nezvigadzirwa, kugadziridzwa, uye huwandu. Tinopa:<br>• Mitengo inokwikwidza yezvigadzirwa zvese<br>• Mitengo yekuderera inawanikwa<br>• Kugadziridzwa kunokanganisa mutengo wekupedzisira<br>• Mitengo yekutumira kunze kwenyika yemaodha epasi rose<br><br>Tibate kuti tiwane quote yakagadzirirwa zvinoenderana nezvaunoda! 💰"
+    }
+  },
+  {
+    "id": "products",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "We offer a wide range of products including:<br>• Custom corporate diaries (A4, A5, A6 sizes)<br>• Printed & laminated diaries with QR code options<br>• Executive diary organizers (Filofax style)<br>• Custom calendars with creative designs<br>• Branded paper bags (200 gsm glossy)<br>• Lever arch files (A5 to A3 sizes)<br>• Register books (A3/A4, 200 pages)<br>• Photo albums with premium paper<br>• NCR books (duplicate, triplicate, quadruplicate)<br>• Custom school notebooks & student diaries<br>• Graduation scroll holders<br>• Restaurant menus<br>• Business cards<br><br>All products can be customized to your needs!",
+      "tn": "Re rekisa dilo di le dintsi jaaka:<br>• Dipuku tsa dikhampani tse di beilweng (A4, A5, A6)<br>• Dipuku tse di gatiseditsweng le tse di laminetsweng di na le dikhoutu tsa QR<br>• Baokedi ba dipuku ba baeteledipele (mokgwa wa Filofax)<br>• Dikhalendara tse di beilweng tse di nang le mekgwa e meintši<br>• Diposete tse di nang le brand (200 gsm glossy)<br>• Mafaele a lever arch (A5 go ya ko A3)<br>• Dipuku tsa go kwala (A3/A4, matlakana a 200)<br>• Dialebamo tsa difoto tse di nang le pampiri e e botoka<br>• Dipuku tsa NCR (duplicate, triplicate, quadruplicate)<br>• Dipuku tsa sekolo tse di beilweng le dipuku tsa barutwana<br>• Dihouldara tsa dikwarata tsa graduation<br>• Menyu ya maresterante<br>• Dikarete tsa kgwebo<br><br>Dilo tsotlhe di ka dirwa go ya ka dithata tsa lona!",
+      "sn": "Tinopa huwandu hwakawanda hwezvigadzirwa zvinosanganisira:<br>• Madhayari emakambani akasarudzika (saizi A4, A5, A6)<br>• Madhayari akadhindwa & akaputirwa ane sarudzo dzeQR code<br>• Masisitimu emadhayari evakuru (maitiro eFilofax)<br>• Makarenda akasarudzika ane magadzirirwo ekugadzira<br>• Mabhegi emapepa ane mabhureki (200 gsm glossy)<br>• Mafaera eLever arch (saizi kubva A5 kusvika A3)<br>• Mabhuku ekunyoresa (A3/A4, mapeji 200)<br>• Maalbum emifananidzo ane mapepa epremium<br>• Mabhuku eNCR (duplicate, triplicate, quadruplicate)<br>• Mabhuku echikoro akasarudzika & madhayari evadzidzi<br>• Zvibato zvezvikwata zvekupedza kudzidza<br>• Mamenu emaresitorendi<br>• Makadhi ebhizinesi<br><br>Zvese zvigadzirwa zvinogona kugadziridzwa kuti zvienderane nezvaunoda!"
+    }
+  },
+  {
+    "id": "thank_you",
+    "pattern": {
+      "en": {},
+      "tn": {},
+      "sn": {}
+    },
+    "response": {
+      "en": "You're very welcome! I'm happy to help. If you have more questions about our products or services, feel free to ask anytime. We're here to support your branding needs! 😊",
+      "tn": "O amogelwe thata! Ke itumetse go thusa. Fa o na le dipotso tse dingwe ka dilo kgotsa ditirelo tsa rona, ikutlwe o gololesegile go botsa nako nngwe le nngwe. Re teng go tshegetsa dithata tsa lona tsa brand! 😊",
+      "sn": "Unogamuchirwa kwazvo! Ndinofara kukubatsira. Kana uine mimwe mibvunzo nezvezvigadzirwa zvedu kana masevhisi, inzwa wakasununguka kubvunza chero nguva. Tiri pano kutsigira zvaunoda zvebrand! 😊"
+    }
+  }
+]

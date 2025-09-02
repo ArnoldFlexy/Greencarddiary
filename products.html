@@ -686,1079 +686,366 @@
         </section>
         <!--Page Header End-->
 
-        <!--Product Start-->
-        <section class="product">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="product__sidebar">
-               
-             
-                            <div class="shop-category product__sidebar-single">
-                                <h3 class="product__sidebar-title">Categories</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Wallpapers</a></li>
-                                    <li class="active"><a href="#">Interior Design</a></li>
-                                    <li><a href="#">Paintings</a></li>
-                                    <li><a href="#">Wall Designing</a></li>
-                                    <li><a href="#">Wall & Decor</a></li>
-                                </ul>
-                            </div>
-                        </div>
+<!--Product Start-->
+<section class="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3">
+                <div class="product__sidebar">
+                    <div class="shop-category product__sidebar-single">
+                        <h3 class="product__sidebar-title">Categories</h3>
+                        <ul id="categories-list" class="list-unstyled">
+                            <li><a href="#" class="category-filter active" data-category="all">All Products</a></li>
+                            <!-- Categories will be dynamically generated -->
+                        </ul>
                     </div>
-                    <div class="col-xl-9 col-lg-9">
-                        <div class="product__items">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="product__showing-result">
-                                        <div class="product__showing-text-box">
-                                            <p class="product__showing-text">Showing 1–9 of 12 Results</p>
-                                        </div>
-                                        <div class="product__showing-sort">
-                                            <div class="select-box">
-                                                <select class="wide">
-                                                    <option data-display="Sort by popular">Sort by Popular</option>
-                                                    <option value="1">Sort by popular</option>
-                                                    <option value="2">Sort by Price</option>
-                                                    <option value="3">Sort by Ratings</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9">
+                <div class="product__items">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="product__showing-result">
+                                <div class="product__showing-text-box">
+                                    <p id="results-text" class="product__showing-text">Loading products...</p>
+                                </div>
+                                <div class="product__showing-sort">
+                                    <div class="select-box">
+                                        <select id="sort-options" class="wide">
+                                            <option value="name-asc">Sort by Name (A-Z)</option>
+                                            <option value="name-desc">Sort by Name (Z-A)</option>
+                                            <option value="category">Sort by Category</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                                <div id="notification" class="notification">
-        Opening WhatsApp with your product details...
-    </div>
-                            <div class="product__all">
-                                <div class="row">
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img" 
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/2 Panel Diary.png" 
-                alt="2 Panel Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
+                        </div>
+                    </div>
+                    <div id="notification" class="notification">
+                        Opening WhatsApp with your product details...
+                    </div>
+                    <div id="products-container" class="product__all">
+                        <div class="row">
+                            <!-- Products will be dynamically loaded -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">2 Panel Diary</a></h4>
-        </div>
     </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img" 
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/2 Panel PU Diary (2).png" 
-                alt="2 Panel PU Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">2 Panel PU Diary</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
+</section>
 
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/2 Panel PU Diary.png" 
-                alt="2 Panel PU Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">2 Panel PU Diary 2</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/2 PHASE Calendar.png" 
-                alt="2 Phase Calendar" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">2 Phase Calendar</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
 
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/ARCH FILE SPINE Customized 1.png" 
-                alt="Arch File Spine Customized" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Arch File Spine Customized</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Attendance Register.png" 
-                alt="Attendance Register" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Attendance Register</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/BAKERY Kraft Paper Bag 3D 1.png" 
-                alt="Bakery Kraft Paper Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Bakery Kraft Paper Bag</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/BAKERY Paper Bag 3D 2.png" 
-                alt="Bakery Bag 3D" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Bakery Bag 3D</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Brown BW Paper Bag 3.png" 
-                alt="Brown BW Paper Bag 3" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Brown BW Paper Bag 3</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Brown BW Paper Bag 3.png" 
-                alt="Brown BW Paper Bag 3" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Brown BW Paper Bag 3</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Brown BW Paper Bag 4.png" 
-                alt="Brown BW Paper Bag 4" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Brown BW Paper Bag 4</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Brown BW Paper Bag.png" 
-                alt="Brown BW Paper Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Brown BW Paper Bag</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/CLOTHING SHOPPING BAG (2).png" 
-                alt="Clothing Shopping Bag 2" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Clothing Shopping Bag 2</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/CLOTHING SHOPPING BAG.png" 
-                alt="Clothing Shopping Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Clothing Shopping Bag</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/CONCEALED WIRO-BOUND DIARY.png" 
-                alt="Concealed Wiro-Bound Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Concealed Wiro-Bound Diary</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/FOOD PACK PAPER BAG 1.png" 
-                alt="Food Pack Paper Bag 1" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Food Pack Paper Bag 1</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/FOOD PACK PAPER BAG 2.png" 
-                alt="Food Pack Paper Bag 2" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Food Pack Paper Bag 2</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/GROCERIES Shopping Bag.png" 
-                alt="Groceries Shopping Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Groceries Shopping Bag</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Half Moon Classic Filofax, Inside.png" 
-                alt="Half Moon Classic Filofax Inside" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Half Moon Classic Filofax Inside</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-
-<!-- Product All Single Start -->
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/HALF-MOON CLASSIC FILOFAX.png" 
-                alt="Half Moon Classic Filofax" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Half Moon Classic Filofax</a></h4>
-        </div>
-    </div>
-</div>
-<!-- Product All Single End -->
-                                   <div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Wine Bag (4).png" 
-                alt="Printed & Laminated Wine Bag (4)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Wine Bag (4)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Prtinted & Laminated WIRO-BOUND JOURNAL.png" 
-                alt="Prtinted & Laminated WIRO-BOUND JOURNAL" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Prtinted & Laminated WIRO-BOUND JOURNAL</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Pyramid Flipover Calendar.png" 
-                alt="Pyramid Flipover Calendar" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Pyramid Flipover Calendar</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/PYRAMID Flipoverf CALENDAR 1.png" 
-                alt="PYRAMID Flipoverf CALENDAR 1" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">PYRAMID Flipoverf CALENDAR 1</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Ring Bound Diaries.png" 
-                alt="Ring Bound Diaries" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Ring Bound Diaries</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Ring Bound Diary.png" 
-                alt="Ring Bound Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Ring Bound Diary</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Ring Bound Diary, Inside.png" 
-                alt="Ring Bound Diary, Inside" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Ring Bound Diary, Inside</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/RING BOUND Diary, Printed and Laminate.png" 
-                alt="RING BOUND Diary, Printed and Laminate" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">RING BOUND Diary, Printed and Laminate</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Ring Bound PU Diary.png" 
-                alt="Ring Bound PU Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Ring Bound PU Diary</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Sinfle Panel PU Journal.png" 
-                alt="Sinfle Panel PU Journal" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Sinfle Panel PU Journal</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Singel Panel PU Diary.png" 
-                alt="Singel Panel PU Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Singel Panel PU Diary</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Diary.png" 
-                alt="Single Panel PU Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Diary</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Diary (2).png" 
-                alt="Single Panel PU Diary (2)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Diary (2)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Diary (3).png" 
-                alt="Single Panel PU Diary (3)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Diary (3)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Diary (4).png" 
-                alt="Single Panel PU Diary (4)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Diary (4)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Diary (5).png" 
-                alt="Single Panel PU Diary (5)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Diary (5)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Single Panel PU Journal.png" 
-                alt="Single Panel PU Journal" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Single Panel PU Journal</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Soft Leatherette Certificate Folder.png" 
-                alt="Soft Leatherette Certificate Folder" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Soft Leatherette Certificate Folder</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Soft Leatherette Certificate Folder (2).png" 
-                alt="Soft Leatherette Certificate Folder (2)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Soft Leatherette Certificate Folder (2)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/VISITORS REG BOK.png" 
-                alt="VISITORS REG BOK" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">VISITORS REG BOK</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Visitors Register Book.png" 
-                alt="Visitors Register Book" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Visitors Register Book</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Wedding Photobook.png" 
-                alt="Wedding Photobook" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Wedding Photobook</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/WEDDING PHOTO BOOK.png" 
-                alt="WEDDING PHOTO BOOK" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">WEDDING PHOTO BOOK</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Half Moon Classic Filofax, Inside.png" 
-                alt="Half Moon Classic Filofax, Inside" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Half Moon Classic Filofax, Inside</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/NCR Self Carbonating Boook.png" 
-                alt="NCR Self Carbonating Boook" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">NCR Self Carbonating Boook</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/New Executive Filofax.png" 
-                alt="New Executive Filofax" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">New Executive Filofax</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Pampiri Budget Lever Arch File.png" 
-                alt="Pampiri Budget Lever Arch File" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Pampiri Budget Lever Arch File</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Phone Shop Carry Bag.png" 
-                alt="Phone Shop Carry Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Phone Shop Carry Bag</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Photobook Mockup.png" 
-                alt="Photobook Mockup" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Photobook Mockup</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/PREMIUM Lever Arch file.png" 
-                alt="PREMIUM Lever Arch file" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">PREMIUM Lever Arch file</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Diary.png" 
-                alt="Printed & Laminated Diary" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Diary</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Diary 1.png" 
-                alt="Printed & Laminated Diary 1" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Diary 1</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Diary 2.png" 
-                alt="Printed & Laminated Diary 2" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Diary 2</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Diary 3.png" 
-                alt="Printed & Laminated Diary 3" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Diary 3</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Diary 4.png" 
-                alt="Printed & Laminated Diary 4" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Diary 4</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Full Colour Paper Bag.png" 
-                alt="Printed & Laminated Full Colour Paper Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Full Colour Paper Bag</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Full Colour Paper Bag 2.png" 
-                alt="Printed & Laminated Full Colour Paper Bag 2" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Full Colour Paper Bag 2</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Journal.png" 
-                alt="Printed & Laminated Journal" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Journal</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Wine Bag.png" 
-                alt="Printed & Laminated Wine Bag" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Wine Bag</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Wine Bag (2).png" 
-                alt="Printed & Laminated Wine Bag (2)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Wine Bag (2)</a></h4>
-        </div>
-    </div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="product__all-single">
-        <div class="product__all-img"
-            style="position: relative; overflow: hidden; width: 100%; height: 350px; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/images/shop/products/Printed & Laminated Wine Bag (3).png" 
-                alt="Printed & Laminated Wine Bag (3)" 
-                style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <div class="product__all-btn-box">
-                <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event)">Order Me</a>
-            </div>
-        </div>
-        <div class="product__all-content">
-            <h4 class="product__all-title"><a href="product-details.html">Printed & Laminated Wine Bag (3)</a></h4>
-        </div>
-    </div>
-</div>
-
-              
+    <style>
+        /* Your existing styles */
+        .product__all-img {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 350px;
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
-        <!--Product End-->
+        .product__all-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .product__sidebar-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .product__showing-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .product__all-btn {
+            background-color: #4e6bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .product__all-btn:hover {
+            background-color: white;
+            color: white;
+        }
+        
+        .category-filter {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-filter.active {
+            font-weight: bold;
+            color: #4e6bff;
+        }
+        
+        .select-box {
+            position: relative;
+        }
+        
+        .select-box select {
+            padding: 8px 40px 8px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            appearance: none;
+            background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
+        }
+        
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    
+        
+        .product__sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .product__items {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .product__all-single {
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .product__all-single:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Product data extracted from your HTML
+    const products = [
+        { id: 1, name: "2 Panel Diary", category: "Diaries & Journals", image: "assets/images/shop/products/2 Panel Diary.png" },
+        { id: 2, name: "2 Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/2 Panel PU Diary (2).png" },
+        { id: 3, name: "2 Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/2 Panel PU Diary.png" },
+        { id: 4, name: "2 Phase Calendar", category: "Calendars", image: "assets/images/shop/products/2 PHASE Calendar.png" },
+        { id: 5, name: "Arch File Spine Customized", category: "Office Supplies", image: "assets/images/shop/products/ARCH FILE SPINE Customized 1.png" },
+        { id: 6, name: "Attendance Register", category: "Registers & Records", image: "assets/images/shop/products/Attendance Register.png" },
+        { id: 7, name: "Bakery Kraft Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/BAKERY Kraft Paper Bag 3D 1.png" },
+        { id: 8, name: "Bakery Bag 3D", category: "Paper Bags", image: "assets/images/shop/products/BAKERY Paper Bag 3D 2.png" },
+        { id: 9, name: "Brown BW Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Brown BW Paper Bag 3.png" },
+        { id: 10, name: "Brown BW Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Brown BW Paper Bag 3.png" },
+        { id: 11, name: "Brown BW Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Brown BW Paper Bag 4.png" },
+        { id: 12, name: "Brown BW Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Brown BW Paper Bag.png" },
+        { id: 13, name: "Clothing Shopping Bag", category: "Shopping Bags", image: "assets/images/shop/products/CLOTHING SHOPPING BAG (2).png" },
+        { id: 14, name: "Clothing Shopping Bag", category: "Shopping Bags", image: "assets/images/shop/products/CLOTHING SHOPPING BAG.png" },
+        { id: 15, name: "Concealed Wiro-Bound Diary", category: "Diaries & Journals", image: "assets/images/shop/products/CONCEALED WIRO-BOUND DIARY.png" },
+        { id: 16, name: "Food Pack Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/FOOD PACK PAPER BAG 1.png" },
+        { id: 17, name: "Food Pack Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/FOOD PACK PAPER BAG 2.png" },
+        { id: 18, name: "Groceries Shopping Bag", category: "Shopping Bags", image: "assets/images/shop/products/GROCERIES Shopping Bag.png" },
+        { id: 19, name: "Half Moon Classic Filofax Inside", category: "Filofax", image: "assets/images/shop/products/Half Moon Classic Filofax, Inside.png" },
+        { id: 20, name: "Half Moon Classic Filofax", category: "Filofax", image: "assets/images/shop/products/HALF-MOON CLASSIC FILOFAX.png" },
+        { id: 21, name: "Printed & Laminated Wine Bag", category: "Wine Bags", image: "assets/images/shop/products/Printed & Laminated Wine Bag (4).png" },
+        { id: 22, name: "Printed & Laminated Wiro-Bound Journal", category: "Diaries & Journals", image: "assets/images/shop/products/Prtinted & Laminated WIRO-BOUND JOURNAL.png" },
+        { id: 23, name: "Pyramid Flipover Calendar", category: "Calendars", image: "assets/images/shop/products/Pyramid Flipover Calendar.png" },
+        { id: 24, name: "Pyramid Flipover Calendar", category: "Calendars", image: "assets/images/shop/products/PYRAMID Flipoverf CALENDAR 1.png" },
+        { id: 25, name: "Ring Bound Diaries", category: "Diaries & Journals", image: "assets/images/shop/products/Ring Bound Diaries.png" },
+        { id: 26, name: "Ring Bound Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Ring Bound Diary.png" },
+        { id: 27, name: "Ring Bound Diary Inside", category: "Diaries & Journals", image: "assets/images/shop/products/Ring Bound Diary, Inside.png" },
+        { id: 28, name: "Ring Bound Diary Printed and Laminate", category: "Diaries & Journals", image: "assets/images/shop/products/RING BOUND Diary, Printed and Laminate.png" },
+        { id: 29, name: "Ring Bound PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Ring Bound PU Diary.png" },
+        { id: 30, name: "Single Panel PU Journal", category: "Diaries & Journals", image: "assets/images/shop/products/Sinfle Panel PU Journal.png" },
+        { id: 31, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Singel Panel PU Diary.png" },
+        { id: 32, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Diary.png" },
+        { id: 33, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Diary (2).png" },
+        { id: 34, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Diary (3).png" },
+        { id: 35, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Diary (4).png" },
+        { id: 36, name: "Single Panel PU Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Diary (5).png" },
+        { id: 37, name: "Single Panel PU Journal", category: "Diaries & Journals", image: "assets/images/shop/products/Single Panel PU Journal.png" },
+        { id: 38, name: "Soft Leatherette Certificate Folder", category: "Folders", image: "assets/images/shop/products/Soft Leatherette Certificate Folder.png" },
+        { id: 39, name: "Soft Leatherette Certificate Folder", category: "Folders", image: "assets/images/shop/products/Soft Leatherette Certificate Folder (2).png" },
+        { id: 40, name: "Visitors Register Book", category: "Registers & Records", image: "assets/images/shop/products/VISITORS REG BOK.png" },
+        { id: 41, name: "Visitors Register Book", category: "Registers & Records", image: "assets/images/shop/products/Visitors Register Book.png" },
+        { id: 42, name: "Wedding Photobook", category: "Photo Books", image: "assets/images/shop/products/Wedding Photobook.png" },
+        { id: 43, name: "Wedding Photo Book", category: "Photo Books", image: "assets/images/shop/products/WEDDING PHOTO BOOK.png" },
+        { id: 44, name: "Half Moon Classic Filofax Inside", category: "Filofax", image: "assets/images/shop/products/Half Moon Classic Filofax, Inside.png" },
+        { id: 45, name: "NCR Self Carbonating Book", category: "Office Supplies", image: "assets/images/shop/products/NCR Self Carbonating Boook.png" },
+        { id: 46, name: "New Executive Filofax", category: "Filofax", image: "assets/images/shop/products/New Executive Filofax.png" },
+        { id: 47, name: "Pampiri Budget Lever Arch File", category: "Office Supplies", image: "assets/images/shop/products/Pampiri Budget Lever Arch File.png" },
+        { id: 48, name: "Phone Shop Carry Bag", category: "Shopping Bags", image: "assets/images/shop/products/Phone Shop Carry Bag.png" },
+        { id: 49, name: "Photobook Mockup", category: "Photo Books", image: "assets/images/shop/products/Photobook Mockup.png" },
+        { id: 50, name: "Premium Lever Arch File", category: "Office Supplies", image: "assets/images/shop/products/PREMIUM Lever Arch file.png" },
+        { id: 51, name: "Printed & Laminated Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Diary.png" },
+        { id: 52, name: "Printed & Laminated Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Diary 1.png" },
+        { id: 53, name: "Printed & Laminated Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Diary 2.png" },
+        { id: 54, name: "Printed & Laminated Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Diary 3.png" },
+        { id: 55, name: "Printed & Laminated Diary", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Diary 4.png" },
+        { id: 56, name: "Printed & Laminated Full Colour Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Printed & Laminated Full Colour Paper Bag.png" },
+        { id: 57, name: "Printed & Laminated Full Colour Paper Bag", category: "Paper Bags", image: "assets/images/shop/products/Printed & Laminated Full Colour Paper Bag 2.png" },
+        { id: 58, name: "Printed & Laminated Journal", category: "Diaries & Journals", image: "assets/images/shop/products/Printed & Laminated Journal.png" },
+        { id: 59, name: "Printed & Laminated Wine Bag", category: "Wine Bags", image: "assets/images/shop/products/Printed & Laminated Wine Bag.png" },
+        { id: 60, name: "Printed & Laminated Wine Bag", category: "Wine Bags", image: "assets/images/shop/products/Printed & Laminated Wine Bag (2).png" },
+        { id: 61, name: "Printed & Laminated Wine Bag", category: "Wine Bags", image: "assets/images/shop/products/Printed & Laminated Wine Bag (3).png" }
+    ];
+
+    // Clean product names by removing numbers and parentheses
+    function cleanProductName(name) {
+        return name.replace(/\s*\(?\d+\)?\s*/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    // Initialize the application
+    function init() {
+        // Clean all product names
+        products.forEach(product => {
+            product.cleanName = cleanProductName(product.name);
+        });
+        
+        generateCategories();
+        renderProducts();
+        setupEventListeners();
+        updateResultsText();
+    }
+
+    // Generate categories from product data
+    function generateCategories() {
+        const categoriesList = document.getElementById('categories-list');
+        const categories = [...new Set(products.map(product => product.category))];
+        
+        categories.forEach(category => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#" class="category-filter" data-category="${category}">${category}</a>`;
+            categoriesList.appendChild(li);
+        });
+    }
+
+    // Render products based on current filter and sort
+    function renderProducts(filterCategory = 'all') {
+        const productsContainer = document.getElementById('products-container');
+        productsContainer.querySelector('.row').innerHTML = '';
+        
+        // Filter products
+        let filteredProducts = filterCategory === 'all' 
+            ? [...products] 
+            : products.filter(product => product.category === filterCategory);
+        
+        // Sort products
+        const sortOption = document.getElementById('sort-options').value;
+        switch(sortOption) {
+            case 'name-asc':
+                filteredProducts.sort((a, b) => a.cleanName.localeCompare(b.cleanName));
+                break;
+            case 'name-desc':
+                filteredProducts.sort((a, b) => b.cleanName.localeCompare(a.cleanName));
+                break;
+            case 'category':
+                filteredProducts.sort((a, b) => a.category.localeCompare(b.category) || a.cleanName.localeCompare(b.cleanName));
+                break;
+        }
+        
+        // Render products
+        filteredProducts.forEach(product => {
+            const productCol = document.createElement('div');
+            productCol.className = 'col-xl-4 col-lg-4 col-md-6';
+            productCol.innerHTML = `
+                <div class="product__all-single">
+                    <div class="product__all-img">
+                        <img src="${product.image}" alt="${product.cleanName}">
+                        <div class="product__all-btn-box">
+                            <a href="#" class="thm-btn product__all-btn" onclick="orderProduct(event, ${product.id})">Order Me</a>
+                        </div>
+                    </div>
+                    <div class="product__all-content">
+                        <h4 class="product__all-title"><a href="product-details.html">${product.cleanName}</a></h4>
+                    </div>
+                </div>
+            `;
+            productsContainer.querySelector('.row').appendChild(productCol);
+        });
+        
+        updateResultsText(filteredProducts.length);
+    }
+
+    // Update the results text
+    function updateResultsText(visibleCount = products.length) {
+        const resultsText = document.getElementById('results-text');
+        resultsText.textContent = `Showing 1–${visibleCount} of ${visibleCount} Results`;
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+        // Category filter
+        document.querySelectorAll('.category-filter').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.getAttribute('data-category');
+                
+                // Update active class
+                document.querySelectorAll('.category-filter').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Render filtered products
+                renderProducts(category);
+            });
+        });
+        
+        // Sort option change
+        document.getElementById('sort-options').addEventListener('change', function() {
+            const activeCategory = document.querySelector('.category-filter.active').getAttribute('data-category');
+            renderProducts(activeCategory);
+        });
+    }
+
+    // Order product function
+    window.orderProduct = function(event, productId) {
+        event.preventDefault();
+        const product = products.find(p => p.id === productId);
+        
+        // Show notification
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        
+        // Prepare WhatsApp message
+        const message = `Hello! I would like to order: ${product.cleanName} (${product.category})`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Open WhatsApp after a brief delay to show notification
+        setTimeout(() => {
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+            notification.style.display = 'none';
+        }, 1500);
+    };
+
+    // Initialize the application
+    init();
+});
+</script>
+
+<!--Product End-->
 
         <!--Newsletter Start-->
         <section class="newsletter">
