@@ -71,7 +71,7 @@
         </div>
     </div>
     
-    <style>
+ <style>
         
         /* .main-menu__wrapper-inner {
             display: flex;
@@ -144,7 +144,7 @@
         .header-search-button {
             background: none;
             border: none;
-            color: #3498db;
+            color: #2c9c56;
             cursor: pointer;
             font-size: 16px;
         }
@@ -222,7 +222,7 @@
         }
         
         .search-submit {
-            background: #3498db;
+            background: #1B5E20;
             color: white;
             padding: 15px 25px;
             border: none;
@@ -234,8 +234,8 @@
             transition: background 0.3s;
         }
         
-        .search-submit:hover {
-            background: #2980b9;
+      .search-submit:hover {
+            background: #25D366;
         }
         
         .search-results {
@@ -264,7 +264,7 @@
         
         .search-result-item h4 {
             margin-bottom: 8px;
-            color: #3498db;
+            color: #1B5E20;
         }
         
         .search-result-item p {
@@ -272,14 +272,14 @@
             font-size: 14px;
         }
         
-        .search-result-item:hover {
-            background: #f9f9f9;
+         .search-result-item:hover {
+            background: #25D366;
         }
         
         .no-results {
             padding: 15px;
             text-align: center;
-            color: #7f8c8d;
+            color: #2c9c56;
         }
         
         /* Demo Content */
@@ -364,47 +364,850 @@
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             
-            // Sample search data - replace with your actual content
+                      // Updated search data for GreenCard Diaries
             const searchData = [
                 { 
-                    title: 'About Our Company', 
-                    url: '#about', 
-                    excerpt: 'Learn more about Green Card Diaries and our mission to help with immigration processes.' 
+                    title: 'Customized Corporate Diaries', 
+                    url: 'project-details.html', 
+                    excerpt: 'Premium soft leatherette corporate diaries customized with your branding.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Our Services', 
-                    url: '#services', 
-                    excerpt: 'We offer consultation services, document preparation, and application guidance.' 
+                    title: 'Calendars', 
+                    url: 'project-details-2.html', 
+                    excerpt: 'Custom printed calendars for corporate gifting and promotional purposes.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Service of Users', 
-                    url: '#services', 
-                    excerpt: 'Our user services include personalized consultations and application assistance.' 
+                    title: 'Printed & Laminated Diaries', 
+                    url: 'project-details-3.html', 
+                    excerpt: 'High-quality printed and laminated diaries with both analog and digital options.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Consultation Services', 
-                    url: '#services', 
-                    excerpt: 'Professional consultation services for immigration and green card applications.' 
+                    title: 'Filafox / Executive Diary Organizers', 
+                    url: 'project-details-4.html', 
+                    excerpt: 'Premium executive diary organizers for professional use.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Recent Projects', 
-                    url: '#projects', 
-                    excerpt: 'Take a look at our recently completed successful immigration cases.' 
+                    title: 'Custom Branded Paper Bags', 
+                    url: 'project-details-5.html', 
+                    excerpt: 'Eco-friendly custom branded paper bags for retail and corporate use.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Blog - Immigration Tips', 
-                    url: 'blog.html', 
-                    excerpt: 'Read our latest article on tips for a successful green card application.' 
+                    title: 'Lever Arch Files', 
+                    url: 'project-details-6.html', 
+                    excerpt: 'Durable lever arch files customized with your company branding.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Contact Us', 
+                    title: 'Register Books', 
+                    url: 'project-details-7.html', 
+                    excerpt: 'Custom register books for various business and institutional needs.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Photo Albums', 
+                    url: 'project-details-8.html', 
+                    excerpt: 'Beautiful custom photo albums for preserving memories.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'NCR (Self Carbonating) Books', 
+                    url: 'project-details-9.html', 
+                    excerpt: 'No Carbon Required forms and books for duplicate/triplicate records.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Customized School Notebooks', 
+                    url: 'project-details-10.html', 
+                    excerpt: 'Personalized school notebooks and student communication diaries.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Corporate Journals', 
+                    url: 'project-details-11.html', 
+                    excerpt: 'Elegant corporate journals for professional note-taking.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Low MOQ Custom Diaries', 
+                    url: 'blog-details-1.html', 
+                    excerpt: 'Why small businesses love our low minimum order quantity of just 20 units.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Fast Delivery Service', 
+                    url: 'blog-details-2.html', 
+                    excerpt: 'Learn how we deliver custom diaries in just 2 weeks.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Local Sourcing Benefits', 
+                    url: 'blog-details-3.html', 
+                    excerpt: 'The hidden benefits of sourcing locally: quality and speed advantages.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Corporate Gifting Trends', 
+                    url: 'blog-details-4.html', 
+                    excerpt: 'Top 5 corporate gifting trends in Botswana for 2023.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Diary Design Tips', 
+                    url: 'blog-details-5.html', 
+                    excerpt: 'How to design a custom diary that impresses clients and employees.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Find Custom Diaries in Gaborone', 
+                    url: 'blog-details-6.html', 
+                    excerpt: 'Where to find the best custom diaries in Gaborone, Botswana.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'About GreenCard Diaries', 
+                    url: 'about.html', 
+                    excerpt: 'Learn about our company, mission, and sustainable practices.',
+                    category: 'Company'
+                },
+                { 
+                    title: 'Contact Information', 
                     url: 'contact.html', 
-                    excerpt: 'Get in touch with our team to schedule a consultation appointment.' 
+                    excerpt: 'Get in touch with us for inquiries, quotes, or appointments.',
+                    category: 'Company'
                 },
                 { 
                     title: 'Online Shop', 
-                    url: '#shop', 
-                    excerpt: 'Check out our resources and guides for purchase in our online shop.' 
+                    url: 'shop.html', 
+                    excerpt: 'Browse and purchase our products through our online store.',
+                    category: 'Shop'
+                },
+                { 
+                    title: 'Book Appointment', 
+                    url: 'contact.html', 
+                    excerpt: 'Schedule a consultation or meeting with our team.',
+                    category: 'Service'
+                }
+            ];
+            
+            // Open search modal
+            searchToggler.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchModal.classList.add('active');
+                searchInput.focus();
+                // Prevent body from scrolling when modal is open
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close search modal
+            searchClose.addEventListener('click', function() {
+                searchModal.classList.remove('active');
+                // Re-enable body scrolling
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside
+            searchModal.addEventListener('click', function(e) {
+                if (e.target === searchModal) {
+                    searchModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Handle header search
+            headerSearchButton.addEventListener('click', function() {
+                performSearch(headerSearchInput.value.trim(), 'header');
+            });
+            
+            headerSearchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch(headerSearchInput.value.trim(), 'header');
+                }
+            });
+            
+            // Handle modal search form submission
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                performSearch(searchInput.value.trim(), 'modal');
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+                    searchModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Function to perform search
+            function performSearch(query, source) {
+                if (query.length === 0) {
+                    if (source === 'modal') {
+                        searchResults.innerHTML = '<p class="no-results">Please enter a search term</p>';
+                    } else {
+                        // For header search, open modal with message
+                        searchModal.classList.add('active');
+                        searchInput.value = '';
+                        searchResults.innerHTML = '<p class="no-results">Please enter a search term</p>';
+                        document.body.style.overflow = 'hidden';
+                    }
+                    return;
+                }
+                
+                // If search initiated from header, open modal and transfer query
+                if (source === 'header') {
+                    searchModal.classList.add('active');
+                    searchInput.value = query;
+                    document.body.style.overflow = 'hidden';
+                }
+                
+                // Show loading state
+                searchResults.innerHTML = '<p class="no-results">Searching...</p>';
+                
+                // Simulate search with a timeout
+                setTimeout(() => {
+                    // Filter results based on query
+                    const results = searchData.filter(item => 
+                        item.title.toLowerCase().includes(query.toLowerCase()) || 
+                        item.excerpt.toLowerCase().includes(query.toLowerCase())
+                    );
+                    
+                    if (results.length > 0) {
+                        let resultsHTML = '';
+                        results.forEach(result => {
+                            resultsHTML += `
+                                <div class="search-result-item">
+                                    <a href="${result.url}">
+                                        <h4>${result.title}</h4>
+                                        <p>${result.excerpt}</p>
+                                    </a>
+                                </div>
+                            `;
+                        });
+                        searchResults.innerHTML = resultsHTML;
+                    } else {
+                        searchResults.innerHTML = `<p class="no-results">No results found for "${query}"</p>`;
+                    }
+                }, 500);
+            }
+            
+            // Optional: Perform search as user types in modal (debounced)
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    performSearch(this.value.trim(), 'modal');
+                }, 300);
+            });
+        });
+    </script>
+<!-- Search ends -->
+
+
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <!-- style switcher -->
+    <div class="style-switcher">
+        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
+        <h3>Layout Options</h3>
+        <div class="layout-feature" id="colorMode">
+            <a href="" class="dark-switcher" data-theme="ambed-dark">Dark</a>
+            <a href="" class="light-switcher" data-theme="ambed-light">Light</a>
+            <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
+        </div><!-- /.language-feature -->
+    </div>
+    <!-- end style switcher -->
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+       <header class="main-header clearfix">
+            <div class="main-header__top">
+                <div class="container">
+                    <div class="main-header__top-inner clearfix">
+                        <div class="main-header__logo">
+                            <a href="index.html">
+                                <img src="assets/images/resources/logo-3.png" alt="" class="dark-logo" style="height: 85px; width: 100%;">
+                                <img src="assets/images/resources/logo-3.png" alt="" class="light-logo" style="height: 85px; width: 100%;">
+                            </a>
+                        </div>
+                        <div class="main-header__top-right">
+                            <div class="main-header__top-right-content">
+                                <div class="main-header__top-address-box">
+                                    <ul class="list-unstyled main-header__top-address">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-phone-call"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Call anytime</p>
+                                                <h5><a href="tel:980009630">+267 71 724 795</a></h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-message"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Send email</p>
+                                                <h5><a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a></h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon icon--location">
+                                                <span class="icon-location"></span>
+                                            </div>
+                                            <div class="content">
+                                                <p>Plot 12045, Nkoyaphiri Industrial</p>
+                                                <h5>Mogoditshane, Gaborone</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="main-header__top-right-social">
+                                            <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
+                                                <i class="fab fa-linkedin"></i>
+                                            </a>
+                                            <a href="https://www.facebook.com/greencarddiary" target="_blank" aria-label="Facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+
+                                            <a href="https://www.instagram.com/greencarddiary" target="_blank" aria-label="Instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                                <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
+                                                <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-menu clearfix">
+                <div class="main-menu__wrapper clearfix">
+                    <div class="container">
+                        <div class="main-menu__wrapper-inner clearfix">
+                            <div class="main-menu__left">
+                                <div class="main-menu__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list">
+                                        <li>
+                                            <a href="index.html">Home </a>
+                                        
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About </a>
+                                        </li>
+                                      
+                                      
+                                             <li class="dropdown">
+                                            <a href="project-details.html">Services</a>
+                                            <ul>
+                                                <li><a href="project-details.html">Customized Corporate Diaries, Soft Leatherette</a></li>
+                                                <li><a href="project-details-2.html">Calendars</a></li>
+                                                <li><a href="project-details-3.html">Printed & Laminated Diaries, Analog Precision, Digital Agility</a></li>
+                                                <li><a href="project-details-4.html">Filafox / Executive Diary Organizers</a></li>
+                                                <li><a href="project-details-5.html">Custom Branded Paper Bags</a></li>
+                                                <li><a href="project-details-6.html">Lever Arch Files</a></li>
+                                                <li><a href="project-details-7.html">Register Books</a></li>
+                                                <li><a href="project-details-8.html">Photo Albums</a></li>
+                                                <li><a href="project-details-9.html">NCR (Self Carbonating)</a></li>
+                                                <li><a href="project-details-10.html">Customized School Notebooks & Student Communication Diary</a></li>
+                                                <li><a href="project-details-11.html">Customized Corporate Diaries & Journals</a></li>
+                                            </ul>
+                                        </li>
+                                     
+                                        <li class="dropdown">
+                                            <a href="blog.html">Blog</a>
+                                            <ul>
+                                                <li><a href="blog-details-1.html">Why Small Businesses Love Our Low MOQ (20 Units) Custom Diaries</a></li>
+                                                <li><a href="blog-details-2.html">Learn How We Deliver Custom Diaries in Just 2 Weeks.</a></li>
+                                                <li><a href="blog-details-3.html">The Hidden Benefits of Sourcing Locally: Quality & Speed</a></li>
+                                                <li><a href="blog-details-4.html">Top 5 Corporate Gifting Trends in Botswana for 2023</a></li>
+                                                <li><a href="blog-details-5.html">How to Design a Custom Diary That Impresses Clients</a></li>
+                                                <li><a href="blog-details-6.html">Where to Find the Best Custom Diaries in Gaborone</a></li>
+                                            </ul>
+                                        </li>
+                                        <li> 
+                                            <a href="shop.html">Shop</a>
+                                          
+                                        </li>
+                                     
+                                        <li><a href="contact.html">Contact </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                            <div class="main-menu__right">
+                                <div class="main-menu__search-btn-box">
+                                    <div class="main-menu__search-box">
+                                        <input type="text" class="header-search-input search-toggler icon-magnifying-glass">
+                                        <button class="header-search-button">
+                                            <i class="fas fa-search" ></i>
+                                        </button>
+                                    </div>
+                                    <div class="main-menu__btn-box">
+                                        <a href="contact.html" class="thm-btn main-menu__btn">Book Appointment</a>
+                                    </div>
+                                </div>
+                            </div> 
+                   
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+<!-- Search starts -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <span class="search-close" id="searchClose">&times;</span>
+            <h2>Search Our Website</h2>
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
+                <button type="submit" class="search-submit">Search</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </div>
+    
+ <style>
+        
+        /* .main-menu__wrapper-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .main-menu__list {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .main-menu__list a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .main-menu__list a:hover {
+            color: #3498db;
+        }
+        
+        .main-menu__search-btn-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .main-menu__search {
+            font-size: 20px;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .main-menu__search:hover {
+            color: #3498db;
+        }
+         */
+
+        /* Header Search Bar */
+        /* .header-search-bar {
+            display: flex;
+            align-items: center;
+            background: #f1f2f6;
+            border-radius: 30px;
+            padding: 5px 15px;
+            margin-right: 5px;
+            width: 50px;
+            transition: all 0.3s ease;
+        } */
+        
+        /* .header-search-bar:focus-within {
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+            background: white;
+        }
+         */
+        .header-search-input {
+            border: none;
+            background: transparent;
+            padding: 8px 10px;
+            width: 100%;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .header-search-button {
+            background: none;
+            border: none;
+            color: #2c9c56;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        /* Search Modal Styles */
+        .search-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 9999;
+            padding-top: 100px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .search-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .search-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.5s ease;
+        }
+        
+        .search-modal.active .search-modal-content {
+            transform: translateY(0);
+        }
+        
+        .search-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s;
+        }
+        
+        .search-close:hover {
+            color: #e74c3c;
+        }
+        
+        .search-form {
+            margin-top: 20px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .search-submit {
+            background: #1B5E20;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+      .search-submit:hover {
+            background: #25D366;
+        }
+        
+        .search-results {
+            margin-top: 25px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        
+        .search-result-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .search-result-item h4 {
+            margin-bottom: 8px;
+            color: #1B5E20;
+        }
+        
+        .search-result-item p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+         .search-result-item:hover {
+            background: #25D366;
+        }
+        
+        .no-results {
+            padding: 15px;
+            text-align: center;
+            color: #2c9c56;
+        }
+        
+        /* Demo Content */
+        .demo-content {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .demo-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .demo-content p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #7f8c8d;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .main-header__top-address {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-menu__list {
+                gap: 15px;
+            }
+            
+            .header-search-bar {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-header__top-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .main-header__top-address-box {
+                width: 100%;
+            }
+            
+            .main-header__top-address {
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .main-menu__wrapper-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .main-menu__list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-search-bar {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .search-modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const headerSearchInput = document.querySelector('.header-search-input');
+            const headerSearchButton = document.querySelector('.header-search-button');
+            const searchToggler = document.querySelector('.search-toggler');
+            const searchModal = document.getElementById('searchModal');
+            const searchClose = document.getElementById('searchClose');
+            const searchForm = document.getElementById('searchForm');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            
+                      // Updated search data for GreenCard Diaries
+            const searchData = [
+                { 
+                    title: 'Customized Corporate Diaries', 
+                    url: 'project-details.html', 
+                    excerpt: 'Premium soft leatherette corporate diaries customized with your branding.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Calendars', 
+                    url: 'project-details-2.html', 
+                    excerpt: 'Custom printed calendars for corporate gifting and promotional purposes.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Printed & Laminated Diaries', 
+                    url: 'project-details-3.html', 
+                    excerpt: 'High-quality printed and laminated diaries with both analog and digital options.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Filafox / Executive Diary Organizers', 
+                    url: 'project-details-4.html', 
+                    excerpt: 'Premium executive diary organizers for professional use.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Custom Branded Paper Bags', 
+                    url: 'project-details-5.html', 
+                    excerpt: 'Eco-friendly custom branded paper bags for retail and corporate use.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Lever Arch Files', 
+                    url: 'project-details-6.html', 
+                    excerpt: 'Durable lever arch files customized with your company branding.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Register Books', 
+                    url: 'project-details-7.html', 
+                    excerpt: 'Custom register books for various business and institutional needs.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Photo Albums', 
+                    url: 'project-details-8.html', 
+                    excerpt: 'Beautiful custom photo albums for preserving memories.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'NCR (Self Carbonating) Books', 
+                    url: 'project-details-9.html', 
+                    excerpt: 'No Carbon Required forms and books for duplicate/triplicate records.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Customized School Notebooks', 
+                    url: 'project-details-10.html', 
+                    excerpt: 'Personalized school notebooks and student communication diaries.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Corporate Journals', 
+                    url: 'project-details-11.html', 
+                    excerpt: 'Elegant corporate journals for professional note-taking.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Low MOQ Custom Diaries', 
+                    url: 'blog-details-1.html', 
+                    excerpt: 'Why small businesses love our low minimum order quantity of just 20 units.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Fast Delivery Service', 
+                    url: 'blog-details-2.html', 
+                    excerpt: 'Learn how we deliver custom diaries in just 2 weeks.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Local Sourcing Benefits', 
+                    url: 'blog-details-3.html', 
+                    excerpt: 'The hidden benefits of sourcing locally: quality and speed advantages.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Corporate Gifting Trends', 
+                    url: 'blog-details-4.html', 
+                    excerpt: 'Top 5 corporate gifting trends in Botswana for 2023.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Diary Design Tips', 
+                    url: 'blog-details-5.html', 
+                    excerpt: 'How to design a custom diary that impresses clients and employees.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Find Custom Diaries in Gaborone', 
+                    url: 'blog-details-6.html', 
+                    excerpt: 'Where to find the best custom diaries in Gaborone, Botswana.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'About GreenCard Diaries', 
+                    url: 'about.html', 
+                    excerpt: 'Learn about our company, mission, and sustainable practices.',
+                    category: 'Company'
+                },
+                { 
+                    title: 'Contact Information', 
+                    url: 'contact.html', 
+                    excerpt: 'Get in touch with us for inquiries, quotes, or appointments.',
+                    category: 'Company'
+                },
+                { 
+                    title: 'Online Shop', 
+                    url: 'shop.html', 
+                    excerpt: 'Browse and purchase our products through our online store.',
+                    category: 'Shop'
+                },
+                { 
+                    title: 'Book Appointment', 
+                    url: 'contact.html', 
+                    excerpt: 'Schedule a consultation or meeting with our team.',
+                    category: 'Service'
                 }
             ];
             
@@ -2107,149 +2910,6 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
     </script>
  <!-- Chat Bot ends -->
 
-<body class="custom-cursor">
-
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
-
-    <!-- style switcher -->
-    <div class="style-switcher">
-        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
-        <h3>Layout Options</h3>
-        <div class="layout-feature" id="colorMode">
-            <a href="" class="dark-switcher" data-theme="ambed-dark">Dark</a>
-            <a href="" class="light-switcher" data-theme="ambed-light">Light</a>
-            <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
-        </div><!-- /.language-feature -->
-    </div>
-    <!-- end style switcher -->
-
-
-
-    <div class="preloader">
-        <div class="preloader__image"></div>
-    </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper">
-      <header class="main-header clearfix">
-            <div class="main-header__top">
-                <div class="container">
-                    <div class="main-header__top-inner clearfix">
-                        <div class="main-header__logo">
-                            <a href="index.html">
-                                <img src="assets/images/resources/logo-3.png" alt="" class="dark-logo" style="height: 85px; width: 100%;">
-                                <img src="assets/images/resources/logo-3.png" alt="" class="light-logo" style="height: 85px; width: 100%;">
-                            </a>
-                        </div>
-                        <div class="main-header__top-right">
-                            <div class="main-header__top-right-content">
-                                <div class="main-header__top-address-box">
-                                    <ul class="list-unstyled main-header__top-address">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-phone-call"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Call anytime</p>
-                                                <h5><a href="tel:980009630">+267 71 724 795</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-message"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Send email</p>
-                                                <h5><a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon icon--location">
-                                                <span class="icon-location"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Plot 12045, Nkoyaphiri Industrial</p>
-                                                <h5>Mogoditshane, Gaborone</h5>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-header__top-right-social">
-                                            <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
-                                                <i class="fab fa-linkedin"></i>
-                                            </a>
-                                            <a href="https://www.facebook.com/greencarddiary" target="_blank" aria-label="Facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
-
-                                            <a href="https://www.instagram.com/greencarddiary" target="_blank" aria-label="Instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                                <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
-                                                <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav class="main-menu clearfix">
-                <div class="main-menu__wrapper clearfix">
-                    <div class="container">
-                        <div class="main-menu__wrapper-inner clearfix">
-                            <div class="main-menu__left">
-                                <div class="main-menu__main-menu-box">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list">
-                                        <li class="dropdown megamenu">
-                                            <a href="index.html">Home </a>
-                                        
-                                        </li>
-                                        <li>
-                                            <a href="about.html">About </a>
-                                        </li>
-                                      
-                                        <li>
-                                            <a href="projects.html">Projects</a>
-                                        </li>
-                                        <li>
-                                            <a href="services.html">Services </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog.html">Blog </a>
-                                        </li>
-                                        <li> 
-                                            <a href="shop.html">Shop</a>
-                                          
-                                        </li>
-                                     
-                                        <li><a href="contact.html">Contact </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-
-                            <div class="main-menu__right">
-                                <div class="main-menu__search-btn-box">
-                                    <div class="main-menu__search-box">
-                                        <input type="text" class="header-search-input search-toggler icon-magnifying-glass">
-                                        <button class="header-search-button">
-                                            <i class="fas fa-search" ></i>
-                                        </button>
-                                    </div>
-                                    <div class="main-menu__btn-box">
-                                        <a href="contact.html" class="thm-btn main-menu__btn">Book Appointment</a>
-                                    </div>
-                                </div>
-                            </div> 
-                   
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -2436,8 +3096,8 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
             <div class="newsletter-shape-1" style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
             <div class="newsletter__left">
-                <h3 class="newsletter__title">Join Our Eco-Community</h3>
-                <p class="newsletter__text">Get sustainability tips, exclusive offers, and tree-planting updates</p>
+                <h3 class="newsletter__title">Track Your Order Here</h3>
+                <p class="newsletter__text">Provide your email so we can track your order</p>
             </div>
             <div class="newsletter__right">
                 <form class="newsletter__form" id="newsletterForm">
@@ -2446,7 +3106,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                         <input type="email" placeholder="Enter your email" name="email" required>
                         
                         <!-- SUBSCRIBE BUTTON (VISUALLY UNCHANGED) -->
-                        <button type="submit" class="thm-btn newsletter__btn">Subscribe</button>
+                        <button type="submit" class="thm-btn newsletter__btn">Track Order</button>
                     </div>
                 </form>
             </div>
@@ -2460,7 +3120,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
         const email = document.querySelector('input[name="email"]').value;
         
         // WhatsApp message format
-        const whatsappUrl = `https://wa.me/26771548257?text=New%20Newsletter%20Subscription:%0A%0AEmail:%20${encodeURIComponent(email)}%0A%0A(Please%20confirm%20subscription)`;
+        const whatsappUrl = `https://wa.me/26771548257?text=Track%20My%20Order:%0A%0AEmail:%20${encodeURIComponent(email)}%0A%0A(Please%20confirm%20Order%20progress%20Thanks)`;
         
         window.open(whatsappUrl, '_blank');
         alert('Please send the pre-filled WhatsApp message to complete your subscription.');
@@ -2485,7 +3145,8 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                             <p class="footer-widget__about-text">Botswana's premier eco-friendly stationery brand, crafting sustainable diaries and calendars from sugarcane waste since 2010.</p>
                         </div>
                         <div class="site-footer__social">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            
+                           
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-whatsapp"></i></a>
@@ -2493,17 +3154,24 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                     </div>
                 </div>
 
+               
+
                 <!-- Explore Column -->
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer-widget__explore clearfix">
-                        <h3 class="footer-widget__title">Explore</h3>
+                        <h3 class="footer-widget__title">Our Services</h3>
                         <ul class="footer-widget__explore-list list-unstyled clearfix">
-                            <li><a href="#">Our Green Story</a></li>
-                            <li><a href="#">Eco-Friendly Products</a></li>
-                            <li><a href="#">Environmental Impact</a></li>
-                            <li><a href="#">Sustainability Blog</a></li>
-                            <li><a href="#">Wholesale Inquiry</a></li>
-                            <li><a href="#">Custom Orders</a></li>
+                      <li><a href="project-details.html">Soft Leatherette</a></li>
+                                                <li><a href="project-details-2.html">Calendars</a></li>
+                                                <li><a href="project-details-3.html">Diaries</a></li>
+                                                <li><a href="project-details-4.html">Filafox</a></li>
+                                                <li><a href="project-details-5.html">Custom Branded Paper Bags</a></li>
+                                                <li><a href="project-details-6.html">Lever Arch Files</a></li>
+                                                <li><a href="project-details-7.html">Register Books</a></li>
+                                                <li><a href="project-details-8.html">Photo Albums</a></li>
+                                                <li><a href="project-details-9.html">NCR (Self Carbonating)</a></li>
+                                                <li><a href="project-details-10.html">School Notebooks</a></li>
+                                                <li><a href="project-details-11.html">Corporate Journals</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2511,14 +3179,14 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                 <!-- Products Column -->
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer-widget__services clearfix">
-                        <h3 class="footer-widget__title">Our Products</h3>
+                        <h3 class="footer-widget__title">Our Blogs</h3>
                         <ul class="footer-widget__services-list list-unstyled clearfix">
-                            <li><a href="#">Sugarcane Diaries</a></li>
-                            <li><a href="#">Eco Calendars</a></li>
-                            <li><a href="#">Corporate Gifts</a></li>
-                            <li><a href="#">School Stationery</a></li>
-                            <li><a href="#">Custom Branding</a></li>
-                            <li><a href="#">New Arrivals</a></li>
+                        <li><a href="blog-details-1.html">Why Small Businesses Love Our Low MOQ (20 Units) Custom Diaries</a></li>
+                                                <li><a href="blog-details-2.html">Learn How We Deliver</a></li>
+                                                <li><a href="blog-details-3.html">Quality & Speed</a></li>
+                                                <li><a href="blog-details-4.html">Top 5 Corporate Gifting Trends</a></li>
+                                                <li><a href="blog-details-5.html">How to Design a Custom Diary</a></li>
+                                                <li><a href="blog-details-6.html">Where to Find the Best Custom Diaries in Gaborone</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2580,44 +3248,47 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
     </div><!-- /.page-wrapper -->
 
 
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/footer-logo.png"
-                        width="155" alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@ambed.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-
+        <div class="logo-box">
+            <a href="index.html" aria-label="GreenCard Diaries Logo">
+                <img src="assets/images/resources/logo-3.png" width="155" alt="GreenCard Diaries" />
+            </a>
         </div>
-        <!-- /.mobile-nav__content -->
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:+26771548257">+267 7154 8257</a>
+            </li>
+            <li>
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/26771548257">Chat on WhatsApp</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
+                <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                <a href="#" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+                <a href="https://wa.me/26771548257" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
     </div>
+    <!-- /.mobile-nav__content -->
+</div>
     <!-- /.mobile-nav__wrapper -->
 
     <div class="search-popup">

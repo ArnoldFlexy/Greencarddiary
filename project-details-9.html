@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Projects || Greencard Diary </title>
+    <title> Services || Greencard Diary </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="content">
                                                 <p>Send email</p>
-                                                <h5><a href="mailto:henley@greencarddiary.co.bw">henley@greencarddiary.co.bw</a></h5>
+                                                <h5><a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a></h5>
                                             </div>
                                         </li>
                                         <li>
@@ -127,11 +127,11 @@
                                             <a href="https://www.linkedin.com/company/greencarddiaries" target="_blank" aria-label="LinkedIn">
                                                 <i class="fab fa-linkedin"></i>
                                             </a>
-                                            <a href="https://www.facebook.com/GreenCardDiaries" target="_blank" aria-label="Facebook">
+                                            <a href="https://www.facebook.com/greencarddiary" target="_blank" aria-label="Facebook">
                                                 <i class="fab fa-facebook"></i>
                                             </a>
 
-                                            <a href="https://www.instagram.com/greencarddiaries" target="_blank" aria-label="Instagram">
+                                            <a href="https://www.instagram.com/greencarddiary" target="_blank" aria-label="Instagram">
                                                 <i class="fab fa-instagram"></i>
                                             </a>
                                                 <a href="https://wa.me/26771548257" target="_blank" aria-label="WhatsApp">
@@ -151,25 +151,45 @@
                                 <div class="main-menu__main-menu-box">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
-                                        <li class="dropdown megamenu">
+                                        <li>
                                             <a href="index.html">Home </a>
                                         
                                         </li>
                                         <li>
-                                            <a href="#about">About </a>
+                                            <a href="about.html">About </a>
                                         </li>
                                       
-                                        <li>
-                                            <a href="#projects">Projects</a>
+                                      
+                                             <li class="dropdown">
+                                            <a href="project-details.html">Services</a>
+                                            <ul>
+                                                <li><a href="project-details.html">Customized Corporate Diaries, Soft Leatherette</a></li>
+                                                <li><a href="project-details-2.html">Calendars</a></li>
+                                                <li><a href="project-details-3.html">Printed & Laminated Diaries, Analog Precision, Digital Agility</a></li>
+                                                <li><a href="project-details-4.html">Filafox / Executive Diary Organizers</a></li>
+                                                <li><a href="project-details-5.html">Custom Branded Paper Bags</a></li>
+                                                <li><a href="project-details-6.html">Lever Arch Files</a></li>
+                                                <li><a href="project-details-7.html">Register Books</a></li>
+                                                <li><a href="project-details-8.html">Photo Albums</a></li>
+                                                <li><a href="project-details-9.html">NCR (Self Carbonating)</a></li>
+                                                <li><a href="project-details-10.html">Customized School Notebooks & Student Communication Diary</a></li>
+                                                <li><a href="project-details-11.html">Customized Corporate Diaries & Journals</a></li>
+                                            </ul>
                                         </li>
-                                        <li>
-                                            <a href="#services">Services </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog.html">Blog </a>
+                                     
+                                        <li class="dropdown">
+                                            <a href="blog.html">Blog</a>
+                                            <ul>
+                                                <li><a href="blog-details-1.html">Why Small Businesses Love Our Low MOQ (20 Units) Custom Diaries</a></li>
+                                                <li><a href="blog-details-2.html">Learn How We Deliver Custom Diaries in Just 2 Weeks.</a></li>
+                                                <li><a href="blog-details-3.html">The Hidden Benefits of Sourcing Locally: Quality & Speed</a></li>
+                                                <li><a href="blog-details-4.html">Top 5 Corporate Gifting Trends in Botswana for 2023</a></li>
+                                                <li><a href="blog-details-5.html">How to Design a Custom Diary That Impresses Clients</a></li>
+                                                <li><a href="blog-details-6.html">Where to Find the Best Custom Diaries in Gaborone</a></li>
+                                            </ul>
                                         </li>
                                         <li> 
-                                            <a href="#shop">Shop</a>
+                                            <a href="shop.html">Shop</a>
                                           
                                         </li>
                                      
@@ -198,7 +218,23 @@
                 </div>
             </nav>
         </header>
-         <style>
+        
+<!-- Search starts -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <span class="search-close" id="searchClose">&times;</span>
+            <h2>Search Our Website</h2>
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
+                <button type="submit" class="search-submit">Search</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </div>
+    
+ <style>
         
         /* .main-menu__wrapper-inner {
             display: flex;
@@ -271,7 +307,7 @@
         .header-search-button {
             background: none;
             border: none;
-            color: #3498db;
+            color: #2c9c56;
             cursor: pointer;
             font-size: 16px;
         }
@@ -349,7 +385,7 @@
         }
         
         .search-submit {
-            background: #3498db;
+            background: #1B5E20;
             color: white;
             padding: 15px 25px;
             border: none;
@@ -361,8 +397,8 @@
             transition: background 0.3s;
         }
         
-        .search-submit:hover {
-            background: #2980b9;
+      .search-submit:hover {
+            background: #25D366;
         }
         
         .search-results {
@@ -391,7 +427,7 @@
         
         .search-result-item h4 {
             margin-bottom: 8px;
-            color: #3498db;
+            color: #1B5E20;
         }
         
         .search-result-item p {
@@ -399,14 +435,14 @@
             font-size: 14px;
         }
         
-        .search-result-item:hover {
-            background: #f9f9f9;
+         .search-result-item:hover {
+            background: #25D366;
         }
         
         .no-results {
             padding: 15px;
             text-align: center;
-            color: #7f8c8d;
+            color: #2c9c56;
         }
         
         /* Demo Content */
@@ -478,22 +514,7 @@
             }
         }
     </style>
-
-     <!-- Search Modal -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-content">
-            <span class="search-close" id="searchClose">&times;</span>
-            <h2>Search Our Website</h2>
-            <form class="search-form" id="searchForm">
-                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
-                <button type="submit" class="search-submit">Search</button>
-            </form>
-            <div class="search-results" id="searchResults">
-                <!-- Search results will appear here -->
-            </div>
-        </div>
-    </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get elements
@@ -506,47 +527,133 @@
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             
-            // Sample search data - replace with your actual content
+                      // Updated search data for GreenCard Diaries
             const searchData = [
                 { 
-                    title: 'About Our Company', 
-                    url: '#about', 
-                    excerpt: 'Learn more about Green Card Diaries and our mission to help with immigration processes.' 
+                    title: 'Customized Corporate Diaries', 
+                    url: 'project-details.html', 
+                    excerpt: 'Premium soft leatherette corporate diaries customized with your branding.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Our Services', 
-                    url: '#services', 
-                    excerpt: 'We offer consultation services, document preparation, and application guidance.' 
+                    title: 'Calendars', 
+                    url: 'project-details-2.html', 
+                    excerpt: 'Custom printed calendars for corporate gifting and promotional purposes.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Service of Users', 
-                    url: '#services', 
-                    excerpt: 'Our user services include personalized consultations and application assistance.' 
+                    title: 'Printed & Laminated Diaries', 
+                    url: 'project-details-3.html', 
+                    excerpt: 'High-quality printed and laminated diaries with both analog and digital options.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Consultation Services', 
-                    url: '#services', 
-                    excerpt: 'Professional consultation services for immigration and green card applications.' 
+                    title: 'Filafox / Executive Diary Organizers', 
+                    url: 'project-details-4.html', 
+                    excerpt: 'Premium executive diary organizers for professional use.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Recent Projects', 
-                    url: '#projects', 
-                    excerpt: 'Take a look at our recently completed successful immigration cases.' 
+                    title: 'Custom Branded Paper Bags', 
+                    url: 'project-details-5.html', 
+                    excerpt: 'Eco-friendly custom branded paper bags for retail and corporate use.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Blog - Immigration Tips', 
-                    url: 'blog.html', 
-                    excerpt: 'Read our latest article on tips for a successful green card application.' 
+                    title: 'Lever Arch Files', 
+                    url: 'project-details-6.html', 
+                    excerpt: 'Durable lever arch files customized with your company branding.',
+                    category: 'Product'
                 },
                 { 
-                    title: 'Contact Us', 
+                    title: 'Register Books', 
+                    url: 'project-details-7.html', 
+                    excerpt: 'Custom register books for various business and institutional needs.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Photo Albums', 
+                    url: 'project-details-8.html', 
+                    excerpt: 'Beautiful custom photo albums for preserving memories.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'NCR (Self Carbonating) Books', 
+                    url: 'project-details-9.html', 
+                    excerpt: 'No Carbon Required forms and books for duplicate/triplicate records.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Customized School Notebooks', 
+                    url: 'project-details-10.html', 
+                    excerpt: 'Personalized school notebooks and student communication diaries.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Corporate Journals', 
+                    url: 'project-details-11.html', 
+                    excerpt: 'Elegant corporate journals for professional note-taking.',
+                    category: 'Product'
+                },
+                { 
+                    title: 'Low MOQ Custom Diaries', 
+                    url: 'blog-details-1.html', 
+                    excerpt: 'Why small businesses love our low minimum order quantity of just 20 units.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Fast Delivery Service', 
+                    url: 'blog-details-2.html', 
+                    excerpt: 'Learn how we deliver custom diaries in just 2 weeks.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Local Sourcing Benefits', 
+                    url: 'blog-details-3.html', 
+                    excerpt: 'The hidden benefits of sourcing locally: quality and speed advantages.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Corporate Gifting Trends', 
+                    url: 'blog-details-4.html', 
+                    excerpt: 'Top 5 corporate gifting trends in Botswana for 2023.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Diary Design Tips', 
+                    url: 'blog-details-5.html', 
+                    excerpt: 'How to design a custom diary that impresses clients and employees.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'Find Custom Diaries in Gaborone', 
+                    url: 'blog-details-6.html', 
+                    excerpt: 'Where to find the best custom diaries in Gaborone, Botswana.',
+                    category: 'Blog'
+                },
+                { 
+                    title: 'About GreenCard Diaries', 
+                    url: 'about.html', 
+                    excerpt: 'Learn about our company, mission, and sustainable practices.',
+                    category: 'Company'
+                },
+                { 
+                    title: 'Contact Information', 
                     url: 'contact.html', 
-                    excerpt: 'Get in touch with our team to schedule a consultation appointment.' 
+                    excerpt: 'Get in touch with us for inquiries, quotes, or appointments.',
+                    category: 'Company'
                 },
                 { 
                     title: 'Online Shop', 
-                    url: '#shop', 
-                    excerpt: 'Check out our resources and guides for purchase in our online shop.' 
+                    url: 'shop.html', 
+                    excerpt: 'Browse and purchase our products through our online store.',
+                    category: 'Shop'
+                },
+                { 
+                    title: 'Book Appointment', 
+                    url: 'contact.html', 
+                    excerpt: 'Schedule a consultation or meeting with our team.',
+                    category: 'Service'
                 }
             ];
             
@@ -662,6 +769,1593 @@
             });
         });
     </script>
+<!-- Search ends -->
+
+ <!-- Chat Bot starts -->
+    <style>
+        /* Chat Bot Styles */
+        .chat-bot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 100vw;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background-color 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        .chat-button i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-window {
+            width: 500px;
+            height: 700px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            max-width: 95vw;
+            max-height: 90vh;
+        }
+
+        .chat-window.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #2c9c56, #1e6e46);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .chat-avatar {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .chat-header .fa-robot {
+            font-size: 24px;
+            margin-right: 12px;
+            animation: robotPulse 2s infinite ease-in-out;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .chat-header-info {
+            z-index: 2;
+        }
+
+        .chat-header-info h3 {
+            font-size: 16px;
+            margin: 0 0 3px 0;
+        }
+
+        .chat-header-info p {
+            font-size: 12px;
+            opacity: 0.8;
+            margin: 0;
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f5f7f9;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+            word-break: break-word;
+        }
+
+        .bot-message {
+            background-color: #e6e6e6;
+            color: #333;
+            border-top-left-radius: 4px;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background-color: #2c9c56;
+            color: white;
+            border-top-right-radius: 4px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .chat-input button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2c9c56;
+            color: white;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-input button:hover {
+            background-color: #1e6e46;
+        }
+
+        .suggested-questions {
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+            color: #000;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggested-question {
+            padding: 8px 12px;
+            background-color: #f0f5ff;
+            border: 1px solid #d0deff;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .suggested-question:hover {
+            background-color: #d0deff;
+        }
+
+        .whatsapp-prompt {
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #25D366;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+
+        .header-waves {
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #4CAF50 100%);
+            position: relative;
+        }
+
+        .header-waves::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M0,50 Q50,20 100,50 T200,50 L200,100 L0,100 Z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat-x;
+            background-size: 200px 100px;
+            animation: wave 8s linear infinite;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            background-color: #e6e6e6;
+            padding: 10px 15px;
+            border-radius: 18px;
+            display: inline-block;
+            margin-bottom: 15px;
+            max-width: 80%;
+            border-top-left-radius: 4px;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 1px;
+            background-color: #9E9EA1;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .typing-indicator span:nth-of-type(1) {
+            animation: typing 1s infinite;
+        }
+
+        .typing-indicator span:nth-of-type(2) {
+            animation: typing 1s 0.33s infinite;
+        }
+
+        .typing-indicator span:nth-of-type(3) {
+            animation: typing 1s 0.66s infinite;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #2c9c56;
+            white-space: nowrap;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        /* Quotation Form Styles */
+        .quotation-form {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #2c9c56;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #2c9c56;
+            color: #2c9c56;
+        }
+
+        .quotation-summary {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .summary-item {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-label {
+            font-weight: bold;
+        }
+
+        .confirmation-checkbox {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .confirmation-checkbox input {
+            margin-right: 8px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes robotPulse {
+            0% { 
+                transform: scale(1) rotate(0deg);
+                text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            }
+            25% { 
+                transform: scale(1.1) rotate(-2deg);
+                text-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+            }
+            50% { 
+                transform: scale(1.2) rotate(2deg);
+                text-shadow: 0 0 20px rgba(76, 175, 80, 1);
+            }
+            75% { 
+                transform: scale(1.1) rotate(-1deg);
+                text-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+            }
+            100% { 
+                transform: scale(1) rotate(0deg);
+                text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes typing {
+            0% {
+                opacity: 0.4;
+                transform: translateY(0px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+            100% {
+                opacity: 0.4;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #2c9c56; }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .chat-window {
+                width: 95vw;
+                height: 85vh;
+                min-width: 220px;
+                min-height: 320px;
+                right: 2vw;
+                bottom: 80px;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .chat-header {
+                padding: 10px;
+                font-size: 15px;
+            }
+            .chat-messages {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .chat-input input {
+                font-size: 13px;
+                padding: 10px;
+            }
+            .chat-input button {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                margin-left: 6px;
+            }
+            .suggested-questions {
+                gap: 5px;
+                padding: 8px;
+                font-size: 13px;
+            }
+            .suggested-question {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+            .whatsapp-prompt {
+                padding: 10px;
+                margin: 6px;
+                font-size: 13px;
+            }
+            .chat-bot-container {
+                bottom: 10px;
+                right: 10px;
+            }
+            .chat-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .chat-window {
+                width: 98vw;
+                height: 80vh;
+                min-width: 180px;
+                min-height: 220px;
+                right: 1vw;
+                bottom: 70px;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+            .chat-header {
+                padding: 8px;
+                font-size: 13px;
+            }
+            .chat-messages {
+                padding: 6px;
+                font-size: 13px;
+            }
+            .chat-input input {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .chat-input button {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+                margin-left: 4px;
+            }
+            .suggested-questions {
+                gap: 3px;
+                padding: 6px;
+                font-size: 12px;
+            }
+            .suggested-question {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+            .whatsapp-prompt {
+                padding: 8px;
+                margin: 4px;
+                font-size: 12px;
+            }
+            .chat-bot-container {
+                bottom: 5px;
+                right: 5px;
+            }
+            .chat-button {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    </style>
+
+    <div class="chat-bot-container">
+        <div class="chat-window">
+            <div class="chat-header header-waves">
+                <div class="chat-avatar">
+                    <i class="fas fa-robot"></i>
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <h5 style="color: white;" id="live-chat-text">LIVE CHAT</h5>
+                        <p id="online-status">•Online</p>
+                    </div>
+                </div>
+                <div class="language-selector" style="margin-left: auto; z-index: 3;">
+                    <select id="languageSelect" style="background: #2c9c56;; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; padding: 5px; font-size: 12px;">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="tn">🇧🇼 Setswana</option>
+                        <option value="sn">🇿🇼 Shona</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="suggested-questions">
+                <div class="suggested-question" data-en="What products do you offer?" data-tn="Dilo dife tse lo di rekisang?" data-sn="Munei zvigadzirwa zvaunotengesa?">What products do you offer?</div>
+                <div class="suggested-question" data-en="Tell me about your diaries" data-tn="Naya ka dipuku tsa lona" data-sn="Ndiudze nezvemadhayari ako">Tell me about your diaries</div>
+                <div class="suggested-question" data-en="Where are you located?" data-tn="Lo kae?" data-sn="Uripi?">Where are you located?</div>
+                <div class="suggested-question" data-en="Do you do custom orders?" data-tn="A lo dira di-order tse di beilweng?" data-sn="Munoita maodha akasarudzika here?">Do you do custom orders?</div>
+                <div class="suggested-question" data-en="Do you need a quotation?" data-tn="A o batla tekanyetso?" data-sn="Unoda quotation here?" id="quotation-suggestion">Do you need a quotation?</div>
+            </div>
+            
+            <div class="chat-messages">
+                <div class="message bot-message" id="welcome-message">
+                    Hello! I'm your Greencarddiary assistant. How can I help you with our products today?
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type your message here...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="footer">
+                <p style="justify-content: center; 
+                text-align: center; 
+                size: 4px; 
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 10px;
+                text-align: center;
+                background: rgba(187, 178, 178, 0.25);
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                line-height: 1.6;
+                color: rgb(73, 73, 73);
+                ">Powered by 
+                <a href="https://techsec-labs.com" 
+                target="_blank" rel="noopener noreferrer">TechSec-LABS</a></p>
+            </div>
+        </div>
+        
+        <div class="chat-button">
+            <i class="fas fa-comment"></i>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const chatButton = document.querySelector('.chat-button');
+            const chatWindow = document.querySelector('.chat-window');
+            const chatInput = document.querySelector('#chat-input-field');
+            const sendButton = document.querySelector('.chat-input button');
+            const chatMessages = document.querySelector('.chat-messages');
+            const suggestedQuestions = document.querySelectorAll('.suggested-question');
+            const languageSelect = document.querySelector('#languageSelect');
+            const quotationSuggestion = document.querySelector('#quotation-suggestion');
+            
+            // State variables
+            let unansweredCount = 0;
+            let whatsappPromptShown = false;
+            let currentLanguage = 'en';
+            let isTyping = false;
+            let quotationData = {
+                productType: '',
+                quantity: '',
+                size: '',
+                bindingType: '',
+                customization: [],
+                paperType: '',
+                coverDetails: '',
+                specialRequirements: '',
+                contactInfo: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: ''
+                }
+            };
+            let currentStep = 0;
+            const quotationSteps = ['product', 'specifications', 'customization', 'contact'];
+            
+            // Translation object with Shona added
+            const translations = {
+                en: {
+                    liveChatTitle: 'LIVE CHAT',
+                    onlineStatus: '•Online',
+                    welcomeMessage: 'Hello! I\'m your Greencarddiary assistant. How can I help you with our products today?',
+                    inputPlaceholder: 'Type your message here...',
+                    whatsappPromptText: 'I\'d love to connect you with one of our human experts who can provide more detailed assistance! Would you like to chat with them on WhatsApp?',
+                    whatsappButtonText: 'Chat with Expert',
+                    needQuotation: "Do you need a quotation?",
+                    quotationTitle: "Custom Quotation Request",
+                    productType: "Product Type",
+                    quantity: "Quantity",
+                    size: "Size",
+                    bindingType: "Binding Type",
+                    customization: "Customization Options",
+                    paperType: "Paper Type",
+                    coverDetails: "Cover Details",
+                    specialRequirements: "Special Requirements",
+                    contactInfo: "Your Contact Information",
+                    name: "Full Name",
+                    email: "Email Address",
+                    phone: "Phone Number",
+                    company: "Company Name",
+                    next: "Next",
+                    previous: "Previous",
+                    submit: "Submit Request",
+                    summary: "Quotation Summary",
+                    confirmDetails: "Please confirm your details are correct:",
+                    correct: "Yes, my details are correct",
+                    sendWhatsApp: "Send via WhatsApp",
+                    quotationPrompt: "I'd be happy to help you with a quotation! Please provide some details about what you need."
+                },
+                tn: {
+                    liveChatTitle: 'PUISANO YA MATENG',
+                    onlineStatus: '•Mo mafaratlheng',
+                    welcomeMessage: 'Dumela! Ke mothusi wa gago wa Greencarddiary. Nka go thusa jang ka dilo tsa rona gompieno?',
+                    inputPlaceholder: 'Kwala molaetsa wa gago fano...',
+                    whatsappPromptText: 'Ke batla go go kopanya le mongwe wa ditswerere tsa rona tse di ka go thusang sentle! A o batla go bua nabo mo WhatsApp?',
+                    whatsappButtonText: 'Bua le Seitsanape',
+                    needQuotation: "A o batla tekanyetso?",
+                    quotationTitle: "Kopo ya Tekanyetso e e Beilweng",
+                    productType: "Mofuta wa Dilo",
+                    quantity: "Palo",
+                    size: "Bogolo",
+                    bindingType: "Mofuta wa go Bopa",
+                    customization: "Dikgetho tsa go Ipeola",
+                    paperType: "Mofuta wa Pampiri",
+                    coverDetails: "Ditlhakoretsi tsa Khavare",
+                    specialRequirements: "Dithata tse di Kgethegileng",
+                    contactInfo: "Tshedimosetso ya gago ya go Golagana",
+                    name: "Maina a Ruri",
+                    email: "Aterese ya Email",
+                    phone: "Nomoro ya Mogala",
+                    company: "Leina ya Khampani",
+                    next: "E setseng",
+                    previous: "E isagane",
+                    submit: "Tumela Kopo",
+                    summary: "Kakaretso ya Tekanyetso",
+                    confirmDetails: "Ka kopo, netefatsa gore tshedimosetso ya gago e nepagile:",
+                    correct: "Ee, tshedimosetso ya me e nepagile",
+                    sendWhatsApp: "Romela ka WhatsApp",
+                    quotationPrompt: "Ke itumetse go go thusa ka tekanyetso! Ka kopo, naya ka ditlhakoretsi tse di maleba le se o se tlhokang."
+                },
+                sn: {
+                    liveChatTitle: 'HURUKURO YEPAMHEPO',
+                    onlineStatus: '•Pamhepo',
+                    welcomeMessage: 'Mhoro! Ndiri mushandi wako weGreencarddiary. Ndingakubatsire sei nezvezvigadzirwa zvedu nhasi?',
+                    inputPlaceholder: 'Nyora meseji yako pano...',
+                    whatsappPromptText: 'Ndinoda kukubatanidza neumwe wenyanzvi dzedu dzinogona kupa rubatsiro rwakadzama! Ungada here kutaura navo paWhatsApp?',
+                    whatsappButtonText: 'Taura neNyanzvi',
+                    needQuotation: "Unoda quotation here?",
+                    quotationTitle: "Chikumbiro cheQuotation Chakasarudzika",
+                    productType: "Rudzi rweChigadzirwa",
+                    quantity: "Uwandu",
+                    size: "Saizi",
+                    bindingType: "Rudzi rweKusunga",
+                    customization: "Sarudzo dzeCustomization",
+                    paperType: "Rudzi rweBepa",
+                    coverDetails: "Ruzivo rweButiro",
+                    specialRequirements: "Zvinodiwa Zvakasarudzika",
+                    contactInfo: "Ruzivo rwako rweKuonana",
+                    name: "Zita Rose",
+                    email: "Kero yeEmail",
+                    phone: "Nhamba yeFoni",
+                    company: "Zita reKambani",
+                    next: "Zvinotevera",
+                    previous: "Zvapfuura",
+                    submit: "Tumira Chikumbiro",
+                    summary: "Pfupiso yeQuotation",
+                    confirmDetails: "Ndapota simbisa kuti ruzivo rwako rwakarurama:",
+                    correct: "Hongu, ruzivo rwangu rwakarurama",
+                    sendWhatsApp: "Tumira kuburikidza neWhatsApp",
+                    quotationPrompt: "Ndingafare kukubatsira nequotation! Ndapota ipa rumwe ruzivo nezve zvaunoda."
+                }
+            };
+            
+            // Enhanced knowledge base with Greencarddiary products
+            const knowledgeBase = {
+                // Greetings and politeness
+                'greeting': {
+                    pattern: {
+                        en: /\b(hello|hi|hey|greetings|howdy|good morning|good afternoon|good evening|sup|wassup)\b/i,
+                        tn: /\b(dumela|thobela|aowa|tsamaya sentle|o tsogile jang|o kae)\b/i,
+                        sn: /\b(mhoro|masikati|manheru|marara sei|mwakanaka|ndewe|horoi)\b/i
+                    },
+                    response: {
+                        en: 'Hello! Welcome to Greencarddiary. We specialize in custom diaries, calendars, and stationery products. How can I assist you today? 😊',
+                        tn: 'Dumela! O amogelwe ko Greencarddiary. Re itsise ka go dira dipuku tse di beilweng, dikhalendara, le dilo tsa ofisi. Nka go thusa jang gompieno? 😊',
+                        sn: 'Mhoro! Tigamuchirwe kuGreencarddiary. Isu tinonyanya kugadzira madhayari akasarudzika, makarenda, uye zvigadzirwa zvepamabasa. Ndingakubatsire sei nhasi? 😊'
+                    }
+                },
+                'how_are_you': {
+                    pattern: {
+                        en: /how are you|how do you do|how\'s it going|what\'s up/i,
+                        tn: /o kae|o tsogile jang|o phela jang|go direga eng/i,
+                        sn: /wakadii|maswera sei|marara sei|zviri kufamba sei/i
+                    },
+                    response: {
+                        en: 'I\'m doing great, thank you for asking! I\'m here and ready to help you with any questions about our custom diaries, calendars, or other stationery products. How are you doing today? 😊',
+                        tn: 'Ke siame, ke lebogile gore o botsa! Ke mo mafaratlheng mme ke ipaakantse go go thusa ka dipotso dipe fela tsa dipuku tsa rona tse di beilweng, dikhalendara, kgotsa dilo tse dingwe tsa ofisi. O kae gompieno? 😊',
+                        sn: 'Ndiri mushanda zvakanaka, ndatenda nekubvunza! Ndiri pano uye ndakagadzirira kukubatsira nemibvunzo yese pamusoro pemadhayari edu akasarudzika, makarenda, kana zvimwe zvigadzirwa zvemumabasa. Wakadii nhasi? 😊'
+                    }
+                },
+                'goodbye': {
+                    pattern: {
+                        en: /bye|goodbye|see you|farewell|talk later|gtg|gotta go/i,
+                        tn: /sala sentle|tsamaya sentle|re bone|ke tsamaile|ke tsamaya/i,
+                        sn: /sara mushe|enda mushe|tichaonana|taura gare gare|ndofanira kuenda/i
+                    },
+                    response: {
+                        en: 'Goodbye! Thank you for chatting with Greencarddiary. Feel free to reach out anytime if you need help with custom diaries or stationery products. Have a wonderful day! 👋',
+                        tn: 'Tsamaya sentle! Ke lebogile gore o buile le Greencarddiary. Ikutlwe o gololesegile go re letsetsa nako nngwe le nngwe fa o tlhoka thuso ka dipuku tse di beilweng kgotsa dilo tsa ofisi. Nna le letsatsi le lentle! 👋',
+                        sn: 'Sara mushe! Ndatenda nekutaura neGreencarddiary. Inzwa wakasununguka kubata nesu chero nguva kana uchida rubatsiro nemadhayari akasarudzika kana zvigadzirwa zvemumabasa. Iva nezuva rakanaka! 👋'
+                    }
+                },
+                
+                // Products and services
+                'products': {
+                    pattern: {
+                        en: /\b(products|what do you offer|diaries|calendars|organizers|stationery|sell|buy|purchase|shop|items)\b/i,
+                        tn: /\b(dilo|se lo se rekisang|dipuku|dikhalendara|sengwe|dilo tsa ofisi|reka|rekisa|dintho)\b/i,
+                        sn: /\b(zvigadzirwa|zvaunotengesa|madhayari|makarenda|masisitimu|zvemumabasa|tenga|kutenga|shop|zvinhu)\b/i
+                    },
+                    response: {
+                        en: 'We offer a wide range of products including:<br>• Custom corporate diaries (A4, A5, A6 sizes)<br>• Printed & laminated diaries with QR code options<br>• Executive diary organizers (Filofax style)<br>• Custom calendars with creative designs<br>• Branded paper bags (200 gsm glossy)<br>• Lever arch files (A5 to A3 sizes)<br>• Register books (A3/A4, 200 pages)<br>• Photo albums with premium paper<br>• NCR books (duplicate, triplicate, quadruplicate)<br>• Custom school notebooks & student diaries<br>• Graduation scroll holders<br>• Restaurant menus<br>• Business cards<br><br>All products can be customized to your needs!',
+                        tn: 'Re rekisa dilo di le dintsi jaaka:<br>• Dipuku tsa dikhampani tse di beilweng (A4, A5, A6)<br>• Dipuku tse di gatiseditsweng le tse di laminetsweng di na le dikhoutu tsa QR<br>• Baokedi ba dipuku ba baeteledipele (mokgwa wa Filofax)<br>• Dikhalendara tse di beilweng tse di nang le mekgwa e meintši<br>• Diposete tse di nang le brand (200 gsm glossy)<br>• Mafaele a lever arch (A5 go ya ko A3)<br>• Dipuku tsa go kwala (A3/A4, matlakana a 200)<br>• Dialebamo tsa difoto tse di nang le pampiri e e botoka<br>• Dipuku tsa NCR (duplicate, triplicate, quadruplicate)<br>• Dipuku tsa sekolo tse di beilweng le dipuku tsa barutwana<br>• Dihouldara tsa dikwarata tsa graduation<br>• Menyu ya maresterante<br>• Dikarete tsa kgwebo<br><br>Dilo tsotlhe di ka dirwa go ya ka dithata tsa lona!',
+                        sn: 'Tinopa huwandu hwakawanda hwezvigadzirwa zvinosanganisira:<br>• Madhayari emakambani akasarudzika (saizi A4, A5, A6)<br>• Madhayari akadhindwa & akaputirwa ane sarudzo dzeQR code<br>• Masisitimu emadhayari evakuru (maitiro eFilofax)<br>• Makarenda akasarudzika ane magadzirirwo ekugadzira<br>• Mabhegi emapepa ane mabhureki (200 gsm glossy)<br>• Mafaera eLever arch (saizi kubva A5 kusvika A3)<br>• Mabhuku ekunyoresa (A3/A4, mapeji 200)<br>• Maalbum emifananidzo ane mapepa epremium<br>• Mabhuku eNCR (duplicate, triplicate, quadruplicate)<br>• Mabhuku echikoro akasarudzika & madhayari evadzidzi<br>• Zvibato zvezvikwata zvekupedza kudzidza<br>• Mamenu emaresitorendi<br>• Makadhi ebhizinesi<br><br>Zvese zvigadzirwa zvinogona kugadziridzwa kuti zvienderane nezvaunoda!'
+                    }
+                },
+                'diaries': {
+                    pattern: {
+                        en: /\b(diaries|journal|notebook|planner|organizer|filofax)\b/i,
+                        tn: /\b(dipuku|kwala|notebook|planara|baokedi)\b/i,
+                        sn: /\b(madhayari|jenaguru|notibhuku|planner|sisitimu|filofax)\b/i
+                    },
+                    response: {
+                        en: 'Our diaries come in various sizes (A4, A5, Slimline/A6) and binding options:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Customization options include:<br>• Leather finish in various colors<br>• Cover design patterns<br>• Front end-sheet customization<br>• Client information lead-in pages<br>• Section wrap around with client info<br>• Silver, gold or blind embossing of logo<br>• Single, two, three and 4 panel cover options<br>• Square back, round spine and flexible cover<br>• Gilt or Nickel corner clips, round corners<br>• Personalization with names<br><br>We also offer hybrid diaries with QR code integration!',
+                        tn: 'Dipuku tsa rona di tla ka disaize di farologanyeng (A4, A5, Slimline/A6) le dikgetho tsa go bopa:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Dikgetho tsa go ipeola di akaretsa:<br>• Lefelo la letlalo ka mmala o o farologaneng<br>• Mekgwa ya disaine ya dikhava<br>• Go ipeola ga letlapele la khavare<br>• Matlakana a tshedimosetso ya moreki<br>• Karolo e e potolotseng tshedimosetso ya moreki<br>• Go embossa logo ka selefera, gouta kgotsa go se bonale<br>• Dikgetho tsa dikhava tsa panel e le nngwe, pedi, tharo kgotsa nne<br>• Mokwatla o o sekwere, mokwatla o o potologang le khavare e e flexibole<br>• Diklipi tsa konere tsa gilt kgotsa Nickel, dikhona tse di potologang<br>• Go bewa ga maina<br><br>Re tlamela ka dipuku tsa hybrid tse di nang le go kopanya khoutu ya QR!',
+                        sn: 'Madhayari edu anouya nemasaizi akasiyana (A4, A5, Slimline/A6) uye sarudzo dzekusunga:<br>• Casebound, Perfect Bound, Wiro-Bound<br>• Concealed Wiro-Bound, Ring-Bound<br><br>Sarudzo dzekugadziridza dzinosanganisira:<br>• Kupedzisa kweganda mumavara akasiyana<br>• Mapatani ekugadzira mabutiro<br>• Kugadziridzwa kwepepa rekupedzisira kwekumberi<br>• Mapeji ekutungamira ruzivo rwevatengi<br>• Chikamu chakatenderedza neruzivo rwevatengi<br>• Sirivheri, goridhe kana blind embossing yelogo<br>• Imwe, mbiri, matatu uye 4 panel sarudzo dzebhutiro<br>• Square back, round spine uye flexible cover<br>• Gilt kana Nickel korona makipi, makona akatenderedza<br>• Kugadziridzwa nemazita<br><br>Tinopawo madhayari ehybrid ane QR code integration!'
+                    }
+                },
+                'calendars': {
+                    pattern: {
+                        en: /\b(calendars|calendar|pyramid|yearly|monthly)\b/i,
+                        tn: /\b(dikhalendara|khalendara|piramide|ngwaga|kgwedi)\b/i,
+                        sn: /\b(makarenda|karenda|piramidhi|pagore|pamwedzi)\b/i
+                    },
+                    response: {
+                        en: 'Our calendars feature creative designs and are available in different sizes:<br>• Wide variety of design templates<br>• Gloss lamination for durability<br>• Public holidays for 14 African countries listed<br>• Advertising space for users and visitors<br>• Highly durable Wiro binding<br>• Portable, trendy and easy to use<br>• Strong rigid pyramid stand<br>• Fully customized options available<br><br>Perfect for corporate gifts and promotions!',
+                        tn: 'Dikhalendara tsa rona di na le mekgwa e meintši ya disaine mme di wanala ka disaize di farologaneng:<br>• Mekgwa e meintši ya dithempleite tsa disaine<br>• Lamination ya gloss bakeng sa go nonofala<br>• Matšatši a phomolo a ditšhaba tse 14 tsa Aforika di kwadilwe<br>• Lefelo la go ikgaketsa bakeng sa badiri le baeti<br>• Go bopa ga Wiro go nonofile thata<br>• Go rwalwa go bonolo, go ya ka mekgwa le go dirisa go bonolo<br>• Seteite ya piramide e e nonofileng<br>• Dikgetho tse di beilweng ka botlalo di wanala<br><br>E maleba thata bakeng sa dimpho tsa dikhampani le ditiro tsa go ikgaketsa!',
+                        sn: 'Makarenda edu ane magadzirirwo ekugadzira uye anowanikwa nemasaizi akasiyana:<br>• Yakasiyana-siyana yematemplate ekugadzira<br>• Gloss lamination yekusimba<br>• Mazororo eruzhinji enyika gumi neina dzeAfrica akanyorwa<br>• Nzvimbo yekushambadzira yevashandisi nevashanyi<br>• Yakasimba kwazvo Wiro inosunga<br>• Inotakurika, ine fashoni uye iri nyore kushandisa<br>• Yakasimba rigid pyramid stand<br>• Yakazara sarudzo dzakagadziridzwa dzinawanikwa<br><br>Yakanyatso kukodzera zvipo zvemakambani uye kukwidziridzwa!'
+                    }
+                },
+                'paper_bags': {
+                    pattern: {
+                        en: /\b(paper bags|bags|gift bags|packaging|carry bags)\b/i,
+                        tn: /\b(diposete tsa pampiri|diposete|diposete tsa dimpho|go phuthegela|diposete tsa go rwala)\b/i,
+                        sn: /\b(mabhegi emapepa|mabhegi|mabhegi ezvipo|kurongedza|mabhegi ekutakura)\b/i
+                    },
+                    response: {
+                        en: 'Our custom branded paper bags are:<br>• Printed and laminated on 200 gsm glossy paper<br>• Available in different sizes (A4, A5 or custom sizes)<br>• Fully customized design to suit your needs<br>• Black & White on Kraft Paper options<br>• Ideal for packaging gifts for employees, customers and stakeholders<br><br>Great for corporate gifting and brand visibility!',
+                        tn: 'Diposete tsa rona tse di nang le brand ke:<br>• Di gatisiwa di bo di laminwa mo pampiring ya 200 gsm glossy<br>• Di wanala ka disaize di farologaneng (A4, A5 kgotsa disaize tse di beilweng)<br>• Disaine e e beilweng ka botlalo go go direla<br>• Dikgetho tsa Black & White mo Kraft Paper<br>• Tse di malebang thata bakeng sa go phuthegela dimpho tsa baseberi, bareki le ba ba amegang<br><br>Tse di molemolelang thata bakeng sa go nea dimpho tsa dikhampani le go bonala ga brand!',
+                        sn: 'Mabhegi edu emapepa ane mabhureki akasarudzika:<br>• Akadhindwa uye akaputirwa pa200 gsm glossy paper<br>• Anowanikwa nemasaizi akasiyana (A4, A5 kana saizi dzakasarudzika)<br>• Dhizaini yakanyatso gadziridzwa kuti ienderane nezvaunoda<br>• Black & White paKraft Paper sarudzo<br>• Yakanakira kurongedza zvipo zvevashandi, vatengi uye vanobatanidzwa<br><br>Yakanakira kupa zvipo zvemakambani uye kuonekwa kwemhando!'
+                    }
+                },
+                'lever_arch': {
+                    pattern: {
+                        en: /\b(lever arch|arch files|files|binders|folders)\b/i,
+                        tn: /\b(lever arch|mafaele a arch|mafaele|dibaokedi|difolata)\b/i,
+                        sn: /\b(lever arch|mafaera earch|mafaera|zvisungo|mafolda)\b/i
+                    },
+                    response: {
+                        en: 'Our Lever Arch Files feature:<br>• Made of various material mixes and colors<br>• Matt or Gloss laminated on both sides<br>• Attractive 2 colour printing<br>• Rado file locking system<br>• Sturdy and durable (2000-micron European grey board)<br>• File sizes ranging from A5 to A3<br>• Fully recyclable and environmentally friendly<br><br>Perfect for office organization and document storage!',
+                        tn: 'Mafaele a rona a Lever Arch a na le:<br>• A dirilwe ka didirisiwa le mmala o o farologaneng<br>• Matt kgotsa Gloss laminated ka mabaka a mabedi<br>• Go gatisa ga mmala o mebedi o o kgabisang<br>• Tsamaiso ya go tswala mafaele ya Rado<br>• Go nonofala le go nonofala (2000-micron European grey board)<br>• Disaize tsa faiele go tswa ko A5 go ya ko A3<br>• Go kgonwa go di dirisa gape ka botlalo le go sireletsa tikologo<br><br>Tse di malebang thata bakeng sa go rulaganya ofisi le go boloka ditokomane!',
+                        sn: 'Mafaera edu eLever Arch ane:<br>• Akagadzirwa nemidziyo yakasiyana-siyana uye mavara<br>• Matt kana Gloss yakaputirwa kumativi ese<br>• Inodhinda ine mavara maviri anoyevedza<br>• Rado file locking system<br>• Yakasimba uye yakasimba (2000-micron European grey board)<br>• Saizi dzemafaera kubva paA5 kusvika paA3<br>• Inogona kudzokororwa zvizere uye ine hushamwari kwezvakatipoteredza<br><br>Yakanyatso kukodzera kurongeka kwemahofisi uye kuchengetedza zvinyorwa!'
+                    }
+                },
+                'custom_orders': {
+                    pattern: {
+                        en: /\b(custom|personalized|bespoke|tailored|branded|logo|minimum order)\b/i,
+                        tn: /\b(go ipeola|go bewa|go dirwa|go direlwa|go nwa le brand|logo|order e e kwa tlase)\b/i,
+                        sn: /\b(akasarudzika|akagadziridzwa|bespoke|akagadzirirwa|ane brand|logo|minimum order)\b/i
+                    },
+                    response: {
+                        en: 'We specialize in custom orders with low minimum quantities:<br>• Minimum order of just 20 units for most products<br>• Wide range of customization options available<br>• Your logo, colors, and branding incorporated<br>• Various binding and finishing options<br>• Multiple paper types and weights available<br>• Expert design assistance if needed<br><br>Make your brand stand out with our custom products!',
+                        tn: 'Re itsise ka di-order tse di beilweng tse di nang le palo e e kwa tlase:<br>• Order e e kwa tlase ya diyuniti tse 20 fela bakeng sa dilo di le dintsi<br>• Dikgetho tse di farologaneng tsa go ipeola di wanala<br>• Logo ya lona, mmala, le brand di akarediwa<br>• Dikgetho tse di farologaneng tsa go bopa le go fetsa<br>• Mefuta e le mentsi ya pampiri le boima bo wanala<br>• Thuso ya disaine ya baitseane fa go tlhokega<br><br>Dirang gore brand ya lona e gakgamale ka dilo tsa rona tse di beilweng!',
+                        sn: 'Isu tinonyanya kugadzira maodha akasarudzika ane huwandu hwakaderera hwepazasi:<br>• Odha shoma yemayuniti makumi maviri chete yezvigadzirwa zvakawanda<br>• Huwandu hwakawanda hwesarudzo dzekugadziridza dzinawanikwa<br>• Logo yako, mavara, uye branding zvakabatanidzwa<br>• Sarudzo dzakasiyana dzekusunga uye kupedzisa<br>• Mhando dzakawanda dzemapepa uye huremu hunowanikwa<br>• Nyanzvi yekugadzira rubatsiro kana uchida<br><br>Ita kuti brand yako isimuke nezvigadzirwa zvedu zvakasarudzika!'
+                    }
+                },
+                
+                // Location and contact
+                'location': {
+                    pattern: {
+                        en: /\b(where|location|address|place|find|visit|office|shop|botswana)\b/i,
+                        tn: /\b(kae|lefelo|aterese|etela|ofisi|lebenkeleng|botswana)\b/i,
+                        sn: /\b(kupi|nzvimbo|kero|nzvimbo|tsvaga|shanyira|hofisi|chitoro|botswana)\b/i
+                    },
+                    response: {
+                        en: 'We are located in Botswana, Africa. 🇧🇼<br><br>Our physical address is:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>We export to Zimbabwe, Zambia, South Africa, and Namibia under SADC FTA agreements.',
+                        tn: 'Re kwa Botswana, Aforika. 🇧🇼<br><br>Aterese ya rona ke:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Re romela dikonego kwa Zimbabwe, Zambia, Aforika Borwa, le Namibia ka tumalano ya SADC FTA.',
+                        sn: 'Tiri muBotswana, Africa. 🇧🇼<br><br>Kero yedu chaiyo ndeye:<br>Plot 12945, Mountain Industrial, Akog A10, Kerne Mosinyane Road, Gaborone, Botswana<br><br>Tinotumira kunze kwenyika kuZimbabwe, Zambia, South Africa, neNamibia pasi pezvibvumirano zveSADC FTA.'
+                    }
+                },
+                'contact': {
+                    pattern: {
+                        en: /\b(contact|phone|number|email|whatsapp|call|reach|communicate)\b/i,
+                        tn: /\b(golagana|mogala|nomoro|email|whatsapp|letsa|fitlhela|buisanya)\b/i,
+                        sn: /\b(bata|runhare|nhamba|email|whatsapp|fona|svika|taurirana)\b/i
+                    },
+                    response: {
+                        en: 'You can reach us through:<br>📞 Phone: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        tn: 'O ka re fitlhelela ka:<br>📞 Mogala: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Website: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>',
+                        sn: 'Unogona kutibata ne:<br>📞 Runhare: <a href="tel:+26771548257" style="color:#2c9c56;text-decoration:underline;">+267 3180708</a><br>📧 Email: <a href="mailto:info@greencarddiary.co.bw" style="color:#2c9c56;text-decoration:underline;">info@greencarddiary.co.bw</a><br>🌐 Webhusaiti: <a href="https://greencarddiary.co.bw" target="_blank" style="color:#2c9c56;text-decoration:underline;">greencarddiary.co.bw</a>'
+                    }
+                },
+                
+                // Business information
+                'about': {
+                    pattern: {
+                        en: /\b(about|company|history|background|story|established)\b/i,
+                        tn: /\b(ka|khampani|histori|bokao|kano|e simolotswe)\b/i,
+                        sn: /\b(nemusoro|kambani|nhoroondo|kumashure|nyaya|yakavambwa)\b/i
+                    },
+                    response: {
+                        en: 'Greencarddiary (Pty) Ltd is a 100% manufacturing industry in Botswana specializing in:<br>• Lever Arch Files, Diaries, Pyramid Calendars<br>• Sketch pads, Exam pads, Photo Books<br>• Branded Paper Bags, Graduation Scroll Holders<br>• Register Books, Restaurant Menus, Receipt Books<br>• Business Cards and Bibles<br><br>We started in 2000 as an advertising agency and transitioned to manufacturing in 2011-2012. We now have 35+ staff and export to multiple African countries.',
+                        tn: 'Greencarddiary (Pty) Ltd ke indaseteri ya go dira dilo e e 100% kwa Botswana e e itseng ka:<br>• Mafaele a Lever Arch, Dipuku, Dikhalendara tsa Piramide<br>• Dipuku tsa go sketcha, dipuku tsa ditlhahlobo, Dipuku tsa Difoto<br>• Diposete tse di nang le brand, Dihouldara tsa dikwarata tsa graduation<br>• Dipuku tsa go kwala, Menyu ya maresterante, Dipuku tsa dirisiti<br>• Dikarete tsa kgwebo le Dibaibele<br><br>Re simolotse ka 2000 e le agentsi ya go ikgaketsa mme re fetogile go dira dilo ka 2011-2012. Jaanong re na le baseberi ba ba fetang 35 mme re romela dikonego kwa dinageng di le dintsi tsa Aforika.',
+                        sn: 'Greencarddiary (Pty) Ltd iindasitiri yekugadzira 100% muBotswana inonyanya:<br>• Mafaera eLever Arch, Madhayari, Makarenda ePiramidhi<br>• Sketch pads, Exam pads, Mabhuku emifananidzo<br>• Mabhegi emapepa ane mabhureki, Zvibato zvezvikwata zvekupedza kudzidza<br>• Mabhuku ekunyoresa, Mamenu emaresitorendi, Mabhuku ekutambira<br>• Makadhi ebhizinesi neBhaibheri<br><br>Takatanga muna 2000 sesangano rekushambadzira uye takachinja kuita kugadzira muna 2011-2012. Iye tine vashandi vanopfuura makumi matatu nevashanu uye tinotumira kunze kwenyika kunyika dzakawanda dzeAfrica.'
+                    }
+                },
+                
+                // Thank you responses
+                'thank_you': {
+                    pattern: {
+                        en: /\b(thank|thanks|appreciate|grateful|cheers)\b/i,
+                        tn: /\b(leboga|ke lebogile|kea leboga|ke itumetse)\b/i,
+                        sn: /\b(waita|ndatenda|tenda|ndinotenda|ndinokutendai|makorokoto)\b/i
+                    },
+                    response: {
+                        en: 'You\'re very welcome! I\'m happy to help. If you have more questions about our products or services, feel free to ask anytime. We\'re here to support your branding needs! 😊',
+                        tn: 'O amogelwe thata! Ke itumetse go thusa. Fa o na le dipotso tse dingwe ka dilo kgotsa ditirelo tsa rona, ikutlwe o gololesegile go botsa nako nngwe le nngwe. Re teng go tshegetsa dithata tsa lona tsa brand! 😊',
+                        sn: 'Unogamuchirwa kwazvo! Ndinofara kukubatsira. Kana uine mimwe mibvunzo nezvezvigadzirwa zvedu kana masevhisi, inzwa wakasununguka kubvunza chero nguva. Tiri pano kutsigira zvaunoda zvebrand! 😊'
+                    }
+                },
+                
+                // Pricing and payment
+                'pricing': {
+                    pattern: {
+                        en: /\b(price|cost|how much|fee|payment|pay|afford|expensive|cheap|discount)\b/i,
+                        tn: /\b(tshenyo|madi|makae|tefo|duela|seleka|tiriso|bonnye)\b/i,
+                        sn: /\b(mutengo|mari|ingani|muripo|kubhadhara|kubhadhara|kukwanisa|inodhura|yakachipa|discount)\b/i
+                    },
+                    response: {
+                        en: 'Our pricing varies based on the products, customization, and quantity. We offer:<br>• Competitive pricing for all products<br>• Quantity discounts available<br>• Customization affects final price<br>• Export pricing for international orders<br><br>Contact us for a personalized quote based on your specific needs! 💰',
+                        tn: 'Ditlhwatlhwa tsa rona di farologana go ya ka dilo, go ipeola, le palo. Re tlamela ka:<br>• Ditlhwatlhwa tse di kgonang go phadisanya bakeng sa dilo tsotlhe<br>• Bonnye jwa palo bo wanala<br>• Go ipeola go ama ditlhwatlhwa tsa bofelo<br>• Ditlhwatlhwa tsa go romela konego kwa ntle<br><br>Re letsetse go go naya tekanyetso e e beilweng go ya ka dithata tsa lona! 💰',
+                        sn: 'Mitengo yedu inosiyana zvichienderana nezvigadzirwa, kugadziridzwa, uye huwandu. Tinopa:<br>• Mitengo inokwikwidza yezvigadzirwa zvese<br>• Mitengo yekuderera inawanikwa<br>• Kugadziridzwa kunokanganisa mutengo wekupedzisira<br>• Mitengo yekutumira kunze kwenyika yemaodha epasi rose<br><br>Tibate kuti tiwane quote yakagadzirirwa zvinoenderana nezvaunoda! 💰'
+                    }
+                },
+                
+                // Delivery and logistics
+                'delivery': {
+                    pattern: {
+                        en: /\b(deliver|delivery|ship|shipping|mail|post|courier|send|dispatch|export)\b/i,
+                        tn: /\b(romela|kabo|poso|tisa|romelela|exporta)\b/i,
+                        sn: /\b(kuendesa|kuendesa|ngarava|kuendesa|tsamba|posvo|courier|tumira|tumira|export)\b/i
+                    },
+                    response: {
+                        en: 'We offer delivery and export services:<br>• Local delivery within Botswana<br>• Export to Zimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA accredited for duty-free exports to Zimbabwe<br>• Reliable courier services<br>• Tracking available for shipments<br><br>Contact us for specific delivery options and costs! 🚚',
+                        tn: 'Re tlamela ka ditirelo tsa kabo le go romela konego kwa ntle:<br>• Kabo ya selegae mo Botswana<br>• Go romela konego kwa Zimbabwe, Zambia, Aforika Borwa, Namibia<br>• Re dumalantswe ke SADC FTA bakeng sa go romela konego kwa Zimbabwe ntle le madi<br>• Ditirelo tsa courier tse di ikanyegang<br>• Go latela konego di wanala<br><br>Re letsetse go dikgakololo tse di tlhamaletseng tsa kabo le ditshenyo! 🚚',
+                        sn: 'Tinopa masevhisi ekuendesa uye ekutumira kunze kwenyika:<br>• Kuendesa kwenzvimbo mukati meBotswana<br>• Kutumira kunze kwenyika kuZimbabwe, Zambia, South Africa, Namibia<br>• SADC FTA yakasimbiswa yekutumira kunze kwenyika zvisina mutero kuZimbabwe<br>• Masevhisi ekuvimbika eCourier<br>• Kuteedzera kunowanikwa kune zvinotumirwa<br><br>Tibate kuti tiwane sarudzo dzakananga dzekuendesa uye mutengo! 🚚'
+                    }
+                },
+                
+                // Quotation requests
+                'quotation': {
+                    pattern: {
+                        en: /\b(quotation|quote|price|estimate|cost|how much|pricing)\b/i,
+                        tn: /\b(tekanyetso|tshenyo|madi|makae|bonnye)\b/i,
+                        sn: /\b(quotation|quote|mutengo|ingani|kubhadhara|discount)\b/i
+                    },
+                    response: {
+                        en: "I'd be happy to help you with a quotation! Please provide some details about what you need.",
+                        tn: "Ke itumetse go go thusa ka tekanyetso! Ka kopo, naya ka ditlhakoretsi tse di maleba le se o se tlhokang.",
+                        sn: "Ndingafare kukubatsira nequotation! Ndapota ipa rumwe ruzivo nezve zvaunoda."
+                    }
+                }
+            };
+            
+            // Enhanced default responses in all three languages
+            const enhancedDefaultResponses = {
+                en: [
+                    "That's an interesting question! While I specialize in our diary and stationery products, I'd love to help you with information about our services. What would you like to know? 🤔",
+                    "I appreciate you sharing that with me! Though my expertise is in our manufacturing products, I'm happy to discuss how we can help with your custom printing needs. What specific assistance do you need? 😊",
+                    "Thanks for that! While I focus on our diary and calendar products, I'm curious - are you looking for custom corporate gifts or promotional items? I'd love to help you get started! 🎁",
+                    "Interesting topic! I'm most helpful when discussing our custom diaries, calendars, or other stationery products. Is there anything in those areas I can assist you with today? 🤝",
+                    "I hear you! While that's outside my main area of expertise, I'm excellent at helping with custom printing and manufacturing solutions. Would you like to explore those opportunities? 🌟"
+                ],
+                tn: [
+                    "Potso e e itumedisang! Le fa ke itsise ka dilo tsa rona tsa dipuku le tsa ofisi, ke batla go go thusa ka tshedimosetso ya ditirelo tsa rona. O batla go itse eng? 🤔",
+                    "Ke itumetse gore o nkabelane seo! Le fa boitsanape jwa me bo le mo dilong tsa rona tsa go dira, ke itumetse go bua ka kafa re ka go thusang ka dithata tsa gago tsa go gatisa tse di beilweng. O tlhoka thuso efe? 😊",
+                    "Ke lebogile seo! Le fa ke lebeletse dilo tsa rona tsa dipuku le dikhalendara, ke batla go itse - a o batla dimpho tse di beilweng tsa dikhampani kgotsa dilo tsa go ikgaketsa? Ke batla go go thusa o simolole! 🎁",
+                    "Setlhogo se se itumedisang! Ke thusa thata fa re bua ka dipuku tsa rona tse di beilweng, dikhalendara, kgotsa dilo tse dingwe tsa ofisi. A go na le sengwe mo dikarolong tseo se nka go thusang ka sone gompieno? 🤝",
+                    "Ke go utlwile! Le fa seo se le kgakala le tse ke di itseng, ke botoka thata mo go thuseng ka ditharabololo tsa go gatisa le go dira tse di beilweng. A o batla go sekaseka ditšhono tseo? 🌟"
+                ],
+                sn: [
+                    "Imubvunzo unonakidza! Kunyange ndichinyanya kugadzira madhayari edu nezvigadzirwa zvemumabasa, ndinoda kukubatsira neruzivo rwemasevhisi edu. Chii chaungade kuziva? 🤔",
+                    "Ndinokutendai nekugovana izvozvo neni! Kunyange ruzivo rwangu rwuri muzvigadzirwa zvedu zvekugadzira, ndinofara kukurukura kuti tingakubatsira sei nezvaunoda zvekudhinda zvakasarudzika. Rudzi rwei rwerubatsiro rwaunoda? 😊",
+                    "Ndatenda neizvozvo! Kunyange ndichitarisa pazvigadzirwa zvedu zvemadhayari nemakarenda, ndiri kuda kuziva - urikutsvaga zvipo zvemakambani zvakasarudzika kana zvinhu zvekusimudzira? Ndingada kukubatsira kuti utange! 🎁",
+                    "Nyaya inonakidza! Ndinonyanya kubatsira kana tichikurukura nezvemadhayari edu akasarudzika, makarenda, kana zvimwe zvigadzirwa zvemumabasa. Pane chero chinhu mumativi iwayo chandingakubatsira nacho nhasi? 🤝",
+                    "Ndakunzwa! Kunyange izvo zviri kunze kwehunyanzvi hwangu hukuru, ndiri nyanzvi pakubatsira nemhinduro dzekudhinda dzakasarudzika uye dzekugadzira. Ungada here kuongorora mikana iyoyo? 🌟"
+                ]
+            };
+            
+            // Language switching function
+            function switchLanguage(lang) {
+                currentLanguage = lang;
+                
+                // Update UI elements
+                document.getElementById('live-chat-text').textContent = translations[lang].liveChatTitle;
+                document.getElementById('online-status').textContent = translations[lang].onlineStatus;
+                document.getElementById('welcome-message').textContent = translations[lang].welcomeMessage;
+                document.getElementById('chat-input-field').placeholder = translations[lang].inputPlaceholder;
+                
+                // Update suggested questions
+                suggestedQuestions.forEach(question => {
+                    question.textContent = question.getAttribute('data-' + lang);
+                });
+            }
+            
+            // Language selector event listener
+            languageSelect.addEventListener('change', function() {
+                switchLanguage(this.value);
+            });
+            
+            // Function to get response in current language
+            function getResponse(key) {
+                const item = knowledgeBase[key];
+                if (item && item.response[currentLanguage]) {
+                    return item.response[currentLanguage];
+                }
+                return null;
+            }
+            
+            // Function to test pattern in current language
+            function testPattern(key, message) {
+                const item = knowledgeBase[key];
+                if (item && item.pattern[currentLanguage]) {
+                    return item.pattern[currentLanguage].test(message);
+                }
+                // Fallback to English pattern if current language pattern doesn't exist
+                if (item && item.pattern.en) {
+                    return item.pattern.en.test(message);
+                }
+                return false;
+            }
+            
+            // Function to get a random enhanced default response in current language
+            function getRandomDefaultResponse() {
+                const responses = enhancedDefaultResponses[currentLanguage] || enhancedDefaultResponses.en;
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+            
+            // Toggle chat window
+            chatButton.addEventListener('click', function() {
+                chatWindow.classList.toggle('active');
+                if (chatWindow.classList.contains('active')) {
+                    chatInput.focus();
+                }
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message to chat
+                addMessage(message, 'user');
+                
+                // Process the message and generate response
+                processMessage(message);
+                
+                // Clear input
+                chatInput.value = '';
+            }
+            
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Send message on Enter key
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Add click events to suggested questions
+            suggestedQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const text = this.textContent;
+                    addMessage(text, 'user');
+                    
+                    // Check if it's the quotation suggestion
+                    if (text.includes('quotation') || text.includes('tekanyetso') || text.includes('quotation')) {
+                        startQuotationProcess();
+                    } else {
+                        processMessage(text);
+                    }
+                });
+            });
+            
+            // Function to show typing indicator
+            function showTypingIndicator() {
+                if (isTyping) return;
+                
+                isTyping = true;
+                const typingElement = document.createElement('div');
+                typingElement.classList.add('typing-indicator');
+                typingElement.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(typingElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return typingElement;
+            }
+            
+            // Function to remove typing indicator
+            function removeTypingIndicator(typingElement) {
+                if (typingElement && typingElement.parentNode) {
+                    typingElement.parentNode.removeChild(typingElement);
+                }
+                isTyping = false;
+            }
+            
+            // Function to add message with typewriter effect
+            function addMessage(text, sender, speed = 20) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+                
+                if (sender === 'user') {
+                    messageElement.textContent = text;
+                    chatMessages.appendChild(messageElement);
+                } else {
+                    // For bot messages, add empty element first
+                    chatMessages.appendChild(messageElement);
+                    
+                    // Then animate the typing
+                    let i = 0;
+                    let currentText = '';
+                    const timer = setInterval(function() {
+                        if (i < text.length) {
+                            currentText += text.charAt(i);
+                            
+                            // Handle HTML tags specially
+                            if (text.charAt(i) === '<') {
+                                const tagEnd = text.indexOf('>', i);
+                                if (tagEnd !== -1) {
+                                    currentText += text.substring(i+1, tagEnd+1);
+                                    i = tagEnd;
+                                }
+                            }
+                            
+                            messageElement.innerHTML = currentText;
+                            i++;
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        } else {
+                            clearInterval(timer);
+                            // Remove the typewriter cursor after completion
+                            messageElement.classList.remove('typewriter');
+                        }
+                    }, speed);
+                    
+                    // Add typewriter class for cursor effect
+                    messageElement.classList.add('typewriter');
+                }
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Enhanced message processing with trilingual pattern matching
+            function processMessage(message) {
+                let responded = false;
+                let matchedResponse = null;
+                
+                // Check all patterns and find the best match using current language
+                for (const key in knowledgeBase) {
+                    if (testPattern(key, message)) {
+                        matchedResponse = getResponse(key);
+                        break;
+                    }
+                }
+                
+                // Show typing indicator
+                const typingElement = showTypingIndicator();
+                
+                // Calculate response time based on message length
+                const thinkingTime = Math.min(2000, Math.max(800, message.length * 30));
+                
+                setTimeout(() => {
+                    // Remove typing indicator
+                    removeTypingIndicator(typingElement);
+                    
+                    if (matchedResponse) {
+                        addMessage(matchedResponse, 'bot', 15 + Math.random() * 10);
+                        responded = true;
+                        unansweredCount = 0; // Reset counter on successful response
+                    }
+                    
+                    // If no match found, use enhanced default response in current language
+                    if (!responded) {
+                        unansweredCount++;
+                        
+                        addMessage(getRandomDefaultResponse(), 'bot', 15 + Math.random() * 10);
+                        
+                        // After 2 unanswered questions, show WhatsApp prompt
+                        if (unansweredCount >= 2 && !whatsappPromptShown) {
+                            showWhatsAppPrompt();
+                        }
+                    }
+                }, thinkingTime);
+            }
+            
+            // Show WhatsApp prompt with clickable link in current language
+            function showWhatsAppPrompt() {
+                whatsappPromptShown = true;
+                
+                setTimeout(() => {
+                    const promptElement = document.createElement('div');
+                    promptElement.classList.add('whatsapp-prompt');
+
+                    promptElement.innerHTML = `
+                        <p>${translations[currentLanguage].whatsappPromptText}</p>
+                        <a href="https://wa.me/2673180708" class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> ${translations[currentLanguage].whatsappButtonText}
+                        </a>
+                    `;
+                    
+                    chatMessages.appendChild(promptElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+            
+            // Quotation functions
+            function startQuotationProcess() {
+                addMessage(translations[currentLanguage].quotationPrompt, 'bot');
+                
+                // Create quotation form
+                const formHtml = `
+                    <div class="quotation-form">
+                        <h4>${translations[currentLanguage].quotationTitle}</h4>
+                        <div class="form-steps">
+                            <div class="form-step active" id="step-product">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].productType}</label>
+                                    <select class="form-control" id="productType">
+                                        <option value="">Select Product</option>
+                                        <option value="diary">Diary</option>
+                                        <option value="calendar">Calendar</option>
+                                        <option value="notebook">Notebook</option>
+                                        <option value="paper-bag">Paper Bag</option>
+                                        <option value="lever-arch">Lever Arch File</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].quantity}</label>
+                                    <input type="number" class="form-control" id="quantity" min="20" placeholder="Min. 20 units">
+                                </div>
+                                <div class="form-actions">
+                                    <div></div>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-specifications">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].size}</label>
+                                    <select class="form-control" id="size">
+                                        <option value="">Select Size</option>
+                                        <option value="A4">A4</option>
+                                        <option value="A5">A5</option>
+                                        <option value="A6">A6</option>
+                                        <option value="slimline">Slimline</option>
+                                        <option value="custom">Custom Size</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].bindingType}</label>
+                                    <select class="form-control" id="bindingType">
+                                        <option value="">Select Binding</option>
+                                        <option value="casebound">Casebound</option>
+                                        <option value="perfect-bound">Perfect Bound</option>
+                                        <option value="wiro-bound">Wiro Bound</option>
+                                        <option value="concealed-wiro">Concealed Wiro Bound</option>
+                                        <option value="ring-bound">Ring Bound</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].paperType}</label>
+                                    <select class="form-control" id="paperType">
+                                        <option value="">Select Paper Type</option>
+                                        <option value="70gsm">70 GSM</option>
+                                        <option value="80gsm">80 GSM</option>
+                                        <option value="100gsm">100 GSM</option>
+                                        <option value="120gsm">120 GSM</option>
+                                        <option value="200gsm-glossy">200 GSM Glossy</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-customization">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].customization}</label>
+                                    <div>
+                                        <input type="checkbox" id="customLogo" value="logo"> <label for="customLogo">Logo Printing</label><br>
+                                        <input type="checkbox" id="customEmbossing" value="embossing"> <label for="customEmbossing">Embossing (Silver/Gold)</label><br>
+                                        <input type="checkbox" id="customColors" value="colors"> <label for="customColors">Custom Colors</label><br>
+                                        <input type="checkbox" id="customDesign" value="design"> <label for="customDesign">Custom Design</label><br>
+                                        <input type="checkbox" id="qrCode" value="qr"> <label for="qrCode">QR Code Integration</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].coverDetails}</label>
+                                    <textarea class="form-control" id="coverDetails" rows="2" placeholder="Describe cover material, finish, etc."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].specialRequirements}</label>
+                                    <textarea class="form-control" id="specialRequirements" rows="3" placeholder="Any special instructions or requirements"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary next-step">${translations[currentLanguage].next}</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step" id="step-contact">
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].name}</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].email}</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].phone}</label>
+                                    <input type="tel" class="form-control" id="contactPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>${translations[currentLanguage].company}</label>
+                                    <input type="text" class="form-control" id="contactCompany">
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline prev-step">${translations[currentLanguage].previous}</button>
+                                    <button class="btn btn-primary" id="submitQuotation">${translations[currentLanguage].submit}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add form to chat
+                const formElement = document.createElement('div');
+                formElement.innerHTML = formHtml;
+                chatMessages.appendChild(formElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Add event listeners for form navigation
+                const nextButtons = formElement.querySelectorAll('.next-step');
+                const prevButtons = formElement.querySelectorAll('.prev-step');
+                const submitButton = formElement.querySelector('#submitQuotation');
+                const steps = formElement.querySelectorAll('.form-step');
+                
+                nextButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        if (validateStep(currentStep)) {
+                            saveStepData(currentStep);
+                            steps[currentStep].classList.remove('active');
+                            currentStep++;
+                            steps[currentStep].classList.add('active');
+                        }
+                    });
+                });
+                
+                prevButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        steps[currentStep].classList.remove('active');
+                        currentStep--;
+                        steps[currentStep].classList.add('active');
+                    });
+                });
+                
+                submitButton.addEventListener('click', function() {
+                    if (validateStep(currentStep)) {
+                        saveStepData(currentStep);
+                        showQuotationSummary();
+                    }
+                });
+            }
+            
+            function validateStep(step) {
+                switch(step) {
+                    case 0: // Product step
+                        const productType = document.getElementById('productType').value;
+                        const quantity = document.getElementById('quantity').value;
+                        if (!productType || !quantity || quantity < 20) {
+                            alert('Please select a product type and enter a quantity (minimum 20 units)');
+                            return false;
+                        }
+                        return true;
+                        
+                    case 1: // Specifications step
+                        const size = document.getElementById('size').value;
+                        const bindingType = document.getElementById('bindingType').value;
+                        if (!size || !bindingType) {
+                            alert('Please select size and binding type');
+                            return false;
+                        }
+                        return true;
+                        
+                    case 3: // Contact step
+                        const name = document.getElementById('contactName').value;
+                        const email = document.getElementById('contactEmail').value;
+                        const phone = document.getElementById('contactPhone').value;
+                        if (!name || !email || !phone) {
+                            alert('Please fill in all required contact information');
+                            return false;
+                        }
+                        return true;
+                        
+                    default:
+                        return true;
+                }
+            }
+            
+            function saveStepData(step) {
+                switch(step) {
+                    case 0: // Product step
+                        quotationData.productType = document.getElementById('productType').value;
+                        quotationData.quantity = document.getElementById('quantity').value;
+                        break;
+                        
+                    case 1: // Specifications step
+                        quotationData.size = document.getElementById('size').value;
+                        quotationData.bindingType = document.getElementById('bindingType').value;
+                        quotationData.paperType = document.getElementById('paperType').value;
+                        break;
+                        
+                    case 2: // Customization step
+                        quotationData.customization = [];
+                        if (document.getElementById('customLogo').checked) quotationData.customization.push('logo');
+                        if (document.getElementById('customEmbossing').checked) quotationData.customization.push('embossing');
+                        if (document.getElementById('customColors').checked) quotationData.customization.push('colors');
+                        if (document.getElementById('customDesign').checked) quotationData.customization.push('design');
+                        if (document.getElementById('qrCode').checked) quotationData.customization.push('qr');
+                        
+                        quotationData.coverDetails = document.getElementById('coverDetails').value;
+                        quotationData.specialRequirements = document.getElementById('specialRequirements').value;
+                        break;
+                        
+                    case 3: // Contact step
+                        quotationData.contactInfo.name = document.getElementById('contactName').value;
+                        quotationData.contactInfo.email = document.getElementById('contactEmail').value;
+                        quotationData.contactInfo.phone = document.getElementById('contactPhone').value;
+                        quotationData.contactInfo.company = document.getElementById('contactCompany').value;
+                        break;
+                }
+            }
+            
+            function showQuotationSummary() {
+                // Remove the form
+                document.querySelector('.quotation-form').remove();
+                
+                // Create summary HTML
+                const summaryHtml = `
+                    <div class="quotation-summary">
+                        <h4>${translations[currentLanguage].summary}</h4>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].productType}:</span>
+                            <span>${quotationData.productType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].quantity}:</span>
+                            <span>${quotationData.quantity}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].size}:</span>
+                            <span>${quotationData.size}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].bindingType}:</span>
+                            <span>${quotationData.bindingType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].paperType}:</span>
+                            <span>${quotationData.paperType}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].customization}:</span>
+                            <span>${quotationData.customization.join(', ') || 'None'}</span>
+                        </div>
+                        ${quotationData.coverDetails ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].coverDetails}:</span>
+                            <span>${quotationData.coverDetails}</span>
+                        </div>
+                        ` : ''}
+                        ${quotationData.specialRequirements ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].specialRequirements}:</span>
+                            <span>${quotationData.specialRequirements}</span>
+                        </div>
+                        ` : ''}
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].name}:</span>
+                            <span>${quotationData.contactInfo.name}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].email}:</span>
+                            <span>${quotationData.contactInfo.email}</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].phone}:</span>
+                            <span>${quotationData.contactInfo.phone}</span>
+                        </div>
+                        ${quotationData.contactInfo.company ? `
+                        <div class="summary-item">
+                            <span class="summary-label">${translations[currentLanguage].company}:</span>
+                            <span>${quotationData.contactInfo.company}</span>
+                        </div>
+                        ` : ''}
+                        
+                        <p>${translations[currentLanguage].confirmDetails}</p>
+                        <div class="confirmation-checkbox">
+                            <input type="checkbox" id="confirmDetails">
+                            <label for="confirmDetails">${translations[currentLanguage].correct}</label>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="sendWhatsApp" disabled>${translations[currentLanguage].sendWhatsApp}</button>
+                    </div>
+                `;
+                
+                // Add summary to chat
+                const summaryElement = document.createElement('div');
+                summaryElement.innerHTML = summaryHtml;
+                chatMessages.appendChild(summaryElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Enable WhatsApp button when confirmation is checked
+                document.getElementById('confirmDetails').addEventListener('change', function() {
+                    document.getElementById('sendWhatsApp').disabled = !this.checked;
+                });
+                
+                // Add event listener for WhatsApp button
+                document.getElementById('sendWhatsApp').addEventListener('click', function() {
+                    sendQuotationViaWhatsApp();
+                });
+            }
+            
+            function sendQuotationViaWhatsApp() {
+                // Format the message for WhatsApp
+                const message = `*New Quotation Request from Greencarddiary Chatbot*
+                
+*Product Details:*
+- Product Type: ${quotationData.productType}
+- Quantity: ${quotationData.quantity}
+- Size: ${quotationData.size}
+- Binding Type: ${quotationData.bindingType}
+- Paper Type: ${quotationData.paperType}
+- Customization: ${quotationData.customization.join(', ') || 'None'}
+${quotationData.coverDetails ? `- Cover Details: ${quotationData.coverDetails}\n` : ''}
+${quotationData.specialRequirements ? `- Special Requirements: ${quotationData.specialRequirements}\n` : ''}
+
+*Contact Information:*
+- Name: ${quotationData.contactInfo.name}
+- Email: ${quotationData.contactInfo.email}
+- Phone: ${quotationData.contactInfo.phone}
+${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.company}\n` : ''}
+
+*Generated on:* ${new Date().toLocaleString()}`;
+
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/2673180708?text=${encodedMessage}`;
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Show confirmation message
+                addMessage('Your quotation request has been sent via WhatsApp. Our team will contact you shortly with your custom quote!', 'bot');
+            }
+            
+            // Auto-open chat after 3 seconds for demo
+            setTimeout(() => {
+                chatWindow.classList.add('active');
+            }, 3000);
+        });
+    </script>
+ <!-- Chat Bot ends -->
+
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -838,8 +2532,8 @@
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
             <div class="newsletter-shape-1" style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
             <div class="newsletter__left">
-                <h3 class="newsletter__title">Join Our Eco-Community</h3>
-                <p class="newsletter__text">Get sustainability tips, exclusive offers, and tree-planting updates</p>
+                <h3 class="newsletter__title">Track Your Order Here</h3>
+                <p class="newsletter__text">Provide your email so we can track your order</p>
             </div>
             <div class="newsletter__right">
                 <form class="newsletter__form" id="newsletterForm">
@@ -848,7 +2542,7 @@
                         <input type="email" placeholder="Enter your email" name="email" required>
                         
                         <!-- SUBSCRIBE BUTTON (VISUALLY UNCHANGED) -->
-                        <button type="submit" class="thm-btn newsletter__btn">Subscribe</button>
+                        <button type="submit" class="thm-btn newsletter__btn">Track Order</button>
                     </div>
                 </form>
             </div>
@@ -862,7 +2556,7 @@
         const email = document.querySelector('input[name="email"]').value;
         
         // WhatsApp message format
-        const whatsappUrl = `https://wa.me/26771548257?text=New%20Newsletter%20Subscription:%0A%0AEmail:%20${encodeURIComponent(email)}%0A%0A(Please%20confirm%20subscription)`;
+        const whatsappUrl = `https://wa.me/26771548257?text=Track%20My%20Order:%0A%0AEmail:%20${encodeURIComponent(email)}%0A%0A(Please%20confirm%20Order%20progress%20Thanks)`;
         
         window.open(whatsappUrl, '_blank');
         alert('Please send the pre-filled WhatsApp message to complete your subscription.');
@@ -887,7 +2581,8 @@
                             <p class="footer-widget__about-text">Botswana's premier eco-friendly stationery brand, crafting sustainable diaries and calendars from sugarcane waste since 2010.</p>
                         </div>
                         <div class="site-footer__social">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            
+                           
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-whatsapp"></i></a>
@@ -895,17 +2590,24 @@
                     </div>
                 </div>
 
+               
+
                 <!-- Explore Column -->
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer-widget__explore clearfix">
-                        <h3 class="footer-widget__title">Explore</h3>
+                        <h3 class="footer-widget__title">Our Services</h3>
                         <ul class="footer-widget__explore-list list-unstyled clearfix">
-                            <li><a href="#">Our Green Story</a></li>
-                            <li><a href="products.html">Eco-Friendly Products</a></li>
-                            <li><a href="impact.html">Environmental Impact</a></li>
-                            <li><a href="blog.html">Sustainability Blog</a></li>
-                            <li><a href="wholesale.html">Wholesale Inquiry</a></li>
-                            <li><a href="contact.html">Custom Orders</a></li>
+                      <li><a href="project-details.html">Soft Leatherette</a></li>
+                                                <li><a href="project-details-2.html">Calendars</a></li>
+                                                <li><a href="project-details-3.html">Diaries</a></li>
+                                                <li><a href="project-details-4.html">Filafox</a></li>
+                                                <li><a href="project-details-5.html">Custom Branded Paper Bags</a></li>
+                                                <li><a href="project-details-6.html">Lever Arch Files</a></li>
+                                                <li><a href="project-details-7.html">Register Books</a></li>
+                                                <li><a href="project-details-8.html">Photo Albums</a></li>
+                                                <li><a href="project-details-9.html">NCR (Self Carbonating)</a></li>
+                                                <li><a href="project-details-10.html">School Notebooks</a></li>
+                                                <li><a href="project-details-11.html">Corporate Journals</a></li>
                         </ul>
                     </div>
                 </div>
@@ -913,14 +2615,14 @@
                 <!-- Products Column -->
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer-widget__services clearfix">
-                        <h3 class="footer-widget__title">Our Products</h3>
+                        <h3 class="footer-widget__title">Our Blogs</h3>
                         <ul class="footer-widget__services-list list-unstyled clearfix">
-                            <li><a href="diaries.html">Sugarcane Diaries</a></li>
-                            <li><a href="calendars.html">Eco Calendars</a></li>
-                            <li><a href="corporate.html">Corporate Gifts</a></li>
-                            <li><a href="school.html">School Stationery</a></li>
-                            <li><a href="custom.html">Custom Branding</a></li>
-                            <li><a href="new.html">New Arrivals</a></li>
+                        <li><a href="blog-details-1.html">Why Small Businesses Love Our Low MOQ (20 Units) Custom Diaries</a></li>
+                                                <li><a href="blog-details-2.html">Learn How We Deliver</a></li>
+                                                <li><a href="blog-details-3.html">Quality & Speed</a></li>
+                                                <li><a href="blog-details-4.html">Top 5 Corporate Gifting Trends</a></li>
+                                                <li><a href="blog-details-5.html">How to Design a Custom Diary</a></li>
+                                                <li><a href="blog-details-6.html">Where to Find the Best Custom Diaries in Gaborone</a></li>
                         </ul>
                     </div>
                 </div>
@@ -977,47 +2679,51 @@
 </footer>
 <!--Site Footer End-->
 
+
     </div><!-- /.page-wrapper -->
 
 
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/footer-logo.png"
-                        width="155" alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@ambed.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-
+        <div class="logo-box">
+            <a href="index.html" aria-label="GreenCard Diaries Logo">
+                <img src="assets/images/resources/logo-3.png" width="155" alt="GreenCard Diaries" />
+            </a>
         </div>
-        <!-- /.mobile-nav__content -->
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:info@greencarddiary.co.bw">info@greencarddiary.co.bw</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:+26771548257">+267 7154 8257</a>
+            </li>
+            <li>
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/26771548257">Chat on WhatsApp</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
+                <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                <a href="#" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+                <a href="https://wa.me/26771548257" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
     </div>
+    <!-- /.mobile-nav__content -->
+</div>
     <!-- /.mobile-nav__wrapper -->
 
     <div class="search-popup">
