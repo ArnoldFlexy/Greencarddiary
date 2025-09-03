@@ -328,6 +328,264 @@
         <!--Page Header End-->
 
         <!--Blog Details Start-->
+                     <style>
+        /* Base Styles */
+
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-xl-8, .col-xl-4, .col-lg-7, .col-lg-5 {
+            position: relative;
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        /* Blog Details Styles */
+        .blog-details__left {
+            margin-bottom: 50px;
+        }
+        
+        .blog-details__img img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-details__meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .blog-details__meta li {
+            margin-right: 10px;
+        }
+        
+        .blog-details__meta a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+        
+        .blog-details__title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2a2a2a;
+        }
+        
+        .blog-details__text-1, .blog-details__text-2 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .blog-details__bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .blog-details__tags a {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            margin-right: 5px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .blog-details__social-list a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 50%;
+            color: #6c757d;
+            margin-left: 5px;
+            text-decoration: none;
+        }
+        
+        .blog-details__pagenation-box {
+            margin: 40px 0;
+        }
+        
+        .blog-details__pagenation li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar__single {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar__title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar__title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #4CAF50;
+        }
+        
+        .sidebar__search-form {
+            position: relative;
+        }
+        
+        .sidebar__search-form input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .sidebar__search-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            border: none;
+            background: transparent;
+            color: #6c757d;
+        }
+        
+        .sidebar__post-list li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar__post-image {
+            width: 80px;
+            margin-right: 15px;
+        }
+        
+        .sidebar__post-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .sidebar__post-content-meta {
+            display: block;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .sidebar__category-list li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar__category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: #6c757d;
+            text-decoration: none;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .sidebar__tags-list a {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            margin-right: 5px;
+            margin-bottom: 8px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .sidebar__comments-list li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar__comments-icon {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 50%;
+            color: #6c757d;
+            margin-right: 15px;
+        }
+        
+        /* Responsive */
+        @media (min-width: 992px) {
+            .col-lg-7 {
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
+            
+            .col-lg-5 {
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .col-xl-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            
+            .col-xl-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+        
+        /* Custom styles for this page */
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-left: 4px solid #4CAF50;
+            margin: 25px 0;
+        }
+        
+        .benefits-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .backlink {
+            color: #4CAF50;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .backlink:hover {
+            text-decoration: underline;
+        }
+    </style>
          <section class="blog-details">
         <div class="container">
             <div class="row">
