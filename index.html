@@ -534,20 +534,20 @@
                                         
                                         </li>
                                         <li>
-                                            <a href="#about">About </a>
+                                            <a href="about.html">About </a>
                                         </li>
                                       
                                         <li>
-                                            <a href="#projects">Projects</a>
+                                            <a href="projects.html">Projects</a>
                                         </li>
                                         <li>
-                                            <a href="#services">Services </a>
+                                            <a href="services.html">Services </a>
                                         </li>
                                         <li>
                                             <a href="blog.html">Blog </a>
                                         </li>
                                         <li> 
-                                            <a href="#shop">Shop</a>
+                                            <a href="shop.html">Shop</a>
                                           
                                         </li>
                                      
@@ -578,6 +578,26 @@
         </header>
         
 
+   
+</head>
+<body>
+
+
+<!-- Search starts -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <span class="search-close" id="searchClose">&times;</span>
+            <h2>Search Our Website</h2>
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
+                <button type="submit" class="search-submit">Search</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </div>
+    
     <style>
         
         /* .main-menu__wrapper-inner {
@@ -858,26 +878,8 @@
             }
         }
     </style>
-</head>
-<body>
-
-
-    <!-- Search Modal -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-content">
-            <span class="search-close" id="searchClose">&times;</span>
-            <h2>Search Our Website</h2>
-            <form class="search-form" id="searchForm">
-                <input type="text" placeholder="What are you looking for?" class="search-input" id="searchInput">
-                <button type="submit" class="search-submit">Search</button>
-            </form>
-            <div class="search-results" id="searchResults">
-                <!-- Search results will appear here -->
-            </div>
-        </div>
-    </div>
-<!-- Search script -->
-<script>
+    
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get elements
             const headerSearchInput = document.querySelector('.header-search-input');
@@ -1044,8 +1046,10 @@
                 }, 300);
             });
         });
-</script>
+    </script>
+<!-- Search ends -->
 
+ <!-- Chat Bot starts -->
     <style>
         /* Chat Bot Styles */
         .chat-bot-container {
@@ -1606,7 +1610,6 @@
         }
     </style>
 
-    <!-- Chat Bot Container -->
     <div class="chat-bot-container">
         <div class="chat-window">
             <div class="chat-header header-waves">
@@ -2629,7 +2632,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
             }, 3000);
         });
     </script>
-
+ <!-- Chat Bot ends -->
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -2762,7 +2765,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                     <div class="about-one__left">
                         <div class="section-title text-left">
                             <span class="section-title__tagline">About our company</span>
-                            <h2 class="section-title__title">Pioneering Eco-Friendly Stationery Solutions</h2>
+                            <h2 class="section-title__title">Proudly Made In Botswana</h2>
                             <div class="section-title__line"></div>
                         </div>
                         <p class="about-one__text-1">With 20+ years of printing expertise, we deliver sustainable quality products.</p>
@@ -2791,7 +2794,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                         <p class="about-one__text-2">Based in Gaborone, Botswana, Greencard Diary revolutionizes stationery by using sugarcane bagasse - a sustainable byproduct of sugar production. Our eco-friendly process ensures zero deforestation, with wastewater recycled back to sugarcane farms. From corporate diaries to educational materials, we help brands showcase their environmental commitment.</p>
                         <div class="about-one__contact-us">
                             <div class="about-one__btn-box">
-                                <a href="#" class="thm-btn about-one__btn">Discover Our Process</a>
+                                <a href="about.html" class="thm-btn about-one__btn">Discover Our Process</a>
                             </div>
                             <div class="about-one__call">
                                 <div class="about-one__call-icon">
@@ -2820,7 +2823,7 @@ ${quotationData.contactInfo.company ? `- Company: ${quotationData.contactInfo.co
                                         <span class="icon-wallpaper-1"></span>
                                     </div>
                                     <div class="about-one__project-content">
-                                        <h3 class="odometer" data-count="3690">00</h3>
+                                        <h3 class="odometer" data-count="25000">00</h3>
                                         <p class="about-one__project-text">Successful Projects</p>
                                     </div>
                                 </div>
